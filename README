@@ -1,20 +1,26 @@
-## LDTS_11_05 - THE PACMAN PROJECT
+## LDTS_11_05 - PUCMAN
 
 In this project, we developed a pacman clone written in Java with the GUI Framework "Lanterna".
 This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pinto Teixeira (up202109860@fe.up.pt) and Emanuel Rui Tavano Maia (up202107486@fe.up.pt) for LDTS 2022⁄23.
 
 ### IMPLEMENTED FEATURES
 
-> This section should contain a list of implemented features and their descriptions. In the end of the section, include two or three screenshots that illustrate the most important features.
-
-**Examples**:
-
-- **Jumping** - The game character will jump when the space bar key is pressed.
-- **Getting hidden coins** - When the game character hits a platform from below (by jumping beneath it) it will smash that segment of the platform and will get any coins that may exist hidden there.
+> List of implemented features and their descriptions. In the end of the section, include two or three screenshots that illustrate the most important features.
 
 ### PLANNED FEATURES
 
-> This section is similar to the previous one but should list the features that are not yet implemented. Instead of screenshots you should include GUI mock-ups for the planned features.
+> List the features that are not yet implemented. Instead of screenshots you should include GUI mock-ups for the planned features.
+
+- **Intro Screen** - An introductory screen that appears when the game is booted, it will display the name of the game, the creators and will allow you to start the first level when the "ENTER" key is pressed.
+- **Levels** - Multiple levels through which the player will traverse in a set order.
+- **Player Character** - The player character (Pucman) will be able to move in 4 different directions depending on the key that is pressed: UP, when "W" is pressed, DOWN, when "S" is pressed, LEFT, when "A" is pressed and RIGHT, when "D" is pressed.
+- **Enemy Characters** - There will be 4 enemy characters (Phantoms) which will move in a random direction with a speed slightly above that of Pucman, until they enter CHASE RANGE (a set distance of [???] from Pucman), in which they'll chase Pucman until capture, Pucman leaves CHASE RANGE, or SWAP MODE is activated.
+- **Points** - Pucman will be able to eat points laid throughout the level. When the level is fully cleared of points, the player will either proceed to the next one, or in the case of it being the last level, will reach the WIN screen and beat the game.
+- **SuperPoints** - These points, have all the features of normal ones, but, in addition of that, it will cause SWAP MODE to activate.
+- **Swap Mode** - This mode allows for Pucman to eat any Phantom within a [???] second period, during which, the speeds of Pucman and Phantoms will swap. Afterwords, said Phantom will respawn [???] seconds later in the center of the map. During this period, Phantoms will flee from Pucman when in CHASE RANGE rather than chase them.
+- **Game Over Screen** - When Pucman is caught by the Phantoms, this screen will appear and allow you to restart the level.
+- **Win Screen** - When the final level is finished, this screen will appear and allow you to replay from the first level.
+- **Multiple Lives** - Pucman will have 3 Lives per level,which means he will be able to be caught up to 2 times and simply respawn in the center of the level, before the Game Over Screen is reached and the points the player caught in the level are reset.
 
 ### DESIGN
 
@@ -82,9 +88,6 @@ A way to improve the code would be to move the `isPlatformSegmentSolid()` method
 
 ### SELF-EVALUATION
 
-> In this section describe how the work regarding the project was divided between the students. In the event that members of the group do not agree on a work distribution, the group should send an email to the teacher explaining the disagreement.
-
-**Example**:
-
-- John Doe: 40%
-- Jane Doe: 60%
+- Tomás Macedo: 33%
+- Davide Teixeira: 34%
+- Emanuel Maia: 33%
