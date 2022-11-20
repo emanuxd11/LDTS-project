@@ -1,12 +1,7 @@
-## LPOO_<T><G> - <PROJECT NAME>
+## LDTS_11_05 - THE PACMAN PROJECT
 
-> Include here one or two paragraphs explaining the main idea of the project, followed by a sentence identifying who the authors are.
-
-**Example**:
-
-In this exciting platform game you can help KangarooBoy save the world, by collecting all the coins throughout ten different levels in which you will […].
-
-This project was developed by *John Doe* (*john.doe*@fe.up.pt) and *Jane Doe* (*jane.doe*@fe.up.pt) for LPOO 2018⁄19.
+In this project, we developed a pacman clone written in Java with the GUI Framework "Lanterna".
+This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pinto Teixeira (up202109860@fe.up.pt) and Emanuel Rui Tavano Maia (up202107486@fe.up.pt) for LDTS 2022⁄23.
 
 ### IMPLEMENTED FEATURES
 
