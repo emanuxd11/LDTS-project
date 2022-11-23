@@ -1,7 +1,11 @@
 package org.l11gr05.ghost;
 
-import org.l11gr05.Element;
+import org.l11gr05.Position;
 
-public abstract class Ghost extends Element {
+import javax.lang.model.element.Element;
 
+public abstract class Ghost implements Element {
+    public Ghost(){
+        super();
+    }
 }
