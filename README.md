@@ -54,11 +54,11 @@ With the Abstract Factory Pattern, one can make sure that the Controllers and Vi
 
 **Problem in Context**
 
-
+There needs to be a way to continually check for any inputs the player might make, as well as a way to track the state without being affected by processor speed
 
 **The Pattern**
 
-
+One can achieve this with the Game Loop Pattern. Through this, with each turn of the loop, you can process user input without blocking and update the game state.
 
 **Consequences**
 
@@ -68,15 +68,15 @@ With the Abstract Factory Pattern, one can make sure that the Controllers and Vi
 
 **Problem in Context**
 
-
+We need a way for the game to behave in a different way depending on whether it's in-game or in a menu.
 
 **The Pattern**
 
-
+The best way for this to be efficiently achieved is through a State Pattern.
 
 **Consequences**
 
-
+Through this you can have different states for game and menu, which allows one to easily change the behaviour of the game depending on the situation.
 
 #### THE GHOSTS NEED TO MOVE IN TANDEM WITH THEIR STATES
 

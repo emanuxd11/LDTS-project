@@ -66,7 +66,7 @@ The use of the State Pattern in the current design allows the following benefits
 - We don’t need to have a long set of conditional if or switch statements associated with the various states; instead, polimorphism is used to activate the right behavior.
 - There are now more classes and instances to manage, but still in a reasonable number.
 
-#### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
+### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
 > This section should describe 3 to 5 different code smells that you have identified in your current implementation, and suggest ways in which the code could be refactored to eliminate them. Each smell and refactoring suggestions should be described in its own subsection.
 
