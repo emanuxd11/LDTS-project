@@ -116,6 +116,8 @@ This UML shows how all design patterns we used were mapped to our different clas
 
 ### TESTING
 
+- [Early Position Testing](./pacman/src/test/java/PositionTest.java)
+
 ### SELF-EVALUATION
 
 - Tomás Macedo: 33%
