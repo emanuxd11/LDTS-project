@@ -26,9 +26,19 @@ This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pi
 
 **Problem in Context**
 
+We needed a way for ghosts to immediately know if pacman has eaten a PowerPellet. And it wouldn't be efficient for the ghosts to continually check if this has happened.
+
 **The Pattern**
 
-**Implementation**
+To achieve this we decided to use an Observer Pattern. The PowerPellets are laid throughout the Arena, therefore if the arena is an observable entity, the ghosts, as observers, can be immediately notified of this and change to the ChasedState.
+
+**Consequences**
+
+The use of the Observer Pattern in the current design allows the following benefits:
+
+- This prevents the Ghosts from having to constantly have to check the Arena for any changes to it.
+
+#### IMPLEMENTATION
 
 This UML shows how all design patterns we used were mapped to our different classes.
 
