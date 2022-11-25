@@ -34,9 +34,9 @@ To achieve this we decided to use an Observer Pattern. The PowerPellets are laid
 
 **Consequences**
 
-The use of the Observer Pattern in the current design allows the following benefits:
+The use of the Observer Pattern in the current design allows for benefits such as:
 
-- This prevents the Ghosts from having to constantly have to check the Arena for any changes to it.
+- Preventing the Ghosts from having to constantly have to check the Arena for any changes to it.
 
 #### IMPLEMENTATION
 
