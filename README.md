@@ -82,29 +82,29 @@ Through this you can have different states for game and menu, which allows one t
 
 **Problem in Context**
 
-
+We need a way for the ghosts to move in a different way depending on whether their state.
 
 **The Pattern**
 
-
+The best way for this to be efficiently achieved is through a State Pattern.
 
 **Consequences**
 
-
+This way, their state can be implemented in a way that is coherent with their movement.
 
 #### EACH GHOST NEEDS TO BEHAVE DIFFERENTLY FROM EACH OTHER
 
 **Problem in Context**
 
-
+There needs to be a way for each ghost to both share some movement code and states and still behave in a different way without creating redundant code.
 
 **The Pattern**
 
-
+With a Strategy Pattern, one can keep shared context, while still allowing for different behaviour.
 
 **Consequences**
 
-
+This way one can easily create different behaviour for each ghost without requiring redundant code.
 
 #### IMPLEMENTATION
 
