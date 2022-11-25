@@ -1,6 +1,6 @@
 ## LDTS_11_05 - PACMAN
 
-In this project, we developed a pacman clone written in Java with the GUI Framework "Lanterna".
+In this project, we developed a pacman clone written in Java with the GUI Framework "Lanterna". 
 This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pinto Teixeira (up202109860@fe.up.pt) and Emanuel Rui Tavano Maia (up202107486@fe.up.pt) for LDTS 2022⁄23.
 
 ### IMPLEMENTED FEATURES
@@ -17,13 +17,12 @@ This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide
 - **Win Screen** - When the final level is finished, this screen will appear.
 - **Multiple Lives** - Pacman will have 3 Lives per level,which means he will be able to be caught up to 2 times and simply respawn in the center of the level, before the Game Over Screen is reached and the points the player caught in the level are reset.
 
-### UML
-
-![UML](https://user-images.githubusercontent.com/86480539/204031722-0c82dc8e-b347-4cf3-9c65-24a97259226d.png)
-
 ### DESIGN
 
-#### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
+**Implementation** - This UML shows how all design patterns we used were mapped to our different classes.
+![UML](https://user-images.githubusercontent.com/86480539/204031722-0c82dc8e-b347-4cf3-9c65-24a97259226d.png)
+
+### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
 ### TESTING
 
