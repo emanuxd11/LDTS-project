@@ -1,4 +1,4 @@
-## LDTS_11_05 - PUCMAN
+## LDTS_11_05 - PACMAN
 
 In this project, we developed a pacman clone written in Java with the GUI Framework "Lanterna".
 This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pinto Teixeira (up202109860@fe.up.pt) and Emanuel Rui Tavano Maia (up202107486@fe.up.pt) for LDTS 2022⁄23.
@@ -49,7 +49,7 @@ We have applied the **State** pattern. This pattern allows you to represent diff
 
 The following figure shows how the pattern’s roles were mapped to the application classes.
 
-![img](https://www.fe.up.pt/~arestivo/page/img/examples/lpoo/state.svg)
+![UML drawio](https://user-images.githubusercontent.com/114567030/204018491-92962c7a-312c-45d2-9a30-4c05f1a2bfc8.png)
 
 These classes can be found in the following files:
 
