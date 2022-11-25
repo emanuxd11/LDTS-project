@@ -11,16 +11,15 @@ This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide
 
 > List the features that are not yet implemented. Instead of screenshots you should include GUI mock-ups for the planned features.
 
-- **Intro Screen** - An introductory screen that appears when the game is booted, it will display the name of the game, the creators and will allow you to start the first level when the "ENTER" key is pressed.
-- **Levels** - Multiple levels through which the player will traverse in a set order.
-- **Player Character** - The player character (Pucman) will be able to move in 4 different directions depending on the key that is pressed: UP, when "W" is pressed, DOWN, when "S" is pressed, LEFT, when "A" is pressed and RIGHT, when "D" is pressed.
-- **Enemy Characters** - There will be 4 enemy characters (Phantoms) which will move in a random direction with a speed slightly above that of Pucman, until they enter CHASE RANGE (a set distance of [???] from Pucman), in which they'll chase Pucman until capture, Pucman leaves CHASE RANGE, or SWAP MODE is activated.
-- **Points** - Pucman will be able to eat points laid throughout the level. When the level is fully cleared of points, the player will either proceed to the next one, or in the case of it being the last level, will reach the WIN screen and beat the game.
-- **SuperPoints** - These points, have all the features of normal ones, but, in addition of that, it will cause SWAP MODE to activate.
-- **Swap Mode** - This mode allows for Pucman to eat any Phantom within a [???] second period, during which, the speeds of Pucman and Phantoms will swap. Afterwords, said Phantom will respawn [???] seconds later in the center of the map. During this period, Phantoms will flee from Pucman when in CHASE RANGE rather than chase them.
-- **Game Over Screen** - When Pucman is caught by the Phantoms, this screen will appear and allow you to restart the level.
-- **Win Screen** - When the final level is finished, this screen will appear and allow you to replay from the first level.
-- **Multiple Lives** - Pucman will have 3 Lives per level,which means he will be able to be caught up to 2 times and simply respawn in the center of the level, before the Game Over Screen is reached and the points the player caught in the level are reset.
+- **Menu** - An introductory screen that appears when the game is booted, it will display the name of the game, the creators and will allow you to start the first level when the "ENTER" key is pressed.
+- **Levels** - Multiple arenas through which the player will traverse in a set order.
+- **Player Character** - The player character (Pacman) will be able to move in 4 different directions depending on the key that is pressed: UP, when "W" is pressed, DOWN, when "S" is pressed, LEFT, when "A" is pressed and RIGHT, when "D" is pressed.
+- **Enemy Characters** - There will be 4 enemy characters (Ghosts) which will chase Pacman until capture if in HunterState or run away from Pacman if in ChasedState. In the case of them being in HouseState or in EatenState they'll stay still and be unreachable by Pacman.
+- **PacDots** - Pacman will be able to eat PacDots laid throughout the arena. When the arena is fully cleared of PacDots, the player will either proceed to the next one, or, in the case of it being the last one, will reach the WIN screen and beat the game.
+- **PowerPellets** - These have all the features of normal PacDots, but, in addition of that, will cause them to change from HunterState to ChasedState through an ObserverPattern, during which Pacman will be able to eat ghosts.
+- **Game Over Screen** - When Pacman is caught by the Ghosts, this screen will appear and allow you to restart the level.
+- **Win Screen** - When the final level is finished, this screen will appear.
+- **Multiple Lives** - Pacman will have 3 Lives per level,which means he will be able to be caught up to 2 times and simply respawn in the center of the level, before the Game Over Screen is reached and the points the player caught in the level are reset.
 
 ### DESIGN
 
