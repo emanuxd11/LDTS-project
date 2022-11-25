@@ -34,9 +34,77 @@ To achieve this we decided to use an Observer Pattern. The PowerPellets are laid
 
 **Consequences**
 
-The use of the Observer Pattern in the current design allows for benefits such as:
+The use of the Observer Pattern prevents the Ghosts from having to constantly have to check the Arena for any changes to it.
 
-- Preventing the Ghosts from having to constantly have to check the Arena for any changes to it.
+#### WE NEED TO MAKE SURE THE GAME/MENU CONTROLLER AND VIEWER ARE ONLY USED IN THE PROPER CIRCUMSTANCES
+
+**Problem in Context**
+
+We need a way for us to use the Controller and Viewer properly depending on whether we are in-game or in the menu.
+
+**The Pattern**
+
+The best way to achieve this is to use the Abstract Factory Pattern. This way we can avoid the redundancy that other ways to do this would require.
+
+**Consequences**
+
+With the Abstract Factory Pattern, one can make sure that the Controllers and Viewers are appropriately used.
+
+#### THERE NEEDS TO BE A WAY TO CONTINUOUSLY PROCESS USER INPUT AND GAME STATE
+
+**Problem in Context**
+
+
+
+**The Pattern**
+
+
+
+**Consequences**
+
+
+
+#### WE NEED A STATE FOR BOTH IN-GAME AND MENU
+
+**Problem in Context**
+
+
+
+**The Pattern**
+
+
+
+**Consequences**
+
+
+
+#### THE GHOSTS NEED TO MOVE IN TANDEM WITH THEIR STATES
+
+**Problem in Context**
+
+
+
+**The Pattern**
+
+
+
+**Consequences**
+
+
+
+#### EACH GHOST NEEDS TO BEHAVE DIFFERENTLY FROM EACH OTHER
+
+**Problem in Context**
+
+
+
+**The Pattern**
+
+
+
+**Consequences**
+
+
 
 #### IMPLEMENTATION
 
