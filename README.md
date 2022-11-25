@@ -58,11 +58,11 @@ There needs to be a way to continually check for any inputs the player might mak
 
 **The Pattern**
 
-One can achieve this with the Game Loop Pattern. Through this, with each turn of the loop, you can process user input without blocking and update the game state.
+One can achieve this with the Game Loop Pattern. Through this, with each turn of the loop, you can process user input and update the game state.
 
 **Consequences**
 
-
+The game time can be tracked independently of processor speed and, therefore, process user input without blocking and continuously update the game state.
 
 #### WE NEED A STATE FOR BOTH IN-GAME AND MENU
 
