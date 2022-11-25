@@ -49,7 +49,7 @@ We have applied the **State** pattern. This pattern allows you to represent diff
 
 The following figure shows how the pattern’s roles were mapped to the application classes.
 
-![UML drawio](https://user-images.githubusercontent.com/114567030/204018491-92962c7a-312c-45d2-9a30-4c05f1a2bfc8.png)
+![UML](https://user-images.githubusercontent.com/114567030/204019036-f35442cd-63ac-4e0a-ab16-2f166c4f0c52.png)
 
 These classes can be found in the following files:
 
