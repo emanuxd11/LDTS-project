@@ -21,7 +21,7 @@ This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide
 - **Win Screen** - When the final level is finished, this screen will appear.
 - **Multiple Lives** - Pacman will have 3 Lives per level,which means he will be able to be caught up to 2 times and simply respawn in the center of the level, before the Game Over Screen is reached and the points the player caught in the level are reset.
 
-![UML](https://github.com/FEUP-LDTS-2022/project-l11gr05/blob/main/UML.png)
+![UML](https://user-images.githubusercontent.com/86480539/204031722-0c82dc8e-b347-4cf3-9c65-24a97259226d.png)
 
 ### DESIGN
 
@@ -43,8 +43,6 @@ This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide
 There was a lot of scattered conditional logic when deciding how the KangarooBoy should behave when jumping, as the jumps should be different depending on the items that came to his possession during the game (an helix will alow him to fly, driking a potion will allow him to jump double the height, etc.). This is a violation of the **Single Responsability Principle**. We could concentrate all the conditional logic in the same method to circumscribe the issue to that one method but the **Single Responsability Principle** would still be violated.
 
 **The Pattern**
-
-![UML](https://user-images.githubusercontent.com/86480539/204031186-fa194d12-9e48-4c91-889a-e5919acc8465.png)
 
 We have applied the **State** pattern. This pattern allows you to represent different states with different subclasses. We can switch to a different state of the application by switching to another implementation (i.e., another subclass). This pattern allowed to address the identified problems because […].
 
