@@ -44,7 +44,7 @@ There was a lot of scattered conditional logic when deciding how the KangarooBoy
 
 **The Pattern**
 
-![UML](https://user-images.githubusercontent.com/114567030/204019036-f35442cd-63ac-4e0a-ab16-2f166c4f0c52.png)
+![UML](https://user-images.githubusercontent.com/86480539/204031186-fa194d12-9e48-4c91-889a-e5919acc8465.png)
 
 We have applied the **State** pattern. This pattern allows you to represent different states with different subclasses. We can switch to a different state of the application by switching to another implementation (i.e., another subclass). This pattern allowed to address the identified problems because […].
 
