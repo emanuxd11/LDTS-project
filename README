@@ -21,7 +21,7 @@ This project was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide
 - **Win Screen** - When the final level is finished, this screen will appear.
 - **Multiple Lives** - Pacman will have 3 Lives per level,which means he will be able to be caught up to 2 times and simply respawn in the center of the level, before the Game Over Screen is reached and the points the player caught in the level are reset.
 
-![UML](UML.png)
+![UML](https://github.com/FEUP-LDTS-2022/project-l11gr05/blob/main/UML.png)
 
 ### DESIGN
 
