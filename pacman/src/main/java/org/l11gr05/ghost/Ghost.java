@@ -4,7 +4,7 @@ import org.l11gr05.Position;
 
 import javax.lang.model.element.Element;
 
-public abstract class Ghost implements Element {
+public abstract class Ghost implements Element, IArenaObserver {
     public Ghost(){
         super();
     }
