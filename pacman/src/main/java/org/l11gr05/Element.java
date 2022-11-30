@@ -22,4 +22,5 @@ public abstract class Element {
     public void moveLeft(){
         position.setY(this.position.getY()-1);
     }
+    
 }
