@@ -1,11 +1,18 @@
 package org.l11gr05.ghost;
 
+import org.l11gr05.Element;
 import org.l11gr05.Position;
+import org.l11gr05.ghost.GhostStates.HouseState;
+import org.l11gr05.ghost.GhostStates.IGhostState;
 
-import javax.lang.model.element.Element;
+public abstract class Ghost extends Element implements IArenaObserver {
+    private IGhostState state;
+    public Ghost(Position position) {
+        super(position);
+        this.state = new HouseState();
+    }
 
-public abstract class Ghost implements Element {
-    public Ghost(){
-        super();
+    public IGhostState getGhostState() {
+        return state;
     }
 }

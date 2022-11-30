@@ -7,6 +7,10 @@ public abstract class Element {
         this.position = position;
     }
 
+    public Element(int x, int y){
+        this.position = new Position(x, y);
+    }
+
     public void moveUp(){
         position.setY(this.position.getY()+1);
     }
@@ -22,5 +26,8 @@ public abstract class Element {
     public void moveLeft(){
         position.setY(this.position.getY()-1);
     }
-    
+
+    public Position getPosition() {
+        return this.position;
+    }
 }
