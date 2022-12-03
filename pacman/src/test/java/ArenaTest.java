@@ -9,4 +9,8 @@ import java.util.List;
 
 public class ArenaTest {
 
+    @Test
+    public void test(){
+        Arena a = new Arena(19,22);
+    }
 }
