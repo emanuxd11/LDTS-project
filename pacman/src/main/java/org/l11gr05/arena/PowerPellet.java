@@ -10,4 +10,5 @@ public class PowerPellet extends Element {
     public PowerPellet(int x, int y){
         super(x, y);
     }
+
 }

@@ -11,6 +11,10 @@ public abstract class Element {
         this.position = new Position(x, y);
     }
 
+    public Position getPosition(){
+        return this.position;
+    }
+
     public void moveUp(){
         position.setY(this.position.getY()+1);
     }
@@ -25,5 +29,14 @@ public abstract class Element {
 
     public void moveLeft(){
         position.setY(this.position.getY()-1);
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (o == null) return false;
+        if (getClass() != o.getClass()) return false;
+        Position p = ((Element) o).getPosition();
+        return this.getPosition().equals(p);
     }
 }

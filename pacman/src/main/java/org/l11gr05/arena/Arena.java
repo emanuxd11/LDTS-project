@@ -51,6 +51,10 @@ public class Arena implements IArenaObservable {
         return this.walls;
     }
 
+    public List<PowerPellet> getPowerPellets(){
+        return this.powerPellets;
+    }
+
     public int getWidth(){
         return this.width;
     }
