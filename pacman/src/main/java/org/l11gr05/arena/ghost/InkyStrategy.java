@@ -1,8 +1,8 @@
-package org.l11gr05.ghost;
+package org.l11gr05.arena.ghost;
 
-import org.l11gr05.Position;
+import org.l11gr05.arena.Position;
 
-public class ClydeStrategy implements IGhostStrategy {
+public class InkyStrategy implements IGhostStrategy {
     @Override
     public Position nextTargetMove() {
         return null;

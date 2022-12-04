@@ -1,6 +1,4 @@
-package org.l11gr05.ghost;
-
-import org.l11gr05.Position;
+package org.l11gr05.arena.ghost;
 
 import javax.lang.model.element.Element;
 

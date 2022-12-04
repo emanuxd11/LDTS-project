@@ -1,4 +1,4 @@
-package org.l11gr05;
+package org.l11gr05.arena;
 
 public abstract class Element {
     private Position position;
