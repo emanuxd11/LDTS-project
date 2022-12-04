@@ -1,16 +1,16 @@
-package org.l11gr05.arena.ghost;
+package org.l11gr05.arena.ghost.ghostStrategies;
 
 import org.l11gr05.arena.Position;
 
 public class PinkyStrategy implements IGhostStrategy {
 
     @Override
-    public Position nextTargetMove() {
+    public Position nextTargetMove(Position pacManPosition) {
         return null;
     }
 
     @Override
-    public Position nextScatorMove() {
+    public Position nextScatorMove(Position pacManPosition) {
         return null;
     }
 }
