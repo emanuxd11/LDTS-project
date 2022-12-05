@@ -21,8 +21,8 @@ public abstract class Ghost extends Element implements IArenaObserver{
         return null;
     }
 
-    public IGhostState powerPelletEaten(){
-        return null;
+    public void powerPelletEaten(){
+        this.state = this.state.powerPelletEaten();
     }
 
     public IGhostState getState(){
@@ -32,4 +32,9 @@ public abstract class Ghost extends Element implements IArenaObserver{
     public IGhostStrategy getStrategy(){
         return this.strategy;
     }
+
+    public void setState(IGhostState state){
+        this.state = state;
+    }
+
 }
