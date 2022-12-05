@@ -1,6 +1,6 @@
 package org.l11gr05.arena;
 
-import org.l11gr05.arena.ghost.Ghost;
+import org.l11gr05.arena.ghost.IArenaObserver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,11 @@ import java.util.List;
 public class Arena implements IArenaObservable {
     private int height;
     private int width;
-    List<Ghost> ghosts;
     List<Wall> walls = new ArrayList<Wall>();
     List<PacDot> pacDots = new ArrayList<PacDot>();
     List<PowerPellet> powerPellets = new ArrayList<PowerPellet>();
+
+    List<IArenaObserver> ghosts = new ArrayList<>();
 
     public Arena(int width, int heigth){
         this.width = width;
@@ -41,6 +42,14 @@ public class Arena implements IArenaObservable {
 
     public void addPowerPellet(PowerPellet powerPellet){
         powerPellets.add(powerPellet);
+    }
+
+    public void addGhost(IArenaObserver ghost){
+        ghosts.add(ghost);
+    }
+
+    public List<IArenaObserver> getGhosts(){
+        return this.ghosts;
     }
 
     public int getHeight(){

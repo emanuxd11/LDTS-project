@@ -16,5 +16,4 @@ public class Blinky extends Ghost {
         super(x, y);
         this.strategy = new BlinkyStrategy();
     }
-
 }

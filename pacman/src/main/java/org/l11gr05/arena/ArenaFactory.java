@@ -1,5 +1,10 @@
 package org.l11gr05.arena;
 
+import org.l11gr05.arena.ghost.Blinky;
+import org.l11gr05.arena.ghost.Clyde;
+import org.l11gr05.arena.ghost.Inky;
+import org.l11gr05.arena.ghost.Pinky;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +40,11 @@ public class ArenaFactory {
                     case '#' -> arena.addWall(new Wall(new Position(j, height - i-1)));
                     case '.' -> arena.addPacDot(new PacDot(new Position(j, height - i -1)));
                     case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, height -i - 1)));
+                    case 'B' -> arena.addGhost(new Blinky(j, height-i-1));
+                    case 'I' -> arena.addGhost(new Inky(j, height-i-1));
+                    case 'P' -> arena.addGhost(new Pinky(j, height-i-1));
+                    case 'C' -> arena.addGhost(new Clyde(j, height-i-1));
+
                 }
             }
         }
