@@ -1,19 +1,19 @@
 package org.l11gr05.arena.ghost;
 
+import org.l11gr05.arena.Element;
 import org.l11gr05.arena.Position;
 import org.l11gr05.arena.ghost.ghostStates.HouseState;
 import org.l11gr05.arena.ghost.ghostStates.IGhostState;
 import org.l11gr05.arena.ghost.ghostStrategies.IGhostStrategy;
 
-import javax.lang.model.element.Element;
 
-public abstract class Ghost implements IArenaObserver, Element {
+public abstract class Ghost extends Element implements IArenaObserver{
 
-    public IGhostStrategy strategy;
-    private IGhostState state;
+    protected IGhostStrategy strategy;
+    protected IGhostState state;
 
-    public Ghost(){
-        super();
+    public Ghost(int x, int y){
+        super(x, y);
         this.state = new HouseState();
     }
 
@@ -22,7 +22,14 @@ public abstract class Ghost implements IArenaObserver, Element {
     }
 
     public IGhostState powerPelletEaten(){
-
         return null;
+    }
+
+    public IGhostState getState(){
+        return this.state;
+    }
+
+    public IGhostStrategy getStrategy(){
+        return this.strategy;
     }
 }
