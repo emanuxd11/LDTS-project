@@ -5,4 +5,9 @@ public class EatenState implements IGhostState{
     public IGhostState powerPelletEaten() {
         return new HunterState();
     }
+
+    @Override
+    public IGhostState pacManCollision() {
+        return new EatenState();
+    }
 }

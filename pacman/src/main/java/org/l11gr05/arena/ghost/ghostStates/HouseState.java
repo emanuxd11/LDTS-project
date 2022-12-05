@@ -5,4 +5,9 @@ public class HouseState implements IGhostState{
     public IGhostState powerPelletEaten() {
         return new HouseState();
     }
+
+    @Override
+    public IGhostState pacManCollision() {
+        return new HouseState();
+    }
 }

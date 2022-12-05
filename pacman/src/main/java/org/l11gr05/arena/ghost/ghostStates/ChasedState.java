@@ -5,4 +5,9 @@ public class ChasedState implements IGhostState{
     public IGhostState powerPelletEaten() {
         return new ChasedState();
     }
+
+    @Override
+    public IGhostState pacManCollision() {
+        return new EatenState();
+    }
 }

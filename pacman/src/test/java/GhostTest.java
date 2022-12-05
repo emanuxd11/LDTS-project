@@ -78,5 +78,36 @@ public class GhostTest {
         Assertions.assertEquals(clyde.getState().getClass(), HunterState.class);
     }
 
+    @Test
+    public void pacManCollisionChasedState(){
+        Inky inky = new Inky(10, 10);
+        inky.setState(new ChasedState());
+        inky.pacManCollision();
+        Assertions.assertEquals(inky.getState().getClass(), EatenState.class);
+    }
+
+    @Test
+    public void pacManCollisionEatenState(){
+        Inky inky = new Inky(10, 10);
+        inky.setState(new EatenState());
+        inky.pacManCollision();
+        Assertions.assertEquals(inky.getState().getClass(), EatenState.class);
+    }
+
+    @Test
+    public void pacManCollisionHouseState(){
+        Inky inky = new Inky(10, 10);
+        inky.setState(new HouseState());
+        inky.pacManCollision();
+        Assertions.assertEquals(inky.getState().getClass(), HouseState.class);
+    }
+
+    @Test
+    public void pacManCollisionHunterState(){
+        Inky inky = new Inky (10, 10);
+        inky.setState(new HunterState());
+        inky.pacManCollision();
+        Assertions.assertEquals(inky.getState().getClass(), HunterState.class);
+    }
 
 }
