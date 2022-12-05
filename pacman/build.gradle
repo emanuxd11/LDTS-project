@@ -11,7 +11,7 @@ application {
 group 'org.l11gr05'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 14
 
 repositories {
     mavenCentral()
@@ -31,3 +31,4 @@ test {
 pitest {
     junit5PluginVersion = '0.12'
 }
+targetCompatibility = JavaVersion.VERSION_14

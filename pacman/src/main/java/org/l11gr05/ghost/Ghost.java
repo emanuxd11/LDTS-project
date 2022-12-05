@@ -1,7 +1,7 @@
 package org.l11gr05.ghost;
 
-import org.l11gr05.Element;
-import org.l11gr05.Position;
+import org.l11gr05.arena.Element;
+import org.l11gr05.arena.Position;
 import org.l11gr05.ghost.GhostStates.HouseState;
 import org.l11gr05.ghost.GhostStates.IGhostState;
 
