@@ -1,6 +1,8 @@
 package org.l11gr05.arena;
 
-import org.l11gr05.arena.ghost.Ghost;
+import org.l11gr05.elements.ghost.Ghost;
+import org.l11gr05.elements.PacDot;
+import org.l11gr05.elements.PowerPellet;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,9 @@
 package org.l11gr05.arena;
 
+import org.l11gr05.elements.PacDot;
+import org.l11gr05.elements.Position;
+import org.l11gr05.elements.PowerPellet;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;

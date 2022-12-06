@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.l11gr05.arena.Arena;
 import org.l11gr05.arena.ArenaFactory;
-import org.l11gr05.arena.PowerPellet;
+import org.l11gr05.elements.PowerPellet;
 
 import java.io.IOException;
 import java.util.ArrayList;
