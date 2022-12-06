@@ -31,7 +31,7 @@ public class ArenaFactory {
         for (int i = 0; i < height; i++) {
             String line = br.readLine();
             for (int j = 0; j < line.length(); j++) {
-                switch (line.charAt(j)){
+                switch (line.charAt(j)) {
                     case '#' -> arena.addWall(new Wall(new Position(j, height - i-1)));
                     case '.' -> arena.addPacDot(new PacDot(new Position(j, height - i -1)));
                     case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, height -i - 1)));
