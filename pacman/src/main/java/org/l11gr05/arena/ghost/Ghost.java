@@ -14,7 +14,7 @@ public abstract class Ghost extends Element implements IArenaObserver{
 
     public Ghost(int x, int y){
         super(x, y);
-        this.state = new HouseState();
+        this.state = new HouseState(this);
     }
 
     public Position move(Position pacManPosition){
@@ -22,7 +22,7 @@ public abstract class Ghost extends Element implements IArenaObserver{
     }
 
     public void powerPelletEaten(){
-        this.state = this.state.powerPelletEaten();
+        this.state.powerPelletEaten();
     }
 
     public IGhostState getState(){
@@ -38,7 +38,7 @@ public abstract class Ghost extends Element implements IArenaObserver{
     }
 
     public void pacManCollision(){
-        this.state = this.state.pacManCollision();
+        this.state.pacManCollision();
     }
 
 }

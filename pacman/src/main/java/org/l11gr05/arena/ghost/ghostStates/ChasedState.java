@@ -1,13 +1,22 @@
 package org.l11gr05.arena.ghost.ghostStates;
 
-public class ChasedState implements IGhostState{
+import org.l11gr05.arena.ghost.Ghost;
+import org.l11gr05.arena.ghost.IArenaObserver;
+
+public class ChasedState implements IGhostState {
+
+    private Ghost ghost;
+
+    public ChasedState(Ghost ghost){
+        this.ghost = ghost;
+    }
     @Override
-    public IGhostState powerPelletEaten() {
-        return new ChasedState();
+    public void powerPelletEaten() {
+        this.ghost.setState(new ChasedState(this.ghost));
     }
 
     @Override
-    public IGhostState pacManCollision() {
-        return new EatenState();
+    public void pacManCollision() {
+        this.ghost.setState(new EatenState(this.ghost));
     }
 }
