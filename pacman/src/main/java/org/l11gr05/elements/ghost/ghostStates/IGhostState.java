@@ -2,7 +2,7 @@ package org.l11gr05.elements.ghost.ghostStates;
 
 public interface IGhostState {
 
-    public IGhostState powerPelletEaten();
+    IGhostState powerPelletEaten();
 
-    public IGhostState pacManCollision();
+    IGhostState pacManCollision();
 }

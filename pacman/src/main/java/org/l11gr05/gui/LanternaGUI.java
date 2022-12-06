@@ -92,9 +92,36 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawMonster(Position position) {
-        drawCharacter(position.getX(), position.getY(), '@', "#CC0000");
+    public void drawPacDot(Position position) {
+        drawCharacter(position.getX(), position.getY(), '*', "#CC0000");
     }
+
+    @Override
+    public void drawPowerPellet(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'O', "#CC0000");
+    }
+
+    /* estas são para os ghosts e por agora têm todas a mesma cor, depois substitui-se pela cor de cada um */
+    @Override
+    public void drawBlinky(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'B', "#CC0000");
+    }
+
+    @Override
+    public void drawPinky(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'P', "#CC0000");
+    }
+
+    @Override
+    public void drawInky(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'I', "#CC0000");
+    }
+
+    @Override
+    public void drawClyde(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'C', "#CC0000");
+    }
+    /* ****************************************************************************** */
 
     @Override
     public void drawText(Position position, String text, String color) {

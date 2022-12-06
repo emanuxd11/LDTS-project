@@ -1,7 +1,7 @@
 package org.l11gr05.elements;
 
 public abstract class Element {
-    private Position position;
+    private final Position position;
 
     public Element(Position position){
         this.position = position;

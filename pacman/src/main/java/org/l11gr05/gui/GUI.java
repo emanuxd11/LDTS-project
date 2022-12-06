@@ -11,7 +11,17 @@ public interface GUI {
 
     void drawWall(Position position);
 
-    void drawMonster(Position position);
+    void drawPacDot(Position position);
+
+    void drawPowerPellet(Position position);
+
+    void drawBlinky(Position position);
+
+    void drawPinky(Position position);
+
+    void drawInky(Position position);
+
+    void drawClyde(Position position);
 
     void drawText(Position position, String text, String color);
 
