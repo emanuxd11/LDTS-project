@@ -31,6 +31,10 @@ public abstract class Element {
         position.setY(this.position.getY()-1);
     }
 
+    public void setPosition(Position position){
+        this.position = position;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

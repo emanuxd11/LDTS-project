@@ -1,17 +1,17 @@
 package org.l11gr05.elements;
-
-import org.l11gr05.elements.Element;
-import org.l11gr05.elements.Position;
-
-import org.l11gr05.arena.Element;
-import org.l11gr05.arena.Position;
-
 public class Pacman extends Element {
-    public Pacman(Position position) {
+
+    private char direction;
+    public Pacman(Position position, char direction) {
         super(position);
+        this.direction = direction;
     }
 
     public Pacman() {
         super(new Position(5, 5));
+    }
+
+    public char getDirection(){
+        return this.direction;
     }
 }
