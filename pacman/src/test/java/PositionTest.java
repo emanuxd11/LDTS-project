@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.l11gr05.arena.Position;
+import org.l11gr05.elements.Position;
 
 public class PositionTest {
     private Position position1, position2;
