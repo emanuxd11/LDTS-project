@@ -4,7 +4,7 @@ import org.l11gr05.classes.game.elements.PacDot;
 import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.PowerPellet;
-import org.l11gr05.classes.game.elements.ghost.Ghost;
+import org.l11gr05.classes.game.elements.ghost.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,11 @@ public class Arena implements IArenaObservable {
     private Pacman pacman;
     private int width;
 
-    List<Ghost> ghosts;
+    private Blinky blinky;
+    private Inky inky;
+    private Pinky pinky;
+    private Clyde clyde;
+
     List<Wall> walls = new ArrayList<Wall>();
     List<PacDot> pacDots = new ArrayList<PacDot>();
     List<PowerPellet> powerPellets = new ArrayList<PowerPellet>();
@@ -26,7 +30,7 @@ public class Arena implements IArenaObservable {
         this.walls = new ArrayList<Wall>();
         this.pacDots = new ArrayList<PacDot>();
         this.powerPellets = new ArrayList<PowerPellet>();
-        this.pacman = new Pacman(new Position(5, 5), 'r');
+        this.pacman = new Pacman(new Position(5, 5), 'l');
     }
 
 
@@ -53,7 +57,12 @@ public class Arena implements IArenaObservable {
     }
 
     public List<Ghost> getGhosts(){
-        return this.ghosts;
+        List<Ghost> temp = null;
+        temp.add(this.blinky);
+        temp.add(this.clyde);
+        temp.add(this.inky);
+        temp.add(this.clyde);
+        return temp;
     }
 
     public void addPowerPellet(PowerPellet powerPellet){
