@@ -14,7 +14,12 @@ public class MenuViewer extends Viewer<Menu> {
         gui.drawText(new Position(7, 4), "PAC-MAN", "#f5e72c");
 
         for (int i = 0; i < getModel().getEntriesLen(); i++) {
-            gui.drawText(new Position(5, 7 + i), getModel().getEntry(i), "#FFFFFF");
+            if (getModel().isSelected(i)){
+                gui.drawText(new Position(5, 7 + i), getModel().getEntry(i), "#f5e72c");
+            }
+            else{
+                gui.drawText(new Position(5, 7 + i), getModel().getEntry(i), "#FFFFFF");
+            }
         }
     }
 }

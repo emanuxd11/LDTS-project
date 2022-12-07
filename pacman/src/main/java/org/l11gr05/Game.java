@@ -18,6 +18,10 @@ public class Game {
         this.state = new MenuState(new Menu());
     }
 
+    public void setState(State state){
+        this.state = state;
+    }
+
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
         new Game().start();
     }
@@ -29,7 +33,7 @@ public class Game {
         while(this.state != null) {
             long startTime = System.currentTimeMillis();
 
-            state.step(gui);
+            state.step(this, gui, startTime);
 
             long elapsedTime = System.currentTimeMillis() - startTime;
             long sleepTime = frameTime - elapsedTime;
