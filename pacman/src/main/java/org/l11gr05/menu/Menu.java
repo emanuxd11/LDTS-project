@@ -23,6 +23,18 @@ public class Menu {
         return i == currentEntry;
     }
 
+    public void previousEntry(){
+        if(currentEntry > 0){
+            currentEntry--;
+        }
+    }
+
+    public void nextEntry(){
+        if (currentEntry < this.entries.size()-1){
+            currentEntry++;
+        }
+    }
+
     public String getEntry(int i) {
         return this.entries.get(i);
     }

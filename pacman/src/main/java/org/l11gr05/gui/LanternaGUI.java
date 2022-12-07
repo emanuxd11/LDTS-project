@@ -1,5 +1,6 @@
 package org.l11gr05.gui;
 
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
@@ -29,6 +30,20 @@ public class LanternaGUI implements GUI {
         AWTTerminalFontConfiguration fontConfig = loadSquareFont();
         Terminal terminal = createTerminal(width, height, fontConfig);
         this.screen = createScreen(terminal);
+        TextGraphics graphics = this.screen.newTextGraphics();
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#111111"));
+        graphics.fillRectangle(new TerminalPosition(1, 1), new TerminalSize(width, height), ' ');
+        //floorColor("#FFFFFF", width, height);
+    }
+
+    private void floorColor(String color, int width, int height){
+        TextGraphics graphics = this.screen.newTextGraphics();
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF"));
+        graphics.fillRectangle(new TerminalPosition(1, 1), new TerminalSize(width, height), ' ');
+        TextGraphics tg = screen.newTextGraphics();
+        tg.setForegroundColor(TextColor.Factory.fromString(color));
+        tg.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
+        //tg.putString(x, y + 1, ' ' + c);
     }
 
     private Screen createScreen(Terminal terminal) throws IOException {
