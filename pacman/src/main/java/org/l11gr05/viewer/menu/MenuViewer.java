@@ -1,6 +1,6 @@
 package org.l11gr05.viewer.menu;
 
-import org.l11gr05.elements.Position;
+import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.viewer.Viewer;
