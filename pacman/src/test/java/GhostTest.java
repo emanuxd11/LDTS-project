@@ -1,18 +1,18 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.l11gr05.elements.Position;
-import org.l11gr05.elements.ghost.Blinky;
-import org.l11gr05.elements.ghost.Clyde;
-import org.l11gr05.elements.ghost.Inky;
-import org.l11gr05.elements.ghost.Pinky;
-import org.l11gr05.elements.ghost.ghostStates.ChasedState;
-import org.l11gr05.elements.ghost.ghostStates.EatenState;
-import org.l11gr05.elements.ghost.ghostStates.HouseState;
-import org.l11gr05.elements.ghost.ghostStates.HunterState;
-import org.l11gr05.elements.ghost.ghostStrategies.BlinkyStrategy;
-import org.l11gr05.elements.ghost.ghostStrategies.ClydeStrategy;
-import org.l11gr05.elements.ghost.ghostStrategies.InkyStrategy;
-import org.l11gr05.elements.ghost.ghostStrategies.PinkyStrategy;
+import org.l11gr05.classes.game.elements.Position;
+import org.l11gr05.classes.game.elements.ghost.Blinky;
+import org.l11gr05.classes.game.elements.ghost.Clyde;
+import org.l11gr05.classes.game.elements.ghost.Inky;
+import org.l11gr05.classes.game.elements.ghost.Pinky;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.EatenState;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
+import org.l11gr05.classes.game.elements.ghost.ghostStrategies.BlinkyStrategy;
+import org.l11gr05.classes.game.elements.ghost.ghostStrategies.ClydeStrategy;
+import org.l11gr05.classes.game.elements.ghost.ghostStrategies.InkyStrategy;
+import org.l11gr05.classes.game.elements.ghost.ghostStrategies.PinkyStrategy;
 
 public class GhostTest {
 

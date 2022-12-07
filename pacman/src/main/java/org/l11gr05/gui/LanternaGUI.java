@@ -10,7 +10,7 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import org.l11gr05.elements.Position;
+import org.l11gr05.classes.game.elements.Position;
 
 import java.awt.*;
 import java.io.File;
