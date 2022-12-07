@@ -11,9 +11,9 @@ import java.util.List;
 
 public class Arena implements IArenaObservable {
     private int height;
+    private int width;
 
     private Pacman pacman;
-    private int width;
 
     private Blinky blinky;
     private Inky inky;
@@ -43,9 +43,9 @@ public class Arena implements IArenaObservable {
         this.height = 0;
     }
 
-    public void setSize(int width, int heigth){
+    public void setSize(int width, int height){
         this.width = width;
-        this.height = heigth;
+        this.height = height;
     }
 
     public void addWall(Wall wall){
