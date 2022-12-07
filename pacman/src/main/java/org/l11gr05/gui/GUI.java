@@ -1,6 +1,6 @@
 package org.l11gr05.gui;
 
-import org.l11gr05.elements.Position;
+import org.l11gr05.classes.game.elements.Position;
 
 import java.io.IOException;
 
