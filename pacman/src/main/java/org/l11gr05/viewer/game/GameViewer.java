@@ -1,5 +1,8 @@
 package org.l11gr05.viewer.game;
 
-public class GameViewer {
+import org.l11gr05.classes.game.arena.Arena;
 
+public class GameViewer {
+    public GameViewer(Arena model) {
+    }
 }

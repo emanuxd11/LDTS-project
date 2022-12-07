@@ -24,9 +24,7 @@ public abstract class State<T> {
         return this.model;
     }
 
-    private Viewer getViewer() {
-        return null;
-    }
+    public abstract Viewer<T> getViewer();
 
     public void step(GUI gui) throws IOException {
         viewer.draw(gui);

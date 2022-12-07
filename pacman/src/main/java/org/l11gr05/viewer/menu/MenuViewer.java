@@ -11,6 +11,10 @@ public class MenuViewer extends Viewer<Menu> {
     }
 
     public void drawElements(GUI gui) {
-        gui.drawText(new Position(5, 5), "Menu", "#FFFFFF");
+        gui.drawText(new Position(7, 4), "PAC-MAN", "#f5e72c");
+
+        for (int i = 0; i < getModel().getEntriesLen(); i++) {
+            gui.drawText(new Position(5, 7 + i), getModel().getEntry(i), "#FFFFFF");
+        }
     }
 }
