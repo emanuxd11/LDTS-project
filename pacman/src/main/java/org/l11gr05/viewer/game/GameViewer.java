@@ -24,7 +24,6 @@ public class GameViewer extends Viewer<Arena> {
 
     @Override
     protected void drawElements(GUI gui) {
-        // testing
         List<Wall> walls = this.getModel().getWalls();
         List<PacDot> pacDots = this.getModel().getPacDots();
         List<PowerPellet> powerPellets = this.getModel().getPowerPellets();
@@ -43,11 +42,6 @@ public class GameViewer extends Viewer<Arena> {
 
 
 
-        blinkyViewer.draw(this.getModel().getBlinky(), gui);
-        inkyViewer.draw(this.getModel().getInky(), gui);
-        pinkyViewer.draw(this.getModel().getPinky(), gui);
-        clydeViewer.draw(this.getModel().getClyde(), gui);
-
         for (Wall wall : walls){
             wallViewer.draw(wall, gui);
         }
@@ -59,6 +53,12 @@ public class GameViewer extends Viewer<Arena> {
         for (PowerPellet powerPellet : powerPellets){
             powerPelletsViewer.draw(powerPellet, gui);
         }
+
+        blinkyViewer.draw(this.getModel().getBlinky(), gui);
+        inkyViewer.draw(this.getModel().getInky(), gui);
+        pinkyViewer.draw(this.getModel().getPinky(), gui);
+        clydeViewer.draw(this.getModel().getClyde(), gui);
+        
         pacmanViewer.draw(pacman, gui);
     }
 }

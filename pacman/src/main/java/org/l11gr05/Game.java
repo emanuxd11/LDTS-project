@@ -45,7 +45,6 @@ public class Game {
             } catch (InterruptedException e) {
             }
         }
-
         gui.close();
     }
 }

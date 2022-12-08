@@ -27,9 +27,7 @@ public class GhostController extends GameController {
     }
 
     private void moveGhost(Ghost ghost, Position position) {
-        if (getModel().isEmpty(position)) {
-            ghost.setPosition(position);
-        }
+        ghost.setPosition(position);
     }
 
 }

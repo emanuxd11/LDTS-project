@@ -43,10 +43,24 @@ public abstract class Element {
 
     public List<Position> getAllNeighbours(){
         List<Position> neighbours = new ArrayList<>();
-        neighbours.add(new Position(position.getX()+1, position.getY()));
-        neighbours.add(new Position(position.getX()-1, position.getY()));
-        neighbours.add(new Position(position.getX(), position.getY()+1));
-        neighbours.add(new Position(position.getX(), position.getY()-1));
+        Position right = new Position(position.getX()+1, position.getY());
+        Position left = new Position(position.getX()-1, position.getY());
+
+        neighbours.add(left);
+        neighbours.add(right);
+        neighbours.add(new Position(position.getX(), position.getY() + 1));
+        neighbours.add(new Position(position.getX(), position.getY() - 1));
+
+
+        if (right.equals(new Position(19, 10))) {
+            neighbours.remove(right);
+        }
+
+
+        else if (left.equals(new Position(-1, 10))) {
+            neighbours.remove(left);
+        }
+
         return neighbours;
     }
 

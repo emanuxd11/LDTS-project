@@ -91,7 +91,7 @@ public class Arena implements IArenaObservable {
         temp.add(this.blinky);
         temp.add(this.clyde);
         temp.add(this.inky);
-        temp.add(this.clyde);
+        temp.add(this.pinky);
         return temp;
     }
 
