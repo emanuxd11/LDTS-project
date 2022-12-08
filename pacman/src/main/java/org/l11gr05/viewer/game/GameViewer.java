@@ -22,7 +22,7 @@ public class GameViewer extends Viewer<Arena> {
         List<PacDot> pacDots = this.getModel().getPacDots();
         List<PowerPellet> powerPellets = this.getModel().getPowerPellets();
 
-        Pacman pacman = new Pacman();
+        Pacman pacman = this.getModel().getPacman();
 
 
         PacmanViewer pacmanViewer = new PacmanViewer();

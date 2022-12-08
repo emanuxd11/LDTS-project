@@ -1,6 +1,7 @@
 package org.l11gr05.classes.game.arena;
 
 import org.l11gr05.classes.game.elements.PacDot;
+import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.PowerPellet;
 
@@ -39,6 +40,7 @@ public class ArenaFactory {
                     case '#' -> arena.addWall(new Wall(new Position(j, i)));
                     case '.' -> arena.addPacDot(new PacDot(new Position(j, i)));
                     case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, i)));
+                    case 'P' -> arena.setPacman(new Pacman(new Position(j, i), 'r'));
                 }
             }
         }

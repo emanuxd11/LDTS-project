@@ -45,6 +45,10 @@ public class Arena implements IArenaObservable {
         return this.pacman;
     }
 
+    public void setPacman(Pacman pacman){
+        this.pacman = pacman;
+    }
+
     public Arena(){
         this.width = 0;
         this.height = 0;

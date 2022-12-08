@@ -22,11 +22,11 @@ public abstract class Element {
     }
 
     public void moveUp(){
-        position.setY(this.position.getY()+1);
+        position.setY(this.position.getY()-1);
     }
 
     public void moveDown(){
-        position.setY(this.position.getY()-1);
+        position.setY(this.position.getY()+1);
     }
 
     public void moveRight(){
@@ -34,7 +34,7 @@ public abstract class Element {
     }
 
     public void moveLeft(){
-        position.setY(this.position.getY()-1);
+        position.setX(this.position.getX()-1);
     }
 
     public void setPosition(Position position){
