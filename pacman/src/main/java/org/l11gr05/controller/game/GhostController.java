@@ -17,13 +17,10 @@ public class GhostController extends GameController {
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException{
+        List<Position> neighbours;
         for (Ghost ghost : this.getModel().getGhosts()) {
-            List<Position> neighbours = ghost.getAllNeighbours();
-            //for (Position position : neighbours){
-            //    if (!getModel().isEmpty(position)){
-            //        neighbours.remove(position);
-            //    }
-            //}
+            neighbours = ghost.getAllNeighbours();
+            neighbours.removeIf(n -> (!getModel().isEmpty(n)));
             Position temp = ghost.nextMove(neighbours, this.getModel().getPacman());
             moveGhost(ghost, temp);
         }

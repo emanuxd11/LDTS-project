@@ -24,17 +24,36 @@ public class Arena implements IArenaObservable {
     List<PacDot> pacDots = new ArrayList<PacDot>();
     List<PowerPellet> powerPellets = new ArrayList<PowerPellet>();
 
-    public Arena(int width, int heigth){
-        this.width = width;
-        this.height = heigth;
-        this.walls = new ArrayList<Wall>();
-        this.pacDots = new ArrayList<PacDot>();
-        this.powerPellets = new ArrayList<PowerPellet>();
-        this.pacman = new Pacman(new Position(5, 5), 'l');
-        this.blinky = new Blinky(1, 1);
-        this.inky = new Inky(2, 2);
-        this.clyde = new Clyde(3, 3);
-        this.pinky = new Pinky(4, 4);
+    public Blinky getBlinky(){
+        return this.blinky;
+    }
+
+    public Inky getInky(){
+        return this.inky;
+    }
+
+    public Pinky getPinky(){
+        return this.pinky;
+    }
+
+    public Clyde getClyde(){
+        return this.clyde;
+    }
+
+    public void setBlinky(Blinky blinky){
+        this.blinky = blinky;
+    }
+
+    public void setInky(Inky inky){
+        this.inky = inky;
+    }
+
+    public void setPinky(Pinky pinky){
+        this.pinky = pinky;
+    }
+
+    public void setClyde(Clyde clyde){
+        this.clyde = clyde;
     }
 
     public List<PacDot> getPacDots(){
@@ -101,5 +120,13 @@ public class Arena implements IArenaObservable {
             if (wall.getPosition().equals(position))
                 return false;
         return true;
+    }
+
+    @Override
+    public void powerPelletEaten() {
+        this.blinky.powerPelletEaten();
+        this.inky.powerPelletEaten();
+        this.clyde.powerPelletEaten();
+        this.pinky.powerPelletEaten();
     }
 }

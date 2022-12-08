@@ -4,6 +4,10 @@ import org.l11gr05.classes.game.elements.PacDot;
 import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.PowerPellet;
+import org.l11gr05.classes.game.elements.ghost.Blinky;
+import org.l11gr05.classes.game.elements.ghost.Clyde;
+import org.l11gr05.classes.game.elements.ghost.Inky;
+import org.l11gr05.classes.game.elements.ghost.Pinky;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,7 +22,7 @@ public class ArenaFactory {
     private int width;
 
     public Arena createArena(String arenaName) throws IOException {
-        Arena arena = new Arena(10, 10);
+        Arena arena = new Arena();
         String rootPath = new File(System.getProperty("user.dir")).getPath();
         String mapLocation = rootPath + "/src/main/resources/" + arenaName;
 
@@ -41,6 +45,11 @@ public class ArenaFactory {
                     case '.' -> arena.addPacDot(new PacDot(new Position(j, i)));
                     case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, i)));
                     case 'P' -> arena.setPacman(new Pacman(new Position(j, i), 'r'));
+                    case 'B' -> arena.setBlinky(new Blinky(j, i));
+                    case 'I' -> arena.setInky(new Inky(j, i));
+                    case 'N' -> arena.setPinky(new Pinky(j, i));
+                    case 'C' -> arena.setClyde(new Clyde(j, i));
+
                 }
             }
         }

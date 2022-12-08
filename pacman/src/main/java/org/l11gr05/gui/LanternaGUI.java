@@ -98,7 +98,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPacman(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'P', "#FFD700");
+        drawCharacter(position.getX(), position.getY(), '<', "#FFD700");
     }
 
     @Override
@@ -119,22 +119,22 @@ public class LanternaGUI implements GUI {
     /* estas são para os ghosts e por agora têm todas a mesma cor, depois substitui-se pela cor de cada um */
     @Override
     public void drawBlinky(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'B', "#CC0000");
+        drawCharacter(position.getX(), position.getY(), 'B', "#FF0000");
     }
 
     @Override
     public void drawPinky(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'P', "#CC0000");
+        drawCharacter(position.getX(), position.getY(), 'P', "#FFB8FF");
     }
 
     @Override
     public void drawInky(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'I', "#CC0000");
+        drawCharacter(position.getX(), position.getY(), 'I', "#00FFFF");
     }
 
     @Override
     public void drawClyde(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'C', "#CC0000");
+        drawCharacter(position.getX(), position.getY(), 'C', "#FFB852");
     }
     /* ****************************************************************************** */
 
