@@ -21,15 +21,15 @@ public class PacmanController extends GameController{
         if (action == GUI.ACTION.LEFT) this.getModel().getPacman().setDirection('l');
         if (action == GUI.ACTION.RIGHT) this.getModel().getPacman().setDirection('r');
 
-        Position pacmanPositon = this.getModel().getPacman().getPosition();
+        Position pacmanPosition = this.getModel().getPacman().getPosition();
         if (this.getModel().getPacman().getDirection() == 'u') {
-            if (this.getModel().isEmpty(new Position(pacmanPositon.getX(), pacmanPositon.getY()-1))) {
+            if (this.getModel().isEmpty(new Position(pacmanPosition.getX(), pacmanPosition.getY()-1))) {
                 this.getModel().getPacman().moveUp();
             }
         }
 
         if (this.getModel().getPacman().getDirection() == 'd'){
-            if (this.getModel().isEmpty(new Position(pacmanPositon.getX(), pacmanPositon.getY()+1))){
+            if (this.getModel().isEmpty(new Position(pacmanPosition.getX(), pacmanPosition.getY()+1))){
                 this.getModel().getPacman().moveDown();
             }
 
@@ -39,7 +39,7 @@ public class PacmanController extends GameController{
                 this.getModel().getPacman().setPosition(new Position(0, 10));
             }
             else {
-                if (this.getModel().isEmpty(new Position(pacmanPositon.getX() + 1, pacmanPositon.getY()))) {
+                if (this.getModel().isEmpty(new Position(pacmanPosition.getX() + 1, pacmanPosition.getY()))) {
                     this.getModel().getPacman().moveRight();
                 }
             }
@@ -50,7 +50,7 @@ public class PacmanController extends GameController{
                 this.getModel().getPacman().setPosition(new Position(22, 10));
             }
             else {
-                if (this.getModel().isEmpty(new Position(pacmanPositon.getX() - 1, pacmanPositon.getY()))) {
+                if (this.getModel().isEmpty(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()))) {
                     this.getModel().getPacman().moveLeft();
                 }
             }
