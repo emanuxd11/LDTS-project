@@ -12,6 +12,11 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.l11gr05.classes.game.elements.Position;
+import org.l11gr05.classes.game.elements.ghost.Blinky;
+import org.l11gr05.classes.game.elements.ghost.Clyde;
+import org.l11gr05.classes.game.elements.ghost.Inky;
+import org.l11gr05.classes.game.elements.ghost.Pinky;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
 
 import java.awt.*;
 import java.io.File;
@@ -116,25 +121,44 @@ public class LanternaGUI implements GUI {
         drawCharacter(position.getX(), position.getY(), '*', "#FFFFFF");
     }
 
-    /* estas são para os ghosts e por agora têm todas a mesma cor, depois substitui-se pela cor de cada um */
     @Override
-    public void drawBlinky(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'B', "#FF0000");
+    public void drawBlinky(Blinky blinky) {
+        if(blinky.getState().getClass() == ChasedState.class){
+            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#5259E8");
+        }
+        else {
+            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#FF0000");
+        }
     }
 
     @Override
-    public void drawPinky(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'P', "#FFB8FF");
+    public void drawPinky(Pinky pinky) {
+        if(pinky.getState().getClass() == ChasedState.class){
+            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#5259E8");
+        }
+        else {
+            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#FFB8FF");
+        }
     }
 
     @Override
-    public void drawInky(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'I', "#00FFFF");
+    public void drawInky(Inky inky) {
+        if(inky.getState().getClass() == ChasedState.class){
+            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#5259E8");
+        }
+        else {
+            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#00FFFF");
+        }
     }
 
     @Override
-    public void drawClyde(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'C', "#FFB852");
+    public void drawClyde(Clyde clyde) {
+        if(clyde.getState().getClass() == ChasedState.class){
+            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#5259E8");
+        }
+        else {
+            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#FFB852");
+        }
     }
     /* ****************************************************************************** */
 

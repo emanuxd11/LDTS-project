@@ -58,7 +58,7 @@ public class GameViewer extends Viewer<Arena> {
         inkyViewer.draw(this.getModel().getInky(), gui);
         pinkyViewer.draw(this.getModel().getPinky(), gui);
         clydeViewer.draw(this.getModel().getClyde(), gui);
-        
+
         pacmanViewer.draw(pacman, gui);
     }
 }

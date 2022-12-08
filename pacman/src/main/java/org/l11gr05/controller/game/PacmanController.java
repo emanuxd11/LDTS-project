@@ -2,6 +2,7 @@ package org.l11gr05.controller.game;
 
 import org.l11gr05.Game;
 import org.l11gr05.classes.game.arena.Arena;
+import org.l11gr05.classes.game.elements.PacDot;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.gui.GUI;
 
@@ -54,6 +55,10 @@ public class PacmanController extends GameController{
                 }
             }
         }
+
+        this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());
+
+        this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());
 
     }
 }
