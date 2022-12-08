@@ -31,8 +31,15 @@ public class Arena implements IArenaObservable {
         this.pacDots = new ArrayList<PacDot>();
         this.powerPellets = new ArrayList<PowerPellet>();
         this.pacman = new Pacman(new Position(5, 5), 'l');
+        this.blinky = new Blinky(1, 1);
+        this.inky = new Inky(2, 2);
+        this.clyde = new Clyde(3, 3);
+        this.pinky = new Pinky(4, 4);
     }
 
+    public List<PacDot> getPacDots(){
+        return this.pacDots;
+    }
 
     public Pacman getPacman(){
         return this.pacman;
@@ -57,7 +64,7 @@ public class Arena implements IArenaObservable {
     }
 
     public List<Ghost> getGhosts(){
-        List<Ghost> temp = null;
+        List<Ghost> temp = new ArrayList<>();
         temp.add(this.blinky);
         temp.add(this.clyde);
         temp.add(this.inky);

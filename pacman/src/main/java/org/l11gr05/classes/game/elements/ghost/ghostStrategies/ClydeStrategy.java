@@ -16,7 +16,7 @@ public class ClydeStrategy implements IGhostStrategy {
         Position pacmanPosition = pacman.getPosition();
         int min = 20000;
         int index = 0;
-        for (int i = 1; i <= possibles.size();i++){
+        for (int i = 1; i < possibles.size();i++){
             Position position = possibles.get(i);
             Position comparable = new Position(abs(position.getX() - pacmanPosition.getX()),abs( position.getX() - pacmanPosition.getX()));
             int temp = comparable.getX() + comparable.getY();

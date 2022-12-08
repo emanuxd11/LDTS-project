@@ -2,6 +2,7 @@ package org.l11gr05.classes.game.elements.ghost;
 
 import org.l11gr05.classes.game.elements.Position;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Element {
@@ -41,7 +42,7 @@ public abstract class Element {
     }
 
     public List<Position> getAllNeighbours(){
-        List<Position> neighbours = null;
+        List<Position> neighbours = new ArrayList<>();
         neighbours.add(new Position(position.getX()+1, position.getY()));
         neighbours.add(new Position(position.getX()-1, position.getY()));
         neighbours.add(new Position(position.getX(), position.getY()+1));

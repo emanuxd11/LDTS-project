@@ -17,7 +17,7 @@ public class ArenaFactory {
     private int width;
 
     public Arena createArena(String arenaName) throws IOException {
-        Arena arena = new Arena();
+        Arena arena = new Arena(10, 10);
         String rootPath = new File(System.getProperty("user.dir")).getPath();
         String mapLocation = rootPath + "/src/main/resources/" + arenaName;
 
@@ -36,9 +36,9 @@ public class ArenaFactory {
             String line = br.readLine();
             for (int j = 0; j < line.length(); j++) {
                 switch (line.charAt(j)) {
-                    case '#' -> arena.addWall(new Wall(new Position(j, height - i-1)));
-                    case '.' -> arena.addPacDot(new PacDot(new Position(j, height - i -1)));
-                    case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, height -i - 1)));
+                    case '#' -> arena.addWall(new Wall(new Position(j, i)));
+                    case '.' -> arena.addPacDot(new PacDot(new Position(j, i)));
+                    case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, i)));
                 }
             }
         }

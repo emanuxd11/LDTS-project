@@ -108,12 +108,12 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPacDot(Position position) {
-        drawCharacter(position.getX(), position.getY(), '*', "#CC0000");
+        drawCharacter(position.getX(), position.getY(), '.', "#FFFFFF");
     }
 
     @Override
     public void drawPowerPellet(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'O', "#CC0000");
+        drawCharacter(position.getX(), position.getY(), '*', "#FFFFFF");
     }
 
     /* estas são para os ghosts e por agora têm todas a mesma cor, depois substitui-se pela cor de cada um */

@@ -2,7 +2,9 @@ package org.l11gr05;
 
 import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.gui.LanternaGUI;
+import org.l11gr05.menu.Menu;
 import org.l11gr05.states.GameState;
+import org.l11gr05.states.MenuState;
 import org.l11gr05.states.State;
 
 import java.awt.*;
@@ -14,20 +16,20 @@ public class Game {
     private State state;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
-        this.gui = new LanternaGUI(21, 20);
-        // this.state = new MenuState(new Menu());
-        this.state  = new GameState(new Arena());
+        this.gui = new LanternaGUI(19, 22);
+        this.state = new MenuState(new Menu());
+        //this.state  = new GameState(new Arena());
     }
 
     public void setState(State state){
         this.state = state;
     }
 
-    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
+    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException{
         new Game().start();
     }
 
-    private void start() throws IOException {
+    private void start() throws IOException{
         int FPS = 10;
         int frameTime = 1000 / FPS;
 
