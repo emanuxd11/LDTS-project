@@ -1,6 +1,7 @@
 package org.l11gr05.controller.menu;
 
 import org.l11gr05.Game;
+import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.arena.ArenaFactory;
 import org.l11gr05.controller.Controller;
 import org.l11gr05.gui.GUI;
@@ -26,7 +27,11 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().exitSelected()) game.setState(null);
-                if (getModel().startSelected()) game.setState(new GameState(new ArenaFactory().createArena("map.txt")));
+                if (getModel().startSelected()){
+                    ArenaFactory temp = new ArenaFactory();
+                    Arena arena = temp.createArena("map.txt");
+                    game.setState(new GameState(arena));
+                }
         }
     }
 }

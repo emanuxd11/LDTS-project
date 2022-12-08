@@ -6,20 +6,22 @@ import java.util.List;
 import java.util.Random;
 
 import static java.lang.Math.abs;
+import static java.lang.Math.sqrt;
 
 public class BlinkyStrategy implements IGhostStrategy {
 
     @Override
     public Position nextTargetMove(Pacman pacman, List<Position> possibles) {
         Position pacmanPosition = pacman.getPosition();
-        int min = 20000;
+        double min = 20000;
         int index = 0;
-        for (int i = 1; i <= possibles.size();i++){
+        double distance;
+        for (int i = 0; i < possibles.size();i++){
             Position position = possibles.get(i);
-            Position comparable = new Position(abs(position.getX() - pacmanPosition.getX()),abs( position.getX() - pacmanPosition.getX()));
-            int temp = comparable.getX() + comparable.getY();
-            if (temp < min) {
-                min = temp;
+                distance = Math.sqrt((Math.pow((position.getX() - pacmanPosition.getX()), 2) +
+                        Math.pow((position.getY() - pacmanPosition.getY()), 2)));
+            if (distance < min) {
+                min = distance;
                 index = i;
             }
         }

@@ -7,6 +7,6 @@ import org.l11gr05.viewer.game.IElementViewer;
 public class ClydeViewer implements IElementViewer<Clyde> {
     @Override
     public void draw(Clyde clyde, GUI gui) {
-        gui.drawClyde(clyde.getPosition());
+        gui.drawClyde(clyde);
     }
 }

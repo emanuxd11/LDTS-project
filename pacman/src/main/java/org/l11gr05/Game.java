@@ -16,18 +16,17 @@ public class Game {
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(21, 20);
         this.state = new MenuState(new Menu());
-        // this.state  = new GameState(new Arena());
     }
 
     public void setState(State state){
         this.state = state;
     }
 
-    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
+    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException{
         new Game().start();
     }
 
-    private void start() throws IOException {
+    private void start() throws IOException{
         int FPS = 10;
         int frameTime = 1000 / FPS;
 
@@ -44,7 +43,6 @@ public class Game {
             } catch (InterruptedException e) {
             }
         }
-
         gui.close();
     }
 }

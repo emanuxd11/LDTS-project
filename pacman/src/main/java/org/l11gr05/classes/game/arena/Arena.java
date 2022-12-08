@@ -24,18 +24,48 @@ public class Arena implements IArenaObservable {
     List<PacDot> pacDots = new ArrayList<PacDot>();
     List<PowerPellet> powerPellets = new ArrayList<PowerPellet>();
 
-    public Arena(int width, int heigth){
-        this.width = width;
-        this.height = heigth;
-        this.walls = new ArrayList<Wall>();
-        this.pacDots = new ArrayList<PacDot>();
-        this.powerPellets = new ArrayList<PowerPellet>();
-        this.pacman = new Pacman(new Position(5, 5), 'l');
+    public Blinky getBlinky(){
+        return this.blinky;
     }
 
+    public Inky getInky(){
+        return this.inky;
+    }
+
+    public Pinky getPinky(){
+        return this.pinky;
+    }
+
+    public Clyde getClyde(){
+        return this.clyde;
+    }
+
+    public void setBlinky(Blinky blinky){
+        this.blinky = blinky;
+    }
+
+    public void setInky(Inky inky){
+        this.inky = inky;
+    }
+
+    public void setPinky(Pinky pinky){
+        this.pinky = pinky;
+    }
+
+    public void setClyde(Clyde clyde){
+        this.clyde = clyde;
+    }
+
+    public List<PacDot> getPacDots(){
+        return this.pacDots;
+    }
 
     public Pacman getPacman(){
         return this.pacman;
+    }
+
+    public void setPacman(Pacman pacman){
+        this.pacman = pacman;
     }
 
     public Arena(){
@@ -57,11 +87,11 @@ public class Arena implements IArenaObservable {
     }
 
     public List<Ghost> getGhosts(){
-        List<Ghost> temp = null;
+        List<Ghost> temp = new ArrayList<>();
         temp.add(this.blinky);
         temp.add(this.clyde);
         temp.add(this.inky);
-        temp.add(this.clyde);
+        temp.add(this.pinky);
         return temp;
     }
 
@@ -91,4 +121,30 @@ public class Arena implements IArenaObservable {
                 return false;
         return true;
     }
+
+    @Override
+    public void powerPelletEaten() {
+        this.blinky.powerPelletEaten();
+        this.inky.powerPelletEaten();
+        this.clyde.powerPelletEaten();
+        this.pinky.powerPelletEaten();
+    }
+
+    public void pacDotRemove(Position position){
+        for (int i = 0; i< this.pacDots.size(); i++){
+            if (pacDots.get(i).getPosition().equals(position)){
+                this.pacDots.remove(pacDots.get(i));
+            }
+        }
+    }
+
+    public void powerPelletRemove(Position position){
+        for (int i = 0; i< this.powerPellets.size(); i++){
+            if (powerPellets.get(i).getPosition().equals(position)){
+                this.powerPellets.remove(powerPellets.get(i));
+                powerPelletEaten();
+            }
+        }
+    }
+
 }

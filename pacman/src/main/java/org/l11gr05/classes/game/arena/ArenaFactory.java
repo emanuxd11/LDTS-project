@@ -1,8 +1,13 @@
 package org.l11gr05.classes.game.arena;
 
 import org.l11gr05.classes.game.elements.PacDot;
+import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.PowerPellet;
+import org.l11gr05.classes.game.elements.ghost.Blinky;
+import org.l11gr05.classes.game.elements.ghost.Clyde;
+import org.l11gr05.classes.game.elements.ghost.Inky;
+import org.l11gr05.classes.game.elements.ghost.Pinky;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,9 +41,15 @@ public class ArenaFactory {
             String line = br.readLine();
             for (int j = 0; j < line.length(); j++) {
                 switch (line.charAt(j)) {
-                    case '#' -> arena.addWall(new Wall(new Position(j, height - i-1)));
-                    case '.' -> arena.addPacDot(new PacDot(new Position(j, height - i -1)));
-                    case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, height -i - 1)));
+                    case '#' -> arena.addWall(new Wall(new Position(j, i)));
+                    case '.' -> arena.addPacDot(new PacDot(new Position(j, i)));
+                    case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, i)));
+                    case 'P' -> arena.setPacman(new Pacman(new Position(j, i), 'r'));
+                    case 'B' -> arena.setBlinky(new Blinky(j, i));
+                    case 'I' -> arena.setInky(new Inky(j, i));
+                    case 'N' -> arena.setPinky(new Pinky(j, i));
+                    case 'C' -> arena.setClyde(new Clyde(j, i));
+
                 }
             }
         }

@@ -2,6 +2,7 @@ package org.l11gr05.classes.game.elements.ghost;
 
 import org.l11gr05.classes.game.elements.Position;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Element {
@@ -21,11 +22,11 @@ public abstract class Element {
     }
 
     public void moveUp(){
-        position.setY(this.position.getY()+1);
+        position.setY(this.position.getY()-1);
     }
 
     public void moveDown(){
-        position.setY(this.position.getY()-1);
+        position.setY(this.position.getY()+1);
     }
 
     public void moveRight(){
@@ -33,7 +34,7 @@ public abstract class Element {
     }
 
     public void moveLeft(){
-        position.setY(this.position.getY()-1);
+        position.setX(this.position.getX()-1);
     }
 
     public void setPosition(Position position){
@@ -41,11 +42,25 @@ public abstract class Element {
     }
 
     public List<Position> getAllNeighbours(){
-        List<Position> neighbours = null;
-        neighbours.add(new Position(position.getX()+1, position.getY()));
-        neighbours.add(new Position(position.getX()-1, position.getY()));
-        neighbours.add(new Position(position.getX(), position.getY()+1));
-        neighbours.add(new Position(position.getX(), position.getY()-1));
+        List<Position> neighbours = new ArrayList<>();
+        Position right = new Position(position.getX()+1, position.getY());
+        Position left = new Position(position.getX()-1, position.getY());
+
+        neighbours.add(left);
+        neighbours.add(right);
+        neighbours.add(new Position(position.getX(), position.getY() + 1));
+        neighbours.add(new Position(position.getX(), position.getY() - 1));
+
+
+        if (right.equals(new Position(19, 10))) {
+            neighbours.remove(right);
+        }
+
+
+        else if (left.equals(new Position(-1, 10))) {
+            neighbours.remove(left);
+        }
+
         return neighbours;
     }
 
