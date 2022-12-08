@@ -23,8 +23,7 @@ public class ArenaController extends GameController{
         if (action == GUI.ACTION.QUIT) {
             // Changes to the menustate
             //game.setState(new MenuState(new Menu()));
-        }
-        else {
+        } else {
             ghostController.step(game, action, time);
             pacmanController.step(game, action, time);
         }

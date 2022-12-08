@@ -62,7 +62,7 @@ public class PinkyStrategy implements IGhostStrategy {
     @Override
     public Position nextScatorMove(Pacman pacman, List<Position> possibles) {
         Random random = new Random();
-        int temp = random.nextInt(possibles.size() - 0) + 0;
+        int temp = random.nextInt(possibles.size());
         return possibles.get(temp);
     }
 }

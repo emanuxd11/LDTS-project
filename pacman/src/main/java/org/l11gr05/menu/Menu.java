@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Menu {
-    private List<String> entries;
+    private final List<String> entries;
     private int currentEntry = 0;
 
     public Menu() {

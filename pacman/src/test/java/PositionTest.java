@@ -10,14 +10,14 @@ public class PositionTest {
     public void equals() {
         position1 = new Position(2, 5);
         position2 = new Position(5, 2);
-        Assertions.assertFalse(position1.equals(position2));
+        Assertions.assertNotEquals(position1, position2);
     }
 
     @Test
     public void differs() {
         position1 = new Position(2, 5);
         position2 = new Position(2, 5);
-        Assertions.assertTrue(position1.equals(position2));
+        Assertions.assertEquals(position1, position2);
     }
 
     @Test
@@ -25,6 +25,6 @@ public class PositionTest {
         position1 = new Position(2, 5);
         position2 = position1;
 
-        Assertions.assertTrue(position1.equals(position2));
+        Assertions.assertEquals(position1, position2);
     }
 }
