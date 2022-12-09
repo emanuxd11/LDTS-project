@@ -13,4 +13,14 @@ public class ChasedState implements IGhostState {
     public IGhostState pacManCollision() {
         return new EatenState();
     }
+
+    @Override
+    public int getTimer() {
+        return 0;
+    }
+
+    @Override
+    public void increaseTimer() {
+
+    }
 }

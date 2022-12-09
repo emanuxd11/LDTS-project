@@ -5,4 +5,8 @@ public interface IGhostState {
     IGhostState powerPelletEaten();
 
     IGhostState pacManCollision();
+
+    public int getTimer();
+
+    public void increaseTimer();
 }

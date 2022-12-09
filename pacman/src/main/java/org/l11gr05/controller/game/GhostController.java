@@ -5,6 +5,7 @@ import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.Ghost;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.EatenState;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
@@ -40,7 +41,15 @@ public class GhostController extends GameController {
     private void moveGhost(Ghost ghost, Position position) {
         if (ghost.getState().getClass() == EatenState.class){
             ghost.setPosition(new Position(13, 14));
-            ghost.setState(new HunterState());
+            ghost.setState(new HouseState());
+        }
+
+        else if (ghost.getState().getClass() == HouseState.class){
+            if (ghost.getState().getTimer() > 10) {
+                ghost.setPosition(new Position(15, 11));
+                ghost.setState(new HunterState());
+            }
+            else ghost.getState().increaseTimer();
         }
 
         else {
