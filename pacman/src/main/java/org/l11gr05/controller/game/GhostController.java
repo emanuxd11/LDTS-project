@@ -15,19 +15,26 @@ import java.util.List;
 
 public class GhostController extends GameController {
 
+    private long lastmovement;
+
     public GhostController(Arena arena) {
         super(arena);
+        this.lastmovement = 0;
     }
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException{
         List<Position> neighbours;
-        for (Ghost ghost : this.getModel().getGhosts()) {
-            neighbours = ghost.getAllNeighbours();
-            neighbours.removeIf(n -> (!getModel().isEmpty(n)));
-            Position temp = ghost.nextMove(neighbours, this.getModel().getPacman());
-            moveGhost(ghost, temp);
+        if (time - lastmovement > 150) {
+            for (Ghost ghost : this.getModel().getGhosts()) {
+                neighbours = ghost.getAllNeighbours();
+                neighbours.removeIf(n -> (!getModel().isEmpty(n)));
+                Position temp = ghost.nextMove(neighbours, this.getModel().getPacman());
+                moveGhost(ghost, temp);
+            }
+            this.lastmovement = time;
         }
+
     }
 
     private void moveGhost(Ghost ghost, Position position) {
