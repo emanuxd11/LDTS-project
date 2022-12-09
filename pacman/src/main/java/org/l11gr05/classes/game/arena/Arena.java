@@ -132,17 +132,21 @@ public class Arena implements IArenaObservable {
 
     public void pacDotRemove(Position position){
         for (int i = 0; i< this.pacDots.size(); i++){
-            if (pacDots.get(i).getPosition().equals(position)){
+            if (pacDots.get(i).getPosition().equals(position)) {
                 this.pacDots.remove(pacDots.get(i));
+                this.getPacman().increaseScorePacDot();
+                break;
             }
         }
     }
 
     public void powerPelletRemove(Position position){
         for (int i = 0; i< this.powerPellets.size(); i++){
-            if (powerPellets.get(i).getPosition().equals(position)){
+            if (powerPellets.get(i).getPosition().equals(position)) {
                 this.powerPellets.remove(powerPellets.get(i));
                 powerPelletEaten();
+                this.getPacman().increaseScorePowerPellet();
+                break;
             }
         }
     }

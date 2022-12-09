@@ -1,11 +1,11 @@
 package org.l11gr05.classes.game.elements.ghost;
 
+import org.l11gr05.classes.game.elements.Pacman;
+import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.IGhostState;
 import org.l11gr05.classes.game.elements.ghost.ghostStrategies.IGhostStrategy;
-import org.l11gr05.classes.game.elements.Pacman;
-import org.l11gr05.classes.game.elements.Position;
 
 import java.util.List;
 
@@ -43,7 +43,10 @@ public abstract class Ghost extends Element implements IArenaObserver {
     }
 
     public void powerPelletEaten(){
+        IGhostState oldState = this.state;
         this.state = this.state.powerPelletEaten();
+
+
     }
 
     public IGhostState getState(){

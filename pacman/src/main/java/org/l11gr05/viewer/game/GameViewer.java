@@ -4,10 +4,8 @@ import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.arena.Wall;
 import org.l11gr05.classes.game.elements.PacDot;
 import org.l11gr05.classes.game.elements.Pacman;
+import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.PowerPellet;
-import org.l11gr05.classes.game.elements.ghost.Blinky;
-import org.l11gr05.classes.game.elements.ghost.Ghost;
-import org.l11gr05.classes.game.elements.ghost.IArenaObserver;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.viewer.Viewer;
 import org.l11gr05.viewer.game.ghost.BlinkyViewer;
@@ -24,11 +22,14 @@ public class GameViewer extends Viewer<Arena> {
 
     @Override
     protected void drawElements(GUI gui) {
+        gui.drawText(new Position(0, 0),
+                "SCORE:" + this.getModel().getPacman().getScore(), "#FFFFFF");
+        gui.drawText(new Position(0, 23), "Q to quit", "#FFFFFF");
+
         List<Wall> walls = this.getModel().getWalls();
         List<PacDot> pacDots = this.getModel().getPacDots();
         List<PowerPellet> powerPellets = this.getModel().getPowerPellets();
         Pacman pacman = this.getModel().getPacman();
-
 
         PacmanViewer pacmanViewer = new PacmanViewer();
         WallViewer wallViewer = new WallViewer();
@@ -39,8 +40,6 @@ public class GameViewer extends Viewer<Arena> {
         InkyViewer inkyViewer = new InkyViewer();
         PinkyViewer pinkyViewer = new PinkyViewer();
         ClydeViewer clydeViewer = new ClydeViewer();
-
-
 
         for (Wall wall : walls){
             wallViewer.draw(wall, gui);
