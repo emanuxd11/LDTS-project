@@ -77,7 +77,7 @@ public class GhostTest {
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), HunterState.class);
     }
-
+/*
     @Test
     public void pacManCollisionChasedState(){
         Inky inky = new Inky(10, 10);
@@ -109,5 +109,7 @@ public class GhostTest {
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), HunterState.class);
     }
+    */
+
 
 }

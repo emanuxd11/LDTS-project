@@ -5,6 +5,8 @@ import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.Ghost;
 import org.l11gr05.gui.GUI;
+import org.l11gr05.menu.Menu;
+import org.l11gr05.states.MenuState;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,6 +30,9 @@ public class GhostController extends GameController {
 
     private void moveGhost(Ghost ghost, Position position) {
         ghost.setPosition(position);
+        if (this.getModel().getPacman().getPosition().equals(ghost.getPosition())) {
+            ghost.getState().pacManCollision();
+        }
     }
 
 }

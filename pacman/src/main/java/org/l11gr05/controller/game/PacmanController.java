@@ -3,7 +3,11 @@ package org.l11gr05.controller.game;
 import org.l11gr05.Game;
 import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.elements.Position;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.gui.GUI;
+import org.l11gr05.menu.Menu;
+import org.l11gr05.states.MenuState;
 
 public class PacmanController extends GameController {
     public PacmanController(Arena arena) {
@@ -40,6 +44,12 @@ public class PacmanController extends GameController {
             }
         }
 
+        if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
+            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HouseState.class){
+                game.setState(new MenuState(new Menu()));
+            }
+        }
+
         switch (this.getModel().getPacman().getDirection()) {
             case 'u':
                 movePacman(new Position(pacmanPosition.getX(), pacmanPosition.getY() - 1));
@@ -58,5 +68,12 @@ public class PacmanController extends GameController {
 
         this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());
         this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());
+
+
+        if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
+            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class){
+                game.setState(new MenuState(new Menu()));
+            }
+        }
     }
 }

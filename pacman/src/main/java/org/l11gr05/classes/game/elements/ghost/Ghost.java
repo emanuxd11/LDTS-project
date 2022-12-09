@@ -1,9 +1,11 @@
 package org.l11gr05.classes.game.elements.ghost;
 
+import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.IGhostState;
 import org.l11gr05.classes.game.elements.ghost.ghostStrategies.IGhostStrategy;
 
@@ -17,7 +19,7 @@ public abstract class Ghost extends Element implements IArenaObserver {
 
     public Ghost(int x, int y){
         super(x, y);
-        this.state = new HouseState();
+        this.state = new HunterState();
     }
 
     public void move(Pacman pacman){
