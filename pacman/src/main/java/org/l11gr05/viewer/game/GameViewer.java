@@ -24,7 +24,7 @@ public class GameViewer extends Viewer<Arena> {
     protected void drawElements(GUI gui) {
         gui.drawText(new Position(0, 0),
                 "SCORE:" + this.getModel().getPacman().getScore(), "#FFFFFF");
-        gui.drawText(new Position(0, 23), "Q to quit", "#FFFFFF");
+        gui.drawText(new Position(0, 32), "Q to quit", "#FFFFFF");
 
         List<Wall> walls = this.getModel().getWalls();
         List<PacDot> pacDots = this.getModel().getPacDots();
