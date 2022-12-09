@@ -4,6 +4,8 @@ import org.l11gr05.Game;
 import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.Ghost;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.EatenState;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.states.MenuState;
@@ -29,11 +31,17 @@ public class GhostController extends GameController {
     }
 
     private void moveGhost(Ghost ghost, Position position) {
-        ghost.setPosition(position);
-        if (this.getModel().getPacman().getPosition().equals(ghost.getPosition())) {
-            ghost.getState().pacManCollision();
+        if (ghost.getState().getClass() == EatenState.class){
+            ghost.setPosition(new Position(13, 14));
+            ghost.setState(new HunterState());
+        }
+
+        else {
+            ghost.setPosition(position);
+            if (this.getModel().getPacman().getPosition().equals(ghost.getPosition())) {
+                ghost.getState().pacManCollision();
+            }
         }
     }
-
 }
 
