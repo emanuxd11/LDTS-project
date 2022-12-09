@@ -124,7 +124,9 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawBlinky(Blinky blinky) {
         if(blinky.getState().getClass() == ChasedState.class){
-            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#5259E8");
+            if (blinky.getState().getTimer() % 2 == 0 && blinky.getState().getTimer() > 30)
+            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#FFFFFF");
+            else drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#5259E8");
         }
         else {
             drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#FF0000");
@@ -134,7 +136,9 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawPinky(Pinky pinky) {
         if(pinky.getState().getClass() == ChasedState.class){
-            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#5259E8");
+            if (pinky.getState().getTimer() % 2 == 0 && pinky.getState().getTimer() > 30)
+            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#FFFFFF");
+            else drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#5259E8");
         }
         else {
             drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#FFB8FF");
@@ -144,7 +148,10 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawInky(Inky inky) {
         if(inky.getState().getClass() == ChasedState.class){
-            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#5259E8");
+            if (inky.getState().getTimer() % 2 == 0 && inky.getState().getTimer() > 30)
+            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#FFFFFF");
+            else drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#5259E8");
+
         }
         else {
             drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#00FFFF");
@@ -154,7 +161,10 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawClyde(Clyde clyde) {
         if(clyde.getState().getClass() == ChasedState.class){
-            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#5259E8");
+            if (clyde.getState().getTimer() % 2 == 0 && clyde.getState().getTimer() >30)
+            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#FFFFFF");
+            else
+                drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#5259E8");
         }
         else {
             drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#FFB852");
