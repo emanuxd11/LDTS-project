@@ -10,4 +10,14 @@ public class HunterState implements IGhostState{
     public IGhostState pacManCollision() {
         return new HunterState();
     }
+
+    @Override
+    public int getTimer() {
+        return 0;
+    }
+
+    @Override
+    public void increaseTimer() {
+
+    }
 }

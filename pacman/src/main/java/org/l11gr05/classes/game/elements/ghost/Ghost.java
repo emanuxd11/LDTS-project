@@ -19,7 +19,7 @@ public abstract class Ghost extends Element implements IArenaObserver {
 
     public Ghost(int x, int y){
         super(x, y);
-        this.state = new HunterState();
+        this.state = new HouseState();
     }
 
     public void move(Pacman pacman){
