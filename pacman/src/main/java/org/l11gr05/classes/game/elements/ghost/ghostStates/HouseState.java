@@ -8,7 +8,7 @@ public class HouseState implements IGhostState{
     }
     @Override
     public IGhostState powerPelletEaten() {
-        return new ChasedState();
+        return this;
     }
 
     @Override

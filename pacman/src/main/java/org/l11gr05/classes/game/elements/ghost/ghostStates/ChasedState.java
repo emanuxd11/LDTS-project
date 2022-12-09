@@ -4,9 +4,14 @@ import org.l11gr05.classes.game.arena.Arena;
 
 public class ChasedState implements IGhostState {
 
+    int timer;
+    public ChasedState(){
+        this.timer = 0;
+    }
     @Override
     public IGhostState powerPelletEaten() {
-        return new ChasedState();
+        this.timer = 0;
+        return this;
     }
 
     @Override
@@ -16,11 +21,11 @@ public class ChasedState implements IGhostState {
 
     @Override
     public int getTimer() {
-        return 0;
+        return this.timer;
     }
 
     @Override
     public void increaseTimer() {
-
+        this.timer++;
     }
 }

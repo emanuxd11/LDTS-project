@@ -4,6 +4,7 @@ import org.l11gr05.Game;
 import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.Ghost;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.EatenState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
@@ -49,7 +50,18 @@ public class GhostController extends GameController {
                 ghost.setPosition(new Position(15, 11));
                 ghost.setState(new HunterState());
             }
-            else ghost.getState().increaseTimer();
+            else {
+                ghost.setPosition(position);
+                ghost.getState().increaseTimer();
+            }
+        }
+
+        else if (ghost.getState().getClass() == ChasedState.class){
+            if (ghost.getState().getTimer() > 40){
+                ghost.setState(new HunterState());
+            }
+            ghost.getState().increaseTimer();
+            ghost.setPosition(position);
         }
 
         else {
