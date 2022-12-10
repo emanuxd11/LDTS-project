@@ -69,6 +69,9 @@ public class PacmanController extends GameController {
         this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());
         this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());
 
+        if (this.getModel().getPacDots().isEmpty() && this.getModel().getPowerPellets().isEmpty())
+            game.setState(new MenuState(new Menu()));
+
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
             if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class){
                 game.setState(new MenuState(new Menu()));
