@@ -3,6 +3,8 @@ package org.l11gr05.controller;
 import org.l11gr05.Game;
 import org.l11gr05.gui.GUI;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 
@@ -16,6 +18,6 @@ public abstract class Controller<T> {
         public T getModel() {
         return model;
     }
-        public abstract void step(Game game, GUI.ACTION action, long time) throws IOException;
+        public abstract void step(Game game, GUI.ACTION action, long time) throws IOException, UnsupportedAudioFileException, LineUnavailableException;
 }
 

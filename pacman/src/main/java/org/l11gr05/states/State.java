@@ -5,6 +5,8 @@ import org.l11gr05.controller.Controller;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.viewer.Viewer;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public abstract class State<T> {
@@ -29,7 +31,7 @@ public abstract class State<T> {
 
     public abstract Viewer<T> getViewer();
 
-    public void step(Game game, GUI gui, long time) throws IOException {
+    public void step(Game game, GUI gui, long time) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         GUI.ACTION action = gui.getNextAction();
         controller.step(game, action, time);
         viewer.draw(gui);

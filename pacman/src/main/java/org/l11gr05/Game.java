@@ -7,7 +7,6 @@ import org.l11gr05.states.State;
 
 import javax.sound.sampled.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
@@ -25,11 +24,11 @@ public class Game {
     }
 
 
-    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
+    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
         new Game().start();
     }
 
-    private void start() throws IOException {
+    private void start() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         int FPS = 10;
         int frameTime = 1000 / FPS;
 
