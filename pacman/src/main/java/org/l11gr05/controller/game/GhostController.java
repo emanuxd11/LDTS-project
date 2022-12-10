@@ -61,11 +61,15 @@ public class GhostController extends GameController {
                 ghost.setState(new HunterState());
             }
             ghost.getState().increaseTimer();
-            ghost.setPosition(position);
+            if(position.equals(new Position(0, 14))) ghost.setPosition(new Position(27, 14));
+            else if(position.equals(new Position(28, 14))) ghost.setPosition(new Position(0, 14));
+            else ghost.setPosition(position);
         }
 
         else {
-            ghost.setPosition(position);
+            if(position.equals(new Position(0, 14))) ghost.setPosition(new Position(27, 14));
+            else if(position.equals(new Position(28, 14))) ghost.setPosition(new Position(0, 14));
+            else ghost.setPosition(position);
             if (this.getModel().getPacman().getPosition().equals(ghost.getPosition())) {
                 ghost.getState().pacManCollision();
             }
