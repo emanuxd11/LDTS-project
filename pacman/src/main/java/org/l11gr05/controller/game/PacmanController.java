@@ -45,7 +45,7 @@ public class PacmanController extends GameController {
         }
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
-            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HouseState.class){
+            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class){
                 game.setState(new MenuState(new Menu()));
             }
         }
@@ -58,7 +58,7 @@ public class PacmanController extends GameController {
                 movePacman((new Position(pacmanPosition.getX(), pacmanPosition.getY() + 1)));
                 break;
             case 'l':
-                if(pacmanPosition.equals(new Position(0, 14))) movePacman(new Position(27, 14));
+                if(pacmanPosition.equals(new Position(-1, 14))) movePacman(new Position(27, 14));
                 else movePacman(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()));
                 break;
             case 'r':
@@ -68,6 +68,9 @@ public class PacmanController extends GameController {
 
         this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());
         this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());
+
+        if (this.getModel().getPacDots().isEmpty() && this.getModel().getPowerPellets().isEmpty())
+            game.setState(new MenuState(new Menu()));
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
             if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class){
