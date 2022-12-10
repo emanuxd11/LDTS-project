@@ -5,12 +5,9 @@ import org.l11gr05.menu.Menu;
 import org.l11gr05.states.MenuState;
 import org.l11gr05.states.State;
 
-import javax.sound.sampled.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Scanner;
 
 public class Game {
     private final LanternaGUI gui;
@@ -25,25 +22,11 @@ public class Game {
         this.state = state;
     }
 
-    // just testing this out
-    public static void playSound(String filePath) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        File file = new File(filePath);
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioInputStream);
-
-        clip.start();
-
-        Scanner scanner = new Scanner(System.in);
-        String response = scanner.next();
-    }
-
-    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
-        playSound("/home/manu/Progs/LDTS_2022/project-l11gr05/pacman/src/main/resources/audio/startUp.wav");
+    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
         new Game().start();
     }
 
-    private void start() throws IOException{
+    private void start() throws IOException {
         int FPS = 10;
         int frameTime = 1000 / FPS;
 
