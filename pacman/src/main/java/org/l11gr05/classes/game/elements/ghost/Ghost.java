@@ -9,6 +9,9 @@ import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.IGhostState;
 import org.l11gr05.classes.game.elements.ghost.ghostStrategies.IGhostStrategy;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.List;
 
 
@@ -44,11 +47,9 @@ public abstract class Ghost extends Element implements IArenaObserver {
         return temp;
     }
 
-    public void powerPelletEaten(){
+    public void powerPelletEaten() {
         IGhostState oldState = this.state;
         this.state = this.state.powerPelletEaten();
-
-
     }
 
     public IGhostState getState(){
@@ -63,7 +64,7 @@ public abstract class Ghost extends Element implements IArenaObserver {
         this.state = state;
     }
 
-    public void pacManCollision(){
+    public void pacManCollision() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.state = this.state.pacManCollision();
     }
 

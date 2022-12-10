@@ -6,13 +6,14 @@ import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.states.MenuState;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class ArenaController extends GameController{
 
     private final GhostController ghostController;
     private final PacmanController pacmanController;
-
 
     public ArenaController(Arena arena) {
         super(arena);
@@ -21,7 +22,7 @@ public class ArenaController extends GameController{
     }
 
     @Override
-    public void step(Game game, GUI.ACTION action, long time) throws IOException {
+    public void step(Game game, GUI.ACTION action, long time) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         if (action == GUI.ACTION.QUIT) {
             game.setState(new MenuState(new Menu()));
         } else {

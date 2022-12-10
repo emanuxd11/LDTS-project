@@ -6,6 +6,7 @@ import org.l11gr05.classes.game.arena.ArenaFactory;
 import org.l11gr05.controller.Controller;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
+import org.l11gr05.sound.SoundFX;
 import org.l11gr05.states.GameState;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -30,10 +31,8 @@ public class MenuController extends Controller<Menu> {
             case SELECT:
                 if (getModel().exitSelected()) game.setState(null);
                 if (getModel().startSelected()) {
-                    /* só um teste mas já funciona
-                       mais tarde eu arranjo
-                    AudioTest audioTest = new AudioTest();
-                    audioTest.play(); */
+                    SoundFX startUp = new SoundFX("startUp.wav");
+                    startUp.play();
 
                     ArenaFactory temp = new ArenaFactory();
                     Arena arena = temp.createArena("map.txt");

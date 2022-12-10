@@ -9,6 +9,10 @@ import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.states.MenuState;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class PacmanController extends GameController {
     public PacmanController(Arena arena) {
         super(arena);
@@ -23,7 +27,7 @@ public class PacmanController extends GameController {
     }
 
     @Override
-    public void step(Game game, GUI.ACTION action, long time) {
+    public void step(Game game, GUI.ACTION action, long time) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         Position pacmanPosition = this.getModel().getPacman().getPosition();
 
         if (action == GUI.ACTION.UP) {

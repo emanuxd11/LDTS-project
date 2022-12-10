@@ -5,16 +5,19 @@ import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.PowerPellet;
 import org.l11gr05.classes.game.elements.ghost.*;
+import org.l11gr05.sound.SoundFX;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Arena implements IArenaObservable {
     private int height;
     private int width;
-
     private Pacman pacman;
-
+    private String eatSound = "wa.wav";
     private Blinky blinky;
     private Inky inky;
     private Pinky pinky;
@@ -130,9 +133,24 @@ public class Arena implements IArenaObservable {
         this.pinky.powerPelletEaten();
     }
 
-    public void pacDotRemove(Position position) {
+    public void pacDotRemove(Position position) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        // Ver comentário abaixo.
+        /* SoundFX wa = new SoundFX("wa.wav");
+        SoundFX ka = new SoundFX("ka.wav"); */
         for (int i = 0; i < this.pacDots.size(); i++) {
             if (pacDots.get(i).getPosition().equals(position)) {
+                // Por agora vou comentar porque isto faz com que o programa crashe,
+                // mas eu penso que tem a ver com ele tocar os áudios muitas vezes em simultâneo,
+                // experimentei baixar os fps para 2, mas continua a crashar à volta dos 550 – 600 de score
+                // talvez tocar os áudios em threads diferentes resolva, mas não sei. Por agora vou ignorar
+                // este som.
+                /* if (eatSound.equals("wa.wav")) {
+                    ka.play();
+                    eatSound = "ka.wav";
+                } else {
+                    wa.play();
+                    eatSound = "wa.wav";
+                } */
                 this.pacDots.remove(pacDots.get(i));
                 this.getPacman().increaseScorePacDot();
                 break;
@@ -151,7 +169,7 @@ public class Arena implements IArenaObservable {
         }
     }
 
-    public Ghost isGhost(Position position) {
+    public Ghost isGhost(Position position) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         if (this.blinky.getPosition().equals(position)){
             this.blinky.pacManCollision();
             return this.blinky;

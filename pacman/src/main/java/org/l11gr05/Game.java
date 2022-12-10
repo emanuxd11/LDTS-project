@@ -29,7 +29,7 @@ public class Game {
     }
 
     private void start() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-        int FPS = 10;
+        int FPS = 15;
         int frameTime = 1000 / FPS;
 
         while(this.state != null) {

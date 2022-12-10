@@ -12,6 +12,8 @@ import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.states.MenuState;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class GhostController extends GameController {
     }
 
     @Override
-    public void step(Game game, GUI.ACTION action, long time) throws IOException{
+    public void step(Game game, GUI.ACTION action, long time) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         List<Position> neighbours;
         if (time - lastmovement > 150) {
             for (Ghost ghost : this.getModel().getGhosts()) {
@@ -36,10 +38,9 @@ public class GhostController extends GameController {
             }
             this.lastmovement = time;
         }
-
     }
 
-    private void moveGhost(Ghost ghost, Position position) {
+    private void moveGhost(Ghost ghost, Position position) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         if (ghost.getState().getClass() == EatenState.class){
             ghost.setPosition(new Position(13, 14));
             ghost.setState(new HouseState());
