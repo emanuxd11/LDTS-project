@@ -1,5 +1,6 @@
 package org.l11gr05.gui;
 
+import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.Blinky;
 import org.l11gr05.classes.game.elements.ghost.Clyde;
@@ -11,7 +12,7 @@ import java.io.IOException;
 public interface GUI {
     ACTION getNextAction() throws IOException;
 
-    void drawPacman(Position position);
+    void drawPacman(Pacman pacman);
 
     void drawWall(Position position);
 

@@ -11,6 +11,7 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.Blinky;
 import org.l11gr05.classes.game.elements.ghost.Clyde;
@@ -102,8 +103,19 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawPacman(Position position) {
-        drawCharacter(position.getX(), position.getY(), '<', "#FFD700");
+    public void drawPacman(Pacman pacman) {
+        if(pacman.getDirection() == 'r') {
+            drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '<', "#FFD700");
+        }
+        else if (pacman.getDirection() == 'l'){
+            drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '>', "#FFD700");
+        }
+        else if (pacman.getDirection() == 'u'){
+            drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), 'V', "#FFD700");
+        }
+        else{
+            drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '^', "#FFD700");
+        }
     }
 
     @Override
