@@ -21,12 +21,13 @@ public class ChasedState implements IGhostState {
         this.timer = 0;
         // isto para o toque antigo e voltar a tocar do início,
         // só que depois o som já não toca mais por alguma razão :(
-        SoundFX.getPowerUp().stop();
-        SoundFX.getPowerUp().play();
+        // SoundFX.getPowerUp().stop();
+        // SoundFX.getPowerUp().play();
     }
 
     @Override
     public void pacManCollision() {
+        SoundFX.getPacmanEatsGhost().stop();
         SoundFX.getPacmanEatsGhost().play();
         this.ghost.setState(new EatenState(this.ghost));
     }

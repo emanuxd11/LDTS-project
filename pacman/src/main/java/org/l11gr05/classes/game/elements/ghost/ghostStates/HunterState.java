@@ -9,26 +9,19 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class HunterState implements IGhostState{
-
-
     private Ghost ghost;
     public HunterState(Ghost ghost){
         this.ghost = ghost;
     }
 
-
     @Override
     public void powerPelletEaten(){
-        SoundFX.getGhostSiren1().stop();
-        SoundFX.getPowerUp().play();
         this.ghost.setState(new ChasedState(this.ghost));
     }
 
     @Override
     public void pacManCollision() {
         SoundFX.stopGameSounds();
-        // só toca na primeira morte por alguma razão :(
-        SoundFX.getPacmanDies().play();
         this.ghost.setState(new HunterState(this.ghost));
     }
 

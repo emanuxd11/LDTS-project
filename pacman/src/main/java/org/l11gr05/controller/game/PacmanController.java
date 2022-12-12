@@ -51,6 +51,9 @@ public class PacmanController extends GameController {
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
             if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
+                SoundFX.stopGameSounds();
+                SoundFX.getPacmanDies().stop();
+                SoundFX.getPacmanDies().play();
                 game.setState(new MenuState(new Menu()));
             }
         }
@@ -71,11 +74,17 @@ public class PacmanController extends GameController {
         this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());
         this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());
 
-        if (this.getModel().getPacDots().isEmpty() && this.getModel().getPowerPellets().isEmpty())
+        // player won game :)   
+        if (this.getModel().getPacDots().isEmpty() && this.getModel().getPowerPellets().isEmpty()) {
+            SoundFX.stopGameSounds();
             game.setState(new MenuState(new Menu()));
+        }
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
-            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class){
+            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
+                SoundFX.stopGameSounds();
+                SoundFX.getPacmanDies().stop();
+                SoundFX.getPacmanDies().play();
                 game.setState(new MenuState(new Menu()));
             }
         }

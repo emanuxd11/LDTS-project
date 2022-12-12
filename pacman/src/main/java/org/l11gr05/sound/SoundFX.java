@@ -50,9 +50,8 @@ public class SoundFX {
         pacmanDies = new SoundFX("pacmanDies.wav");
     }
 
-    // maybe remove
-    public static boolean isPlaying() {
-        return false;
+    public boolean isPlaying() {
+        return clip.isActive();
     }
 
     public void play() {

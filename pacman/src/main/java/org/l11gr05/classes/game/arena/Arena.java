@@ -152,6 +152,10 @@ public class Arena implements IArenaObservable {
                 // play eating sound
                 SoundFX.getPrevEatSound().stop();
                 SoundFX.getEatSound().play();
+                // stop siren and loop powerup sound
+                SoundFX.getGhostSiren1().stop();
+                SoundFX.getPowerUp().stop();
+                SoundFX.getPowerUp().play();
 
                 this.powerPellets.remove(powerPellets.get(i));
                 powerPelletEaten();
@@ -161,7 +165,7 @@ public class Arena implements IArenaObservable {
         }
     }
 
-    public Ghost isGhost(Position position) throws IOException {
+    public Ghost isGhost(Position position) {
         if (this.blinky.getPosition().equals(position)){
             this.blinky.pacManCollision();
             return this.blinky;

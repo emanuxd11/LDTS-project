@@ -52,8 +52,10 @@ public class GhostController extends GameController {
             if (ghost.getState().getTimer() > 10) {
                 ghost.setPosition(new Position(15, 11));
                 //
-                SoundFX.getPowerUp().stop();
-                SoundFX.getGhostSiren1().loop();
+                if (!SoundFX.getPowerUp().isPlaying()) {
+                    SoundFX.getPowerUp().stop();
+                    SoundFX.getGhostSiren1().loop();
+                }
                 //
                 ghost.setState(new HunterState(ghost));
             }
@@ -66,8 +68,10 @@ public class GhostController extends GameController {
         else if (ghost.getState().getClass() == ChasedState.class){
             if (ghost.getState().getTimer() > 60) {
                 //
-                SoundFX.getPowerUp().stop();
-                SoundFX.getGhostSiren1().loop();
+                if (!SoundFX.getPowerUp().isPlaying()) {
+                    SoundFX.getPowerUp().stop();
+                    SoundFX.getGhostSiren1().loop();
+                }
                 //
                 ghost.setState(new HunterState(ghost));
             }
@@ -78,7 +82,7 @@ public class GhostController extends GameController {
         }
 
         else {
-            if(position.equals(new Position(-1, 14))) ghost.setPosition(new Position(27, 14));
+            if(position.equals(new Position(0, 14))) ghost.setPosition(new Position(27, 14));
             else if(position.equals(new Position(27, 14))) ghost.setPosition(new Position(0, 14));
             else ghost.setPosition(position);
             if (this.getModel().getPacman().getPosition().equals(ghost.getPosition())) {
