@@ -19,6 +19,8 @@ public class SoundFX {
     private static SoundFX pacmanDies;
     private static SoundFX menuTheme;
 
+    private static SoundFX menuThemeAlt;
+
 
     private String getResourcePath() {
         return System.getProperty("user.dir") + "/src/main/resources/audio/" + effect;
@@ -47,6 +49,7 @@ public class SoundFX {
         pacmanEatsGhost = new SoundFX("pacmanEatsGhost.wav");
         powerUp = new SoundFX("powerUp.wav");
         menuTheme = new SoundFX("menuTheme2.wav");
+        menuThemeAlt = new SoundFX("menuTheme1.wav");
         pacmanDies = new SoundFX("pacmanDies.wav");
     }
 
@@ -105,6 +108,7 @@ public class SoundFX {
         wa.stop();
         ka.stop();
         pacmanEatsGhost.stop();
+        menuThemeAlt.stop();
     }
 
     public static void stopMenuSounds() {
@@ -129,6 +133,10 @@ public class SoundFX {
 
     public static SoundFX getMenuTheme() {
         return menuTheme;
+    }
+
+    public static SoundFX getMenuThemeAlt() {
+        return menuThemeAlt;
     }
 
     public static SoundFX getPacmanDies() {
