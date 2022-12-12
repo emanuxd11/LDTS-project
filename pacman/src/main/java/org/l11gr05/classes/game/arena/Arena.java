@@ -17,7 +17,6 @@ public class Arena implements IArenaObservable {
     private int height;
     private int width;
     private Pacman pacman;
-    private String eatSound = "wa.wav";
     private Blinky blinky;
     private Inky inky;
     private Pinky pinky;
@@ -133,24 +132,13 @@ public class Arena implements IArenaObservable {
         this.pinky.powerPelletEaten();
     }
 
-    public void pacDotRemove(Position position) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        // Ver comentário abaixo.
-        /* SoundFX wa = new SoundFX("wa.wav");
-        SoundFX ka = new SoundFX("ka.wav"); */
+    public void pacDotRemove(Position position) {
         for (int i = 0; i < this.pacDots.size(); i++) {
             if (pacDots.get(i).getPosition().equals(position)) {
-                // Por agora vou comentar porque isto faz com que o programa crashe,
-                // mas eu penso que tem a ver com ele tocar os áudios muitas vezes em simultâneo,
-                // experimentei baixar os fps para 2, mas continua a crashar à volta dos 550 – 600 de score
-                // talvez tocar os áudios em threads diferentes resolva, mas não sei. Por agora vou ignorar
-                // este som.
-                /* if (eatSound.equals("wa.wav")) {
-                    ka.play();
-                    eatSound = "ka.wav";
-                } else {
-                    wa.play();
-                    eatSound = "wa.wav";
-                } */
+                // play eating sound
+                SoundFX.getPrevEatSound().stop();
+                SoundFX.getEatSound().play();
+
                 this.pacDots.remove(pacDots.get(i));
                 this.getPacman().increaseScorePacDot();
                 break;
@@ -161,6 +149,10 @@ public class Arena implements IArenaObservable {
     public void powerPelletRemove(Position position) {
         for (int i = 0; i < this.powerPellets.size(); i++) {
             if (powerPellets.get(i).getPosition().equals(position)) {
+                // play eating sound
+                SoundFX.getPrevEatSound().stop();
+                SoundFX.getEatSound().play();
+
                 this.powerPellets.remove(powerPellets.get(i));
                 powerPelletEaten();
                 this.getPacman().increaseScorePowerPellet();
@@ -169,7 +161,7 @@ public class Arena implements IArenaObservable {
         }
     }
 
-    public Ghost isGhost(Position position) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public Ghost isGhost(Position position) throws IOException {
         if (this.blinky.getPosition().equals(position)){
             this.blinky.pacManCollision();
             return this.blinky;

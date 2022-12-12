@@ -20,24 +20,28 @@ public class MenuController extends Controller<Menu> {
     }
 
     @Override
-    public void step(Game game, GUI.ACTION action, long time) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+    public void step(Game game, GUI.ACTION action, long time) throws IOException {
+        // SoundFX.stopGameSounds();
+        SoundFX.getMenuTheme().play();
         switch (action) {
-            case UP:
-                this.getModel().previousEntry();
-                break;
-            case DOWN:
-                this.getModel().nextEntry();
-                break;
-            case SELECT:
-                if (getModel().exitSelected()) game.setState(null);
+            case UP -> this.getModel().previousEntry();
+            case DOWN -> this.getModel().nextEntry();
+            case SELECT -> {
+                if (getModel().exitSelected()) {
+                    SoundFX.stopMenuSounds();
+                    game.setState(null);
+                }
                 if (getModel().startSelected()) {
-                    SoundFX startUp = new SoundFX("startUp.wav");
-                    startUp.play();
-
+                    // testing
+                    SoundFX.stopMenuSounds();
+                    // comentei porque fica irritante sem o delay no início
+                    // SoundFX.getStartUp().play();
+                    ////////////////////////
                     ArenaFactory temp = new ArenaFactory();
                     Arena arena = temp.createArena("map.txt");
                     game.setState(new GameState(arena));
                 }
+            }
         }
     }
 }

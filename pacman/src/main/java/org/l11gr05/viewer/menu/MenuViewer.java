@@ -10,11 +10,19 @@ public class MenuViewer extends Viewer<Menu> {
         super(model);
     }
 
+    private static final String[] TITLE_TEXT = {
+            " _     _  \n",
+            "|_)/\\ /_|\\/| /\\ |\\ |\n",
+            "| /--\\\\_|  |/--\\| \\| \n"
+    };
+
     public void drawElements(GUI gui) {
-        gui.drawText(new Position(7, 4), "PAC-MAN", "#f5e72c");
+        for (int i = 0; i < TITLE_TEXT.length; i++) {
+            gui.drawText(new Position(4, 3 + i), TITLE_TEXT[i], "#f5e72c");
+        }
 
         for (int i = 0; i < getModel().getEntriesLen(); i++) {
-            gui.drawText(new Position(5, 7 + i), getModel().getEntry(i),
+            gui.drawText(new Position(12, 10 + 2*i), getModel().getEntry(i),
                     getModel().isSelected(i) ? "#34bbc9" : "#FFFFFF");
         }
     }

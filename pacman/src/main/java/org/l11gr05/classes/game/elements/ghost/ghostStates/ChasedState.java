@@ -16,15 +16,16 @@ public class ChasedState implements IGhostState {
     @Override
     public IGhostState powerPelletEaten() {
         this.timer = 0;
-        SoundFX powerUp = new SoundFX("powerUp.wav");
-        powerUp.play();
+        // isto para o toque antigo e voltar a tocar do início,
+        // só que depois o som já não toca mais por alguma razão :(
+        SoundFX.getPowerUp().stop();
+        SoundFX.getPowerUp().play();
         return this;
     }
 
     @Override
     public IGhostState pacManCollision() {
-        SoundFX pacmanEatsGhost = new SoundFX("pacmanEatsGhost.wav");
-        pacmanEatsGhost.play();
+        SoundFX.getPacmanEatsGhost().play();
         return new EatenState();
     }
 

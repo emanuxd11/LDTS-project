@@ -2,6 +2,8 @@ package org.l11gr05;
 
 import org.l11gr05.gui.LanternaGUI;
 import org.l11gr05.menu.Menu;
+import org.l11gr05.sound.SoundFX;
+import org.l11gr05.states.GameState;
 import org.l11gr05.states.MenuState;
 import org.l11gr05.states.State;
 
@@ -15,21 +17,21 @@ public class Game {
     private State state;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
+        SoundFX.initAllSounds();
         this.gui = new LanternaGUI(28, 32);
         this.state = new MenuState(new Menu());
     }
 
-    public void setState(State state){
+    public void setState(State state) {
         this.state = state;
     }
-
 
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
         new Game().start();
     }
 
     private void start() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-        int FPS = 15;
+        int FPS = 10;
         int frameTime = 1000 / FPS;
 
         while(this.state != null) {
@@ -42,7 +44,7 @@ public class Game {
 
             try {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
-            } catch (InterruptedException e) {}
+            } catch (InterruptedException ignored) {}
         }
 
         gui.close();
