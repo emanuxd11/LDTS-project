@@ -32,3 +32,4 @@ pitest {
     junit5PluginVersion = '0.12'
 }
 targetCompatibility = JavaVersion.VERSION_14
+

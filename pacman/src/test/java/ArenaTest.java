@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.arena.ArenaFactory;
 import org.l11gr05.classes.game.elements.PowerPellet;
+import org.l11gr05.classes.game.elements.ghost.Blinky;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
 
 import java.io.IOException;
@@ -42,12 +43,5 @@ public class ArenaTest {
         int expected = arena.getPacDots().size();
         Assertions.assertEquals(expected, 240);
     }
-
-    @Test
-    public void observerPatternTest() throws IOException {
-        ArenaFactory temp = new ArenaFactory();
-        Arena arena = temp.createArena("map.txt");
-        arena.powerPelletEaten();
-        Assertions.assertEquals(arena.getBlinky().getState().getClass(), ChasedState.class);
-    }
+    
 }

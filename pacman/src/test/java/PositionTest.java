@@ -27,4 +27,30 @@ public class PositionTest {
 
         Assertions.assertEquals(position1, position2);
     }
+
+    @Test
+    public void getXTest(){
+        Position t1 = new Position(1, 10);
+        Assertions.assertEquals(t1.getX(), 1);
+    }
+
+    @Test
+    public void getYTest(){
+        Position t1 = new Position(1, 10);
+        Assertions.assertEquals(t1.getY(), 10);
+    }
+
+    @Test
+    public void setXTest(){
+        Position t1 = new Position(1, 10);
+        t1.setX(5);
+        Assertions.assertEquals(t1.getX(), 5);
+    }
+
+    @Test
+    public void setYTest(){
+        Position t1 = new Position(1, 10);
+        t1.setY(7);
+        Assertions.assertEquals(t1.getY(), 7);
+    }
 }

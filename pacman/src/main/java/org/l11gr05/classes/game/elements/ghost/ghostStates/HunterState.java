@@ -1,5 +1,6 @@
 package org.l11gr05.classes.game.elements.ghost.ghostStates;
 
+import org.l11gr05.classes.game.elements.ghost.Ghost;
 import org.l11gr05.sound.SoundFX;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -8,19 +9,27 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class HunterState implements IGhostState{
+
+
+    private Ghost ghost;
+    public HunterState(Ghost ghost){
+        this.ghost = ghost;
+    }
+
+
     @Override
-    public IGhostState powerPelletEaten() {
+    public void powerPelletEaten(){
         SoundFX.getGhostSiren1().stop();
         SoundFX.getPowerUp().play();
-        return new ChasedState();
+        this.ghost.setState(new ChasedState(this.ghost));
     }
 
     @Override
-    public IGhostState pacManCollision() {
+    public void pacManCollision() {
         SoundFX.stopGameSounds();
         // só toca na primeira morte por alguma razão :(
         SoundFX.getPacmanDies().play();
-        return new HunterState();
+        this.ghost.setState(new HunterState(this.ghost));
     }
 
     @Override

@@ -45,7 +45,7 @@ public class GhostController extends GameController {
     private void moveGhost(Ghost ghost, Position position) {
         if (ghost.getState().getClass() == EatenState.class){
             ghost.setPosition(new Position(13, 14));
-            ghost.setState(new HouseState());
+            ghost.setState(new HouseState(ghost));
         }
 
         else if (ghost.getState().getClass() == HouseState.class){
@@ -55,7 +55,7 @@ public class GhostController extends GameController {
                 SoundFX.getPowerUp().stop();
                 SoundFX.getGhostSiren1().loop();
                 //
-                ghost.setState(new HunterState());
+                ghost.setState(new HunterState(ghost));
             }
             else {
                 ghost.setPosition(position);
@@ -69,7 +69,7 @@ public class GhostController extends GameController {
                 SoundFX.getPowerUp().stop();
                 SoundFX.getGhostSiren1().loop();
                 //
-                ghost.setState(new HunterState());
+                ghost.setState(new HunterState(ghost));
             }
             ghost.getState().increaseTimer();
             if(position.equals(new Position(-1, 14))) ghost.setPosition(new Position(27, 14));

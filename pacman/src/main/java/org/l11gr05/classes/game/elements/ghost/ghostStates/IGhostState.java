@@ -6,9 +6,9 @@ import java.io.IOException;
 
 public interface IGhostState {
 
-    IGhostState powerPelletEaten();
+    void powerPelletEaten();
 
-    IGhostState pacManCollision();
+    void pacManCollision();
 
     public int getTimer();
 

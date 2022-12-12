@@ -1,6 +1,7 @@
 package org.l11gr05.classes.game.elements.ghost.ghostStates;
 
 import org.l11gr05.classes.game.arena.Arena;
+import org.l11gr05.classes.game.elements.ghost.Ghost;
 import org.l11gr05.sound.SoundFX;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -9,24 +10,25 @@ import java.io.IOException;
 
 public class ChasedState implements IGhostState {
 
-    int timer;
-    public ChasedState(){
+    private int timer;
+    private Ghost ghost;
+    public ChasedState(Ghost ghost){
         this.timer = 0;
+        this.ghost = ghost;
     }
     @Override
-    public IGhostState powerPelletEaten() {
+    public void powerPelletEaten() {
         this.timer = 0;
         // isto para o toque antigo e voltar a tocar do início,
         // só que depois o som já não toca mais por alguma razão :(
         SoundFX.getPowerUp().stop();
         SoundFX.getPowerUp().play();
-        return this;
     }
 
     @Override
-    public IGhostState pacManCollision() {
+    public void pacManCollision() {
         SoundFX.getPacmanEatsGhost().play();
-        return new EatenState();
+        this.ghost.setState(new EatenState(this.ghost));
     }
 
     @Override

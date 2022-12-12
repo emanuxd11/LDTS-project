@@ -1,16 +1,23 @@
 package org.l11gr05.classes.game.elements.ghost.ghostStates;
 
+import org.l11gr05.classes.game.elements.ghost.Ghost;
+
 public class EatenState implements IGhostState{
+
+    private Ghost ghost;
+
+    public EatenState(Ghost ghost){
+        this.ghost = ghost;
+    }
 
 
     @Override
-    public IGhostState powerPelletEaten() {
-        return new HunterState();
+    public void powerPelletEaten() {
+        this.ghost.setState(new HunterState(this.ghost));
     }
 
     @Override
-    public IGhostState pacManCollision() {
-        return new EatenState();
+    public void pacManCollision() {
     }
 
     @Override

@@ -22,19 +22,8 @@ public abstract class Ghost extends Element implements IArenaObserver {
 
     public Ghost(int x, int y){
         super(x, y);
-        this.state = new HouseState();
+        this.state = new HouseState(this);
     }
-
-    public void move(Pacman pacman){
-        List<Position> possibles = null;
-        possibles.add(new Position(this.getPosition().getX(), this.getPosition().getY()+1));
-        possibles.add(new Position(this.getPosition().getX(), this.getPosition().getY()-1));
-        possibles.add(new Position(this.getPosition().getX()+1, this.getPosition().getY()));
-        possibles.add(new Position(this.getPosition().getX()-1, this.getPosition().getY()));
-        Position next = this.strategy.nextTargetMove(pacman, possibles);
-        this.setPosition(next);
-    }
-
 
     public Position nextMove(List<Position> neighbours, Pacman pacman){
         Position temp;
@@ -48,8 +37,7 @@ public abstract class Ghost extends Element implements IArenaObserver {
     }
 
     public void powerPelletEaten() {
-        IGhostState oldState = this.state;
-        this.state = this.state.powerPelletEaten();
+        this.state.powerPelletEaten();
     }
 
     public IGhostState getState(){
@@ -65,7 +53,7 @@ public abstract class Ghost extends Element implements IArenaObserver {
     }
 
     public void pacManCollision() {
-        this.state = this.state.pacManCollision();
+        this.state.pacManCollision();
     }
 
 }
