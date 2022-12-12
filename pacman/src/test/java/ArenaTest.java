@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.arena.ArenaFactory;
 import org.l11gr05.classes.game.elements.PowerPellet;
+import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,11 +18,36 @@ public class ArenaTest {
         List<PowerPellet> actual = arena.getPowerPellets();
         List<PowerPellet> expected = new ArrayList<PowerPellet>();
 
-        expected.add(new PowerPellet(1,18));
-        expected.add(new PowerPellet(17,18));
-        expected.add(new PowerPellet(1, 5));
-        expected.add(new PowerPellet(17, 5));
+        expected.add(new PowerPellet(1,8));
+        expected.add(new PowerPellet(26,8));
+        expected.add(new PowerPellet(1, 23));
+        expected.add(new PowerPellet(26, 23));
 
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void wallstest() throws IOException {
+        ArenaFactory temp = new ArenaFactory();
+        Arena arena = temp.createArena("map.txt");
+        int expected = arena.getWalls().size();
+
+        Assertions.assertEquals(expected, 502);
+    }
+
+    @Test
+    public void pacDottest() throws IOException {
+        ArenaFactory temp = new ArenaFactory();
+        Arena arena = temp.createArena("map.txt");
+        int expected = arena.getPacDots().size();
+        Assertions.assertEquals(expected, 240);
+    }
+
+    @Test
+    public void observerPatternTest() throws IOException {
+        ArenaFactory temp = new ArenaFactory();
+        Arena arena = temp.createArena("map.txt");
+        arena.powerPelletEaten();
+        Assertions.assertEquals(arena.getBlinky().getState().getClass(), ChasedState.class);
     }
 }

@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="PositionTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-09T21:46:45" hostname="Air-de-Davide.Home" time="0.009">
-  <properties/>
-  <testcase name="equals()" classname="PositionTest" time="0.002"/>
-=======
-<testsuite name="PositionTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-09T21:29:51" hostname="Air-de-Davide.Home" time="0.004">
+<testsuite name="PositionTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-12T10:56:22" hostname="MacBook-Air-de-Davide.local" time="0.004">
   <properties/>
   <testcase name="equals()" classname="PositionTest" time="0.001"/>
->>>>>>> ghostspeed
-  <testcase name="same()" classname="PositionTest" time="0.001"/>
-  <testcase name="differs()" classname="PositionTest" time="0.002"/>
+  <testcase name="same()" classname="PositionTest" time="0.0"/>
+  <testcase name="differs()" classname="PositionTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
