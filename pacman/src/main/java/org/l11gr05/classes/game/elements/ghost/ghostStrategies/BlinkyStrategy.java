@@ -30,8 +30,19 @@ public class BlinkyStrategy implements IGhostStrategy {
 
     @Override
     public Position nextScatorMove(Pacman pacman, List<Position> possibles) {
-        Random random = new Random();
-        int temp = random.nextInt(possibles.size());
-        return possibles.get(temp);
+        Position pacmanPosition = pacman.getPosition();
+        double max = 0;
+        int index = 0;
+        double distance;
+        for (int i = 0; i < possibles.size();i++){
+            Position position = possibles.get(i);
+            distance = Math.sqrt((Math.pow((position.getX() - pacmanPosition.getX()), 2) +
+                    Math.pow((position.getY() - pacmanPosition.getY()), 2)));
+            if (distance > max) {
+                max= distance;
+                index = i;
+            }
+        }
+        return possibles.get(index);
     }
 }

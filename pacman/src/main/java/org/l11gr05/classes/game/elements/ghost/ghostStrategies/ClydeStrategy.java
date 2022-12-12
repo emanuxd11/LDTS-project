@@ -10,7 +10,6 @@ import static java.lang.Math.abs;
 
 public class ClydeStrategy implements IGhostStrategy {
 
-    // Mudar ainda - Algumas coisas que devem alterar
     @Override
     public Position nextTargetMove(Pacman pacman, List<Position> possibles) {
         Position pacmanPosition = pacman.getPosition();
@@ -21,7 +20,7 @@ public class ClydeStrategy implements IGhostStrategy {
             for (int i = 0; i < possibles.size(); i++) {
                 Position position = possibles.get(i);
                 distance = Math.sqrt((Math.pow((position.getX() - pacmanPosition.getX()), 2) + Math.pow((position.getY() - pacmanPosition.getY()), 2)));
-                if (distance < min) {
+                if (distance > min) {
                     min = distance;
                     index = i;
                 }
@@ -31,7 +30,7 @@ public class ClydeStrategy implements IGhostStrategy {
             for (int i = 0; i < possibles.size(); i++) {
                 Position position = possibles.get(i);
                 distance = Math.sqrt((Math.pow((position.getX() - pacmanPosition.getX()), 2) + Math.pow((position.getY() - pacmanPosition.getY()), 2)));
-                if (distance > min) {
+                if (distance < min) {
                     min = distance;
                     index = i;
                 }
@@ -45,8 +44,31 @@ public class ClydeStrategy implements IGhostStrategy {
 
     @Override
     public Position nextScatorMove(Pacman pacman, List<Position> possibles) {
-        Random random = new Random();
-        int temp = random.nextInt(possibles.size());
-        return possibles.get(temp);
+        Position pacmanPosition = pacman.getPosition();
+        double max = 0;
+        int index = 0;
+        double distance = Math.abs(possibles.get(0).getX() - pacmanPosition.getX()) + Math.abs(possibles.get(0).getY() - pacmanPosition.getY());
+        if (distance <= 8) {
+            for (int i = 0; i < possibles.size(); i++) {
+                Position position = possibles.get(i);
+                distance = Math.sqrt((Math.pow((position.getX() - pacmanPosition.getX()), 2) + Math.pow((position.getY() - pacmanPosition.getY()), 2)));
+                if (distance < max) {
+                    max = distance;
+                    index = i;
+                }
+            }
+        }
+        else{
+            for (int i = 0; i < possibles.size(); i++) {
+                Position position = possibles.get(i);
+                distance = Math.sqrt((Math.pow((position.getX() - pacmanPosition.getX()), 2) + Math.pow((position.getY() - pacmanPosition.getY()), 2)));
+                if (distance > max) {
+                    max = distance;
+                    index = i;
+                }
+            }
+
+        }
+        return possibles.get(index);
     }
 }

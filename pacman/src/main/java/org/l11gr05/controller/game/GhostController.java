@@ -64,7 +64,7 @@ public class GhostController extends GameController {
         }
 
         else if (ghost.getState().getClass() == ChasedState.class){
-            if (ghost.getState().getTimer() > 40) {
+            if (ghost.getState().getTimer() > 60) {
                 //
                 SoundFX.getPowerUp().stop();
                 SoundFX.getGhostSiren1().loop();
