@@ -46,7 +46,7 @@ public class SoundFX {
         ghostSiren1 = new SoundFX("ghostSiren.wav");
         pacmanEatsGhost = new SoundFX("pacmanEatsGhost.wav");
         powerUp = new SoundFX("powerUp.wav");
-        menuTheme = new SoundFX("menuTheme1.wav");
+        menuTheme = new SoundFX("menuTheme2.wav");
         pacmanDies = new SoundFX("pacmanDies.wav");
     }
 

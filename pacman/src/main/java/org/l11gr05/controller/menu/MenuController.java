@@ -22,7 +22,7 @@ public class MenuController extends Controller<Menu> {
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         // SoundFX.stopGameSounds();
-        SoundFX.getMenuTheme().play();
+        SoundFX.getMenuTheme().loop();
         switch (action) {
             case UP -> this.getModel().previousEntry();
             case DOWN -> this.getModel().nextEntry();
