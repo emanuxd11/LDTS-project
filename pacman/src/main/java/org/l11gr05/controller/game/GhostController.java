@@ -76,8 +76,8 @@ public class GhostController extends GameController {
                 ghost.setState(new HunterState(ghost));
             }
             ghost.getState().increaseTimer();
-            if(position.equals(new Position(-1, 14))) ghost.setPosition(new Position(27, 14));
-            else if(position.equals(new Position(27, 14))) ghost.setPosition(new Position(0, 14));
+            if(position.equals(new Position(-1, 14)) || position.equals(new Position(-2, 14))) ghost.setPosition(new Position(27, 14));
+            else if(position.equals(new Position(27, 14)) || position.equals(new Position(28, 14))) ghost.setPosition(new Position(0, 14));
             else ghost.setPosition(position);
         }
 

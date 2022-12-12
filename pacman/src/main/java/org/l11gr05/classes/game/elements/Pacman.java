@@ -11,10 +11,6 @@ public class Pacman extends Element {
         this.score = 0;
     }
 
-    public Pacman() {
-        super(new Position(5, 5));
-    }
-
     public char getDirection(){
         return this.direction;
     }

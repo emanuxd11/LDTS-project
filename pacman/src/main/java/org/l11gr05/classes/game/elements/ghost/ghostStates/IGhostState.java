@@ -10,7 +10,7 @@ public interface IGhostState {
 
     void pacManCollision();
 
-    public int getTimer();
+    int getTimer();
 
-    public void increaseTimer();
+    void increaseTimer();
 }
