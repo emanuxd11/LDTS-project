@@ -64,7 +64,7 @@ public abstract class Ghost extends Element implements IArenaObserver {
         this.state = state;
     }
 
-    public void pacManCollision() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public void pacManCollision() {
         this.state = this.state.pacManCollision();
     }
 

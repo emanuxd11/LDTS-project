@@ -7,6 +7,7 @@ import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
 import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
+import org.l11gr05.sound.SoundFX;
 import org.l11gr05.states.MenuState;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -27,7 +28,7 @@ public class PacmanController extends GameController {
     }
 
     @Override
-    public void step(Game game, GUI.ACTION action, long time) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public void step(Game game, GUI.ACTION action, long time) throws IOException {
         Position pacmanPosition = this.getModel().getPacman().getPosition();
 
         if (action == GUI.ACTION.UP) {
@@ -49,25 +50,22 @@ public class PacmanController extends GameController {
         }
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
-            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class){
+            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
                 game.setState(new MenuState(new Menu()));
             }
         }
 
         switch (this.getModel().getPacman().getDirection()) {
-            case 'u':
-                movePacman(new Position(pacmanPosition.getX(), pacmanPosition.getY() - 1));
-                break;
-            case 'd':
-                movePacman((new Position(pacmanPosition.getX(), pacmanPosition.getY() + 1)));
-                break;
-            case 'l':
-                if(pacmanPosition.equals(new Position(-1, 14))) movePacman(new Position(27, 14));
+            case 'u' -> movePacman(new Position(pacmanPosition.getX(), pacmanPosition.getY() - 1));
+            case 'd' -> movePacman((new Position(pacmanPosition.getX(), pacmanPosition.getY() + 1)));
+            case 'l' -> {
+                if (pacmanPosition.equals(new Position(-1, 14))) movePacman(new Position(27, 14));
                 else movePacman(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()));
-                break;
-            case 'r':
-                if(pacmanPosition.equals(new Position(27, 14))) movePacman(new Position(0, 14));
+            }
+            case 'r' -> {
+                if (pacmanPosition.equals(new Position(27, 14))) movePacman(new Position(0, 14));
                 else movePacman(new Position(pacmanPosition.getX() + 1, pacmanPosition.getY()));
+            }
         }
 
         this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());

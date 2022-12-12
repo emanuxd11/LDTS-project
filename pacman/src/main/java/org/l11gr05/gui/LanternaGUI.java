@@ -104,23 +104,18 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPacman(Pacman pacman) {
-        if(pacman.getDirection() == 'r') {
-            drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '<', "#FFD700");
-        }
-        else if (pacman.getDirection() == 'l'){
-            drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '>', "#FFD700");
-        }
-        else if (pacman.getDirection() == 'u'){
-            drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), 'V', "#FFD700");
-        }
-        else{
-            drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '^', "#FFD700");
+        switch (pacman.getDirection()) {
+            case 'r' -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '<', "#FFD700");
+            case 'l' -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '>', "#FFD700");
+            case 'u' -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), 'V', "#FFD700");
+            case 'd' -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '^', "#FFD700");
+            default -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '>', "#FFD700");
         }
     }
 
     @Override
     public void drawWall(Position position) {
-        drawCharacter(position.getX(), position.getY(), '#', "#3333FF");
+        paintSquare(position.getX(), position.getY(), "#3333FF");
     }
 
     @Override
@@ -130,7 +125,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPowerPellet(Position position) {
-        drawCharacter(position.getX(), position.getY(), '*', "#FFFFFF");
+        drawCharacter(position.getX(), position.getY(), 'O', "#FFFFFF");
     }
 
     @Override
@@ -195,6 +190,13 @@ public class LanternaGUI implements GUI {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
         tg.putString(x, y + 1, "" + c);
+    }
+
+    private void paintSquare(int x, int y, String color) {
+        TextGraphics tg = screen.newTextGraphics();
+        tg.setBackgroundColor(TextColor.Factory.fromString(color));
+        tg.setForegroundColor(TextColor.Factory.fromString(color));
+        tg.putString(x, y + 1, "#");
     }
 
     @Override

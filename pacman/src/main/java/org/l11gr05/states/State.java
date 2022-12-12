@@ -24,7 +24,6 @@ public abstract class State<T> {
 
     protected abstract Controller<T> getController();
 
-
     public T getModel() {
         return this.model;
     }

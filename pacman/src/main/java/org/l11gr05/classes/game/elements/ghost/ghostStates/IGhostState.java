@@ -8,7 +8,7 @@ public interface IGhostState {
 
     IGhostState powerPelletEaten();
 
-    IGhostState pacManCollision() throws UnsupportedAudioFileException, LineUnavailableException, IOException;
+    IGhostState pacManCollision();
 
     public int getTimer();
 

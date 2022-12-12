@@ -10,15 +10,16 @@ import java.io.IOException;
 public class HunterState implements IGhostState{
     @Override
     public IGhostState powerPelletEaten() {
-        SoundFX powerUp = new SoundFX("powerUp.wav");
-        powerUp.play();
-
+        SoundFX.getGhostSiren1().stop();
+        SoundFX.getPowerUp().play();
         return new ChasedState();
     }
 
     @Override
     public IGhostState pacManCollision() {
-
+        SoundFX.stopGameSounds();
+        // só toca na primeira morte por alguma razão :(
+        SoundFX.getPacmanDies().play();
         return new HunterState();
     }
 
