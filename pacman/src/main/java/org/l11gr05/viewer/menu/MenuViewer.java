@@ -12,8 +12,8 @@ public class MenuViewer extends Viewer<Menu> {
 
     private static final String[] TITLE_TEXT = {
             " _     _  \n",
-            "|_)/\\ /_|\\/| /\\ |\\ |\n",
-            "| /--\\\\_|  |/--\\| \\| \n"
+            "|_)/\\ /  _ |\\/| /\\ |\\ |\n",
+            "| /--\\\\_   |  |/--\\| \\|\n"
     };
 
     public void drawElements(GUI gui) {
