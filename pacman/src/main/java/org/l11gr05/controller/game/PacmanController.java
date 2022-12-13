@@ -13,6 +13,9 @@ import org.l11gr05.states.MenuState;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import static org.l11gr05.sound.SoundFX.gamePause;
 
 public class PacmanController extends GameController {
     public PacmanController(Arena arena) {
@@ -54,6 +57,8 @@ public class PacmanController extends GameController {
                 SoundFX.stopGameSounds();
                 SoundFX.getPacmanDies().stop();
                 SoundFX.getPacmanDies().play();
+                //this.getModel().getBlinky().setState(new HouseState(this.getModel().getBlinky()));
+                //gamePause(1500);
                 game.setState(new MenuState(new Menu()));
             }
         }
@@ -85,7 +90,8 @@ public class PacmanController extends GameController {
                 SoundFX.stopGameSounds();
                 SoundFX.getPacmanDies().stop();
                 SoundFX.getPacmanDies().play();
-                game.setState(new MenuState(new Menu()));
+                //gamePause(1500);
+                //game.setState(new MenuState(new Menu()));
             }
         }
     }

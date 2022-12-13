@@ -107,6 +107,15 @@ public class SoundFX {
         pacmanEatsGhost.stop();
     }
 
+    public static void gamePause(int num){
+        try {
+            Thread.sleep(num);
+        }
+        catch(InterruptedException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public static void stopMenuSounds() {
         menuTheme.stop();
     }

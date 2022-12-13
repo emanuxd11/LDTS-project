@@ -40,11 +40,14 @@ public class PinkyStrategy implements IGhostStrategy {
 
     @Override
     public Position nextScatorMove(Pacman pacman, List<Position> possibles) {
+
         char direction = pacman.getDirection();
         Position left = possibles.get(0);
         Position right= possibles.get(0);
         Position up= possibles.get(0);
         Position down= possibles.get(0);
+
+
         for (int i = 1; i < possibles.size();i++){
             Position comparable = possibles.get(i);
             if (comparable.getX() > right.getX()) right = comparable;
@@ -63,6 +66,7 @@ public class PinkyStrategy implements IGhostStrategy {
             case 'r' -> position = down;
 
             case 'l' -> position = up;
+
         }
         return position;
     }

@@ -36,6 +36,7 @@ public class GhostController extends GameController {
                 neighbours = ghost.getAllNeighbours();
                 neighbours.removeIf(n -> (!getModel().isEmpty(n)));
                 Position temp = ghost.nextMove(neighbours, this.getModel().getPacman());
+                if (temp.equals(new Position(0, 0))) temp = new Position(15, 14);
                 moveGhost(ghost, temp);
             }
             this.lastmovement = time;
@@ -84,7 +85,9 @@ public class GhostController extends GameController {
         else {
             if(position.equals(new Position(0, 14))) ghost.setPosition(new Position(27, 14));
             else if(position.equals(new Position(27, 14))) ghost.setPosition(new Position(0, 14));
+
             else ghost.setPosition(position);
+
             if (this.getModel().getPacman().getPosition().equals(ghost.getPosition())) {
                 ghost.getState().pacManCollision();
             }

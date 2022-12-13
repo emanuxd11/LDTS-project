@@ -32,18 +32,9 @@ public abstract class Element {
 
         neighbours.add(left);
         neighbours.add(right);
+
         neighbours.add(new Position(position.getX(), position.getY() + 1));
         neighbours.add(new Position(position.getX(), position.getY() - 1));
-
-
-        if (right.equals(new Position(19, 10))) {
-            neighbours.remove(right);
-        }
-
-
-        else if (left.equals(new Position(-1, 10))) {
-            neighbours.remove(left);
-        }
 
         return neighbours;
     }
