@@ -2,9 +2,9 @@ package org.l11gr05.classes.game.elements.ghost.ghostStates;
 
 import org.l11gr05.classes.game.elements.ghost.Ghost;
 
-public class EatenState implements IGhostState{
+public class EatenState implements IGhostState {
 
-    private Ghost ghost;
+    private final Ghost ghost;
 
     public EatenState(Ghost ghost){
         this.ghost = ghost;
@@ -18,6 +18,11 @@ public class EatenState implements IGhostState{
 
     @Override
     public void pacManCollision() {
+    }
+
+    @Override
+    public boolean isBeingChased() {
+        return false;
     }
 
     @Override

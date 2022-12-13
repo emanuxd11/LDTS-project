@@ -19,6 +19,11 @@ public class HouseState implements IGhostState{
         this.ghost.setState(new HouseState(this.ghost));
     }
 
+    @Override
+    public boolean isBeingChased() {
+        return false;
+    }
+
     public void increaseTimer(){
         this.timer++;
     }

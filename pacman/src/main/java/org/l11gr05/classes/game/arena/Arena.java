@@ -14,6 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Arena implements IArenaObservable {
+    private static final int MAX_MULTIPLIER = 8;
+    private static final int BASELINE_GHOST_SCORE = 200;
+    private static final int POWER_PELLET_SCORE = 50;
+    private static final int PACDOT_SCORE = 10;
+    private int multiplier;
     private int height;
     private int width;
     private Pacman pacman;
@@ -71,6 +76,7 @@ public class Arena implements IArenaObservable {
     }
 
     public Arena() {
+        this.multiplier = 1;
         this.width = 0;
         this.height = 0;
     }
@@ -140,7 +146,7 @@ public class Arena implements IArenaObservable {
                 SoundFX.getEatSound().play();
 
                 this.pacDots.remove(pacDots.get(i));
-                this.getPacman().increaseScorePacDot();
+                this.getPacman().increaseScore(PACDOT_SCORE);
                 break;
             }
         }
@@ -159,29 +165,42 @@ public class Arena implements IArenaObservable {
 
                 this.powerPellets.remove(powerPellets.get(i));
                 powerPelletEaten();
-                this.getPacman().increaseScorePowerPellet();
+                this.getPacman().increaseScore(POWER_PELLET_SCORE);
                 break;
             }
         }
     }
 
+    private void resetMultiplier() {
+        if (multiplier == MAX_MULTIPLIER) {
+            multiplier = 1;
+            return;
+        }
+
+        for (Ghost ghost : this.getGhosts()) {
+            if (ghost.getState().isBeingChased()) {
+                return;
+            }
+        }
+
+        multiplier = 1;
+    }
+
     public Ghost isGhost(Position position) {
-        if (this.blinky.getPosition().equals(position)){
-            this.blinky.pacManCollision();
-            return this.blinky;
+        resetMultiplier();
+
+        for (Ghost ghost : this.getGhosts()) {
+            if (ghost.getPosition().equals(position)) {
+                if (ghost.getState().isBeingChased()) {
+                    this.getPacman().increaseScore(
+                            BASELINE_GHOST_SCORE * multiplier);
+                    multiplier *= 2;
+                }
+                ghost.pacManCollision();
+                return ghost;
+            }
         }
-        else if (this.inky.getPosition().equals(position)) {
-            this.inky.pacManCollision();
-            return this.inky;
-        }
-        else if (this.clyde.getPosition().equals(position)) {
-            this.clyde.pacManCollision();
-            return this.clyde;
-        }
-        else if (this.pinky.getPosition().equals(position)) {
-            this.pinky.pacManCollision();
-            return this.pinky;
-        }
-        else return null;
+
+        return null;
     }
 }

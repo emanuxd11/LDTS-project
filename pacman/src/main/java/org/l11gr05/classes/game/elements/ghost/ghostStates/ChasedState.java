@@ -33,6 +33,11 @@ public class ChasedState implements IGhostState {
     }
 
     @Override
+    public boolean isBeingChased() {
+        return true;
+    }
+
+    @Override
     public int getTimer() {
         return this.timer;
     }

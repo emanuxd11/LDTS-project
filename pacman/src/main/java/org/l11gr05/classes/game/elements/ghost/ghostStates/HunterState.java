@@ -26,6 +26,11 @@ public class HunterState implements IGhostState{
     }
 
     @Override
+    public boolean isBeingChased() {
+        return false;
+    }
+
+    @Override
     public int getTimer() {
         return 0;
     }

@@ -9,8 +9,6 @@ import org.l11gr05.menu.Menu;
 import org.l11gr05.sound.SoundFX;
 import org.l11gr05.states.GameState;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class MenuController extends Controller<Menu> {
@@ -32,14 +30,12 @@ public class MenuController extends Controller<Menu> {
                     game.setState(null);
                 }
                 if (getModel().startSelected()) {
-                    // testing
                     SoundFX.stopMenuSounds();
                     // comentei porque fica irritante sem o delay no início
                     //SoundFX.getStartUp().play();
-                    SoundFX.getMenuThemeAlt().loop();
                     ////////////////////////
                     ArenaFactory temp = new ArenaFactory();
-                    Arena arena = temp.createArena("map.txt");
+                    Arena arena = temp.createArena("maps/map.txt");
                     game.setState(new GameState(arena));
                 }
             }

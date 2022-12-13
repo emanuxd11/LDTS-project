@@ -31,7 +31,7 @@ public class PacmanController extends GameController {
     }
 
     @Override
-    public void step(Game game, GUI.ACTION action, long time) throws IOException {
+    public void step(Game game, GUI.ACTION action, long time) {
         Position pacmanPosition = this.getModel().getPacman().getPosition();
 
         if (action == GUI.ACTION.UP) {
@@ -91,7 +91,7 @@ public class PacmanController extends GameController {
                 SoundFX.getPacmanDies().stop();
                 SoundFX.getPacmanDies().play();
                 //gamePause(1500);
-                //game.setState(new MenuState(new Menu()));
+                game.setState(new MenuState(new Menu()));
             }
         }
     }

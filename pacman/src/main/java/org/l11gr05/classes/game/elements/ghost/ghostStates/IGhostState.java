@@ -10,6 +10,8 @@ public interface IGhostState {
 
     void pacManCollision();
 
+    boolean isBeingChased();
+
     int getTimer();
 
     void increaseTimer();

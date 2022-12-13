@@ -3,8 +3,6 @@ import org.junit.jupiter.api.Test;
 import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.arena.ArenaFactory;
 import org.l11gr05.classes.game.elements.PowerPellet;
-import org.l11gr05.classes.game.elements.ghost.Blinky;
-import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +13,7 @@ public class ArenaTest {
     @Test
     public void powerPelletstest() throws IOException {
         ArenaFactory temp = new ArenaFactory();
-        Arena arena = temp.createArena("map.txt");
+        Arena arena = temp.createArena("maps/map.txt");
         List<PowerPellet> actual = arena.getPowerPellets();
         List<PowerPellet> expected = new ArrayList<PowerPellet>();
 
@@ -30,7 +28,7 @@ public class ArenaTest {
     @Test
     public void wallstest() throws IOException {
         ArenaFactory temp = new ArenaFactory();
-        Arena arena = temp.createArena("map.txt");
+        Arena arena = temp.createArena("maps/map.txt");
         int expected = arena.getWalls().size();
 
         Assertions.assertEquals(expected, 502);
@@ -39,7 +37,7 @@ public class ArenaTest {
     @Test
     public void pacDottest() throws IOException {
         ArenaFactory temp = new ArenaFactory();
-        Arena arena = temp.createArena("map.txt");
+        Arena arena = temp.createArena("maps/map.txt");
         int expected = arena.getPacDots().size();
         Assertions.assertEquals(expected, 240);
     }
