@@ -25,6 +25,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import static java.awt.Font.PLAIN;
+
 public class LanternaGUI implements GUI {
     private final Screen screen;
 
@@ -73,14 +75,15 @@ public class LanternaGUI implements GUI {
     }
 
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
-        File fontFile = new File(resource.toURI());
-        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+        //URL resource = getClass().getClassLoader().getResource("fonts/pacman.ttf");
+        //File fontFile = new File(resource.toURI());
+        //Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+        Font font = new Font("PACMAN", PLAIN, 24);
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
 
-        Font loadedFont = font.deriveFont(Font.PLAIN, 24);
+        Font loadedFont = font.deriveFont(PLAIN, 24);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         return fontConfig;
     }
@@ -132,11 +135,11 @@ public class LanternaGUI implements GUI {
     public void drawBlinky(Blinky blinky) {
         if(blinky.getState().getClass() == ChasedState.class){
             if (blinky.getState().getTimer() % 2 == 0 && blinky.getState().getTimer() > 30)
-            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#FFFFFF");
-            else drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#5259E8");
+            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', "#FFFFFF");
+            else drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', "#5259E8");
         }
         else {
-            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), 'B', "#FF0000");
+            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', "#FF0000");
         }
     }
 
@@ -144,11 +147,11 @@ public class LanternaGUI implements GUI {
     public void drawPinky(Pinky pinky) {
         if(pinky.getState().getClass() == ChasedState.class){
             if (pinky.getState().getTimer() % 2 == 0 && pinky.getState().getTimer() > 30)
-            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#FFFFFF");
-            else drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#5259E8");
+            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', "#FFFFFF");
+            else drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', "#5259E8");
         }
         else {
-            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), 'P', "#FFB8FF");
+            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', "#FFB8FF");
         }
     }
 
@@ -156,12 +159,12 @@ public class LanternaGUI implements GUI {
     public void drawInky(Inky inky) {
         if(inky.getState().getClass() == ChasedState.class){
             if (inky.getState().getTimer() % 2 == 0 && inky.getState().getTimer() > 30)
-            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#FFFFFF");
-            else drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#5259E8");
+            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', "#FFFFFF");
+            else drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', "#5259E8");
 
         }
         else {
-            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), 'I', "#00FFFF");
+            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', "#00FFFF");
         }
     }
 
@@ -169,12 +172,12 @@ public class LanternaGUI implements GUI {
     public void drawClyde(Clyde clyde) {
         if(clyde.getState().getClass() == ChasedState.class){
             if (clyde.getState().getTimer() % 2 == 0 && clyde.getState().getTimer() >30)
-            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#FFFFFF");
+            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', "#FFFFFF");
             else
-                drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#5259E8");
+                drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', "#5259E8");
         }
         else {
-            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), 'C', "#FFB852");
+            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', "#FFB852");
         }
     }
     /* ****************************************************************************** */
