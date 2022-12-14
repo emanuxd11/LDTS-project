@@ -110,7 +110,7 @@ This way one can easily create different behaviour for each ghost without requir
 
 This UML shows how all design patterns we used were mapped to our different classes.
 
-![UML](https://user-images.githubusercontent.com/86480539/204031722-0c82dc8e-b347-4cf3-9c65-24a97259226d.png)
+![UML](./finalUML.png)
 
 ### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
