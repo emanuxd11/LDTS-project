@@ -7,6 +7,7 @@ import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.PowerPellet;
 import org.l11gr05.gui.GUI;
+import org.l11gr05.sound.SoundFX;
 import org.l11gr05.viewer.Viewer;
 import org.l11gr05.viewer.game.ghost.BlinkyViewer;
 import org.l11gr05.viewer.game.ghost.ClydeViewer;
@@ -18,6 +19,7 @@ import java.util.List;
 public class GameViewer extends Viewer<Arena> {
     public GameViewer(Arena model) {
         super(model);
+        SoundFX.getStartUp().play();
     }
 
     @Override
@@ -61,5 +63,6 @@ public class GameViewer extends Viewer<Arena> {
         clydeViewer.draw(this.getModel().getClyde(), gui);
 
         pacmanViewer.draw(pacman, gui);
+
     }
 }

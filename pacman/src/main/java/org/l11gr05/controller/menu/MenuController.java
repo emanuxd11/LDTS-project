@@ -32,7 +32,6 @@ public class MenuController extends Controller<Menu> {
                 if (getModel().startSelected()) {
                     SoundFX.stopMenuSounds();
                     // comentei porque fica irritante sem o delay no início
-                    //SoundFX.getStartUp().play();
                     ////////////////////////
                     ArenaFactory temp = new ArenaFactory();
                     Arena arena = temp.createArena("maps/map.txt");

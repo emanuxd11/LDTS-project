@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.l11gr05.sound.SoundFX.gamePause;
 
 public class PacmanController extends GameController {
+    public boolean alreadyPlayed = false;
     public PacmanController(Arena arena) {
         super(arena);
     }
@@ -54,12 +55,14 @@ public class PacmanController extends GameController {
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
             if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
+                alreadyPlayed = true;
                 SoundFX.stopGameSounds();
                 SoundFX.getPacmanDies().stop();
                 SoundFX.getPacmanDies().play();
-                //this.getModel().getBlinky().setState(new HouseState(this.getModel().getBlinky()));
-                //gamePause(1500);
                 game.setState(new MenuState(new Menu()));
+                try{
+                    Thread.sleep(1500);
+                }catch(InterruptedException ignored){}
             }
         }
 
@@ -87,11 +90,15 @@ public class PacmanController extends GameController {
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
             if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
-                SoundFX.stopGameSounds();
-                SoundFX.getPacmanDies().stop();
-                SoundFX.getPacmanDies().play();
-                //gamePause(1500);
-                game.setState(new MenuState(new Menu()));
+                if (!alreadyPlayed) {
+                    SoundFX.stopGameSounds();
+                    SoundFX.getPacmanDies().stop();
+                    SoundFX.getPacmanDies().play();
+                    game.setState(new MenuState(new Menu()));
+                    try{
+                        Thread.sleep(1500);
+                    }catch(InterruptedException ignored){}
+                }
             }
         }
     }
