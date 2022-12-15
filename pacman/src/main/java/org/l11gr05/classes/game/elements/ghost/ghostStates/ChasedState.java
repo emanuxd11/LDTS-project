@@ -19,10 +19,6 @@ public class ChasedState implements IGhostState {
     @Override
     public void powerPelletEaten() {
         this.timer = 0;
-        // isto para o toque antigo e voltar a tocar do início,
-        // só que depois o som já não toca mais por alguma razão :(
-        // SoundFX.getPowerUp().stop();
-        // SoundFX.getPowerUp().play();
     }
 
     @Override

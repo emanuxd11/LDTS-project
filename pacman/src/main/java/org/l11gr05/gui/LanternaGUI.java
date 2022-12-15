@@ -26,6 +26,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 import static java.awt.Font.PLAIN;
+import static java.awt.Font.TRUETYPE_FONT;
 
 public class LanternaGUI implements GUI {
     private final Screen screen;
@@ -75,17 +76,30 @@ public class LanternaGUI implements GUI {
     }
 
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+
+        URL resource = getClass().getClassLoader().getResource("fonts/pacman.ttf");
         File fontFile = new File(resource.toURI());
-        //Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
-        Font font = new Font("PACMAN", PLAIN, 24);
+
+        Font font = Font.createFont(TRUETYPE_FONT, fontFile);
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
 
         Font loadedFont = font.deriveFont(PLAIN, 24);
+
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         return fontConfig;
+
+
+
+
+        /*
+        Font font1  = new Font("pacman", Font.TRUETYPE_FONT, 25);
+        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(font1);
+        return fontConfig;
+
+         */
+
     }
 
     public ACTION getNextAction() throws IOException {
@@ -128,7 +142,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPowerPellet(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'O', "#FFFFFF");
+        drawCharacter(position.getX(), position.getY(), '*', "#FFFFFF");
     }
 
     @Override
