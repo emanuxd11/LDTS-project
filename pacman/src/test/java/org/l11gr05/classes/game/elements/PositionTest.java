@@ -1,3 +1,5 @@
+package org.l11gr05.classes.game.elements;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.l11gr05.classes.game.elements.Position;

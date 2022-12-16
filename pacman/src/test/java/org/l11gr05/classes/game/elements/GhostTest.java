@@ -1,6 +1,7 @@
+package org.l11gr05.classes.game.elements;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.l11gr05.classes.game.elements.Position;
 import org.l11gr05.classes.game.elements.ghost.Blinky;
 import org.l11gr05.classes.game.elements.ghost.Clyde;
 import org.l11gr05.classes.game.elements.ghost.Inky;
@@ -53,11 +54,11 @@ public class GhostTest {
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), HouseState.class);
     }
-/*
+
     @Test
     public void powerPelletHunterState(){
         Clyde clyde = new Clyde(10, 10);
-        clyde.setState(new HunterState());
+        clyde.setState(new HunterState(clyde));
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), ChasedState.class);
     }
@@ -65,7 +66,7 @@ public class GhostTest {
     @Test
     public void powerPelletChasedState(){
         Clyde clyde = new Clyde (10, 10);
-        clyde.setState(new ChasedState());
+        clyde.setState(new ChasedState(clyde));
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), ChasedState.class);
     }
@@ -73,7 +74,7 @@ public class GhostTest {
     @Test
     public void powerPelletEatenState(){
         Clyde clyde = new Clyde(10, 10);
-        clyde.setState(new EatenState());
+        clyde.setState(new EatenState(clyde));
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), HunterState.class);
     }
@@ -81,15 +82,15 @@ public class GhostTest {
     @Test
     public void pacManCollisionChasedState(){
         Inky inky = new Inky(10, 10);
-        inky.setState(new ChasedState());
+        inky.setState(new ChasedState(inky));
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), EatenState.class);
     }
 
     @Test
-    public void pacManCollisionEatenState(){
+    public void pacManCollisionEatenState() throws NullPointerException{
         Inky inky = new Inky(10, 10);
-        inky.setState(new EatenState());
+        inky.setState(new EatenState(inky));
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), EatenState.class);
     }
@@ -97,7 +98,7 @@ public class GhostTest {
     @Test
     public void pacManCollisionHouseState(){
         Inky inky = new Inky(10, 10);
-        inky.setState(new HouseState());
+        inky.setState(new HouseState(inky));
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), HouseState.class);
     }
@@ -105,11 +106,9 @@ public class GhostTest {
     @Test
     public void pacManCollisionHunterState(){
         Inky inky = new Inky (10, 10);
-        inky.setState(new HunterState());
+        inky.setState(new HunterState(inky));
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), HunterState.class);
     }
-*/
-
 
 }

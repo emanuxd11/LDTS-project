@@ -1,15 +1,9 @@
 package org.l11gr05.classes.game.arena;
 
-import org.l11gr05.classes.game.elements.PacDot;
-import org.l11gr05.classes.game.elements.Pacman;
-import org.l11gr05.classes.game.elements.Position;
-import org.l11gr05.classes.game.elements.PowerPellet;
+import org.l11gr05.classes.game.elements.*;
 import org.l11gr05.classes.game.elements.ghost.*;
 import org.l11gr05.sound.SoundFX;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -141,7 +135,6 @@ public class Arena implements IArenaObservable {
     public void pacDotRemove(Position position) {
         for (int i = 0; i < this.pacDots.size(); i++) {
             if (pacDots.get(i).getPosition().equals(position)) {
-                // play eating sound
                 SoundFX.getPrevEatSound().stop();
                 SoundFX.getEatSound().play();
 
@@ -155,10 +148,8 @@ public class Arena implements IArenaObservable {
     public void powerPelletRemove(Position position) {
         for (int i = 0; i < this.powerPellets.size(); i++) {
             if (powerPellets.get(i).getPosition().equals(position)) {
-                // play eating sound
                 SoundFX.getPrevEatSound().stop();
                 SoundFX.getEatSound().play();
-                // stop siren and loop powerup sound
                 SoundFX.getGhostSiren1().stop();
                 SoundFX.getPowerUp().stop();
                 SoundFX.getPowerUp().play();
@@ -188,7 +179,6 @@ public class Arena implements IArenaObservable {
 
     public Ghost isGhost(Position position) {
         resetMultiplier();
-
         for (Ghost ghost : this.getGhosts()) {
             if (ghost.getPosition().equals(position)) {
                 if (ghost.getState().isBeingChased()) {

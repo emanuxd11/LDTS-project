@@ -1,7 +1,7 @@
 package org.l11gr05.viewer.game;
 
 import org.l11gr05.classes.game.arena.Arena;
-import org.l11gr05.classes.game.arena.Wall;
+import org.l11gr05.classes.game.elements.Wall;
 import org.l11gr05.classes.game.elements.PacDot;
 import org.l11gr05.classes.game.elements.Pacman;
 import org.l11gr05.classes.game.elements.Position;

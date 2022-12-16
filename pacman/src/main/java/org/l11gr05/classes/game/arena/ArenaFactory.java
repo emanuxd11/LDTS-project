@@ -1,9 +1,6 @@
 package org.l11gr05.classes.game.arena;
 
-import org.l11gr05.classes.game.elements.PacDot;
-import org.l11gr05.classes.game.elements.Pacman;
-import org.l11gr05.classes.game.elements.Position;
-import org.l11gr05.classes.game.elements.PowerPellet;
+import org.l11gr05.classes.game.elements.*;
 import org.l11gr05.classes.game.elements.ghost.Blinky;
 import org.l11gr05.classes.game.elements.ghost.Clyde;
 import org.l11gr05.classes.game.elements.ghost.Inky;

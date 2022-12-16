@@ -1,5 +1,6 @@
 package org.l11gr05.classes.game.elements.ghost.ghostStates;
 
+import com.googlecode.lanterna.terminal.swing.TerminalScrollController;
 import org.l11gr05.classes.game.arena.Arena;
 import org.l11gr05.classes.game.elements.ghost.Ghost;
 import org.l11gr05.sound.SoundFX;
@@ -22,9 +23,12 @@ public class ChasedState implements IGhostState {
     }
 
     @Override
-    public void pacManCollision() {
-        SoundFX.getPacmanEatsGhost().stop();
-        SoundFX.getPacmanEatsGhost().play();
+    public void pacManCollision() throws NullPointerException {
+        try {
+            SoundFX.getPacmanEatsGhost().stop();
+            SoundFX.getPacmanEatsGhost().play();
+        }
+        catch(NullPointerException e){}
         this.ghost.setState(new EatenState(this.ghost));
     }
 

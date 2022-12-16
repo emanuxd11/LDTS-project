@@ -1,4 +1,4 @@
-package org.l11gr05.classes.game.arena;
+package org.l11gr05.classes.game.elements;
 
 
 import org.l11gr05.classes.game.elements.Position;
