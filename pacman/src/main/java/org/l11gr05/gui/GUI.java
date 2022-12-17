@@ -1,11 +1,11 @@
 package org.l11gr05.gui;
 
-import org.l11gr05.classes.game.elements.Pacman;
-import org.l11gr05.classes.game.elements.Position;
-import org.l11gr05.classes.game.elements.ghost.Blinky;
-import org.l11gr05.classes.game.elements.ghost.Clyde;
-import org.l11gr05.classes.game.elements.ghost.Inky;
-import org.l11gr05.classes.game.elements.ghost.Pinky;
+import org.l11gr05.model.elements.Pacman;
+import org.l11gr05.model.elements.Position;
+import org.l11gr05.model.elements.ghost.Blinky;
+import org.l11gr05.model.elements.ghost.Clyde;
+import org.l11gr05.model.elements.ghost.Inky;
+import org.l11gr05.model.elements.ghost.Pinky;
 
 import java.io.IOException;
 

@@ -1,6 +1,6 @@
 package org.l11gr05.viewer.game;
 
-import org.l11gr05.classes.game.elements.Wall;
+import org.l11gr05.model.elements.Wall;
 import org.l11gr05.gui.GUI;
 
 public class WallViewer implements IElementViewer<Wall> {

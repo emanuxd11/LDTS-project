@@ -1,21 +1,13 @@
 package org.l11gr05.controller.game;
 
 import org.l11gr05.Game;
-import org.l11gr05.classes.game.arena.Arena;
-import org.l11gr05.classes.game.elements.Position;
-import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
-import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
+import org.l11gr05.model.arena.Arena;
+import org.l11gr05.model.elements.Position;
+import org.l11gr05.model.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.sound.SoundFX;
 import org.l11gr05.states.MenuState;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
-import static org.l11gr05.sound.SoundFX.gamePause;
 
 public class PacmanController extends GameController {
     public boolean alreadyPlayed = false;

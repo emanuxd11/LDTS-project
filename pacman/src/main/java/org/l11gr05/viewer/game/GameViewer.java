@@ -1,11 +1,11 @@
 package org.l11gr05.viewer.game;
 
-import org.l11gr05.classes.game.arena.Arena;
-import org.l11gr05.classes.game.elements.Wall;
-import org.l11gr05.classes.game.elements.PacDot;
-import org.l11gr05.classes.game.elements.Pacman;
-import org.l11gr05.classes.game.elements.Position;
-import org.l11gr05.classes.game.elements.PowerPellet;
+import org.l11gr05.model.arena.Arena;
+import org.l11gr05.model.elements.Wall;
+import org.l11gr05.model.elements.PacDot;
+import org.l11gr05.model.elements.Pacman;
+import org.l11gr05.model.elements.Position;
+import org.l11gr05.model.elements.PowerPellet;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.sound.SoundFX;
 import org.l11gr05.viewer.Viewer;

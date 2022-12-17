@@ -1,8 +1,8 @@
 package org.l11gr05.controller.menu;
 
 import org.l11gr05.Game;
-import org.l11gr05.classes.game.arena.Arena;
-import org.l11gr05.classes.game.arena.ArenaFactory;
+import org.l11gr05.model.arena.Arena;
+import org.l11gr05.model.arena.ArenaFactory;
 import org.l11gr05.controller.Controller;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;

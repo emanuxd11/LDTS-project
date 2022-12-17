@@ -1,22 +1,16 @@
 package org.l11gr05.controller.game;
 
 import org.l11gr05.Game;
-import org.l11gr05.classes.game.arena.Arena;
-import org.l11gr05.classes.game.elements.Position;
-import org.l11gr05.classes.game.elements.ghost.Ghost;
-import org.l11gr05.classes.game.elements.ghost.ghostStates.ChasedState;
-import org.l11gr05.classes.game.elements.ghost.ghostStates.EatenState;
-import org.l11gr05.classes.game.elements.ghost.ghostStates.HouseState;
-import org.l11gr05.classes.game.elements.ghost.ghostStates.HunterState;
+import org.l11gr05.model.arena.Arena;
+import org.l11gr05.model.elements.Position;
+import org.l11gr05.model.elements.ghost.Ghost;
+import org.l11gr05.model.elements.ghost.ghostStates.ChasedState;
+import org.l11gr05.model.elements.ghost.ghostStates.EatenState;
+import org.l11gr05.model.elements.ghost.ghostStates.HouseState;
+import org.l11gr05.model.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.gui.GUI;
-import org.l11gr05.menu.Menu;
 import org.l11gr05.sound.SoundFX;
-import org.l11gr05.states.MenuState;
 
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
 import java.util.List;
 
 public class GhostController extends GameController {
@@ -34,7 +28,7 @@ public class GhostController extends GameController {
         if (time - lastmovement > 150) {
             for (Ghost ghost : this.getModel().getGhosts()) {
                 neighbours = ghost.getAllNeighbours();
-                neighbours.removeIf(n -> (!getModel().isEmpty(n)));
+                neighbours.removeIf(n -> !getModel().isEmpty(n));
                 Position temp = ghost.nextMove(neighbours, this.getModel().getPacman());
                 if (temp.equals(new Position(0, 0))){
                     temp = new Position(15, 14);

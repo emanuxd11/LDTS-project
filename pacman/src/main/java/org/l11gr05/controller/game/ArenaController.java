@@ -1,14 +1,12 @@
 package org.l11gr05.controller.game;
 
 import org.l11gr05.Game;
-import org.l11gr05.classes.game.arena.Arena;
+import org.l11gr05.model.arena.Arena;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.sound.SoundFX;
 import org.l11gr05.states.MenuState;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class ArenaController extends GameController{
