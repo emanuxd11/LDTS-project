@@ -3,7 +3,6 @@ package org.l11gr05;
 import org.l11gr05.gui.LanternaGUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.sound.SoundFX;
-import org.l11gr05.states.GameState;
 import org.l11gr05.states.MenuState;
 import org.l11gr05.states.State;
 
@@ -17,7 +16,7 @@ public class Game {
     private State state;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
-        SoundFX.initAllSounds();
+        SoundFX.initSounds();
         this.gui = new LanternaGUI(28, 32);
         this.state = new MenuState(new Menu());
     }

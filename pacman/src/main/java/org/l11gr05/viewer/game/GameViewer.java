@@ -19,7 +19,7 @@ import java.util.List;
 public class GameViewer extends Viewer<Arena> {
     public GameViewer(Arena model) {
         super(model);
-        SoundFX.getStartUp().play();
+        SoundFX.playStartUp();
     }
 
     @Override

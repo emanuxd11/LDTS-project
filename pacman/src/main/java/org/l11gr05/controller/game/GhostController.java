@@ -49,10 +49,6 @@ public class GhostController extends GameController {
         else if (ghost.getState().getClass() == HouseState.class){
             if (ghost.getState().getTimer() > 10) {
                 ghost.setPosition(new Position(15, 11));
-                if (!SoundFX.getPowerUp().isPlaying()) {
-                    SoundFX.getPowerUp().stop();
-                    SoundFX.getGhostSiren1().loop();
-                }
                 ghost.setState(new HunterState(ghost));
             }
             else {
@@ -63,10 +59,7 @@ public class GhostController extends GameController {
 
         else if (ghost.getState().getClass() == ChasedState.class){
             if (ghost.getState().getTimer() > 60) {
-                if (!SoundFX.getPowerUp().isPlaying()) {
-                    SoundFX.getPowerUp().stop();
-                    SoundFX.getGhostSiren1().loop();
-                }
+                SoundFX.loopGhostSiren1();
                 ghost.setState(new HunterState(ghost));
             }
             ghost.getState().increaseTimer();

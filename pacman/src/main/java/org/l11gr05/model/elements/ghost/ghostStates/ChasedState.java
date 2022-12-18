@@ -19,8 +19,7 @@ public class ChasedState implements IGhostState {
     @Override
     public void pacManCollision() throws NullPointerException {
         try {
-            SoundFX.getPacmanEatsGhost().stop();
-            SoundFX.getPacmanEatsGhost().play();
+            SoundFX.playPacmanEatsGhost();
         }
         catch(NullPointerException e){}
         this.ghost.setState(new EatenState(this.ghost));

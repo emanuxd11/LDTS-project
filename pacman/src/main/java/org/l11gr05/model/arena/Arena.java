@@ -138,8 +138,7 @@ public class Arena implements IArenaObservable {
         for (int i = 0; i < this.pacDots.size(); i++) {
             if (pacDots.get(i).getPosition().equals(position)) {
                 try {
-                    SoundFX.getPrevEatSound().stop();
-                    SoundFX.getEatSound().play();
+                    SoundFX.playEatSound();
                 }catch(NullPointerException e){}
 
                 this.pacDots.remove(pacDots.get(i));
@@ -153,11 +152,9 @@ public class Arena implements IArenaObservable {
         for (int i = 0; i < this.powerPellets.size(); i++) {
             if (powerPellets.get(i).getPosition().equals(position)) {
                 try {
-                    SoundFX.getPrevEatSound().stop();
-                    SoundFX.getEatSound().play();
-                    SoundFX.getGhostSiren1().stop();
-                    SoundFX.getPowerUp().stop();
-                    SoundFX.getPowerUp().play();
+                    SoundFX.playEatSound();
+                    SoundFX.stopGhostSiren1();
+                    SoundFX.playPowerUp();
                 } catch(NullPointerException e){}
 
                 this.powerPellets.remove(powerPellets.get(i));

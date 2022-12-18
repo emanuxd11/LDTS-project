@@ -38,7 +38,17 @@ public class SoundFX {
         }
     }
 
-    public static void initAllSounds() {
+    /* ? */
+    public static void gamePause(int num){
+        try {
+            Thread.sleep(num);
+        }
+        catch(InterruptedException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void initSounds() {
         startUp = new SoundFX("startUp.wav");
         wa = new SoundFX("wa.wav");
         ka = new SoundFX("ka.wav");
@@ -49,11 +59,11 @@ public class SoundFX {
         pacmanDies = new SoundFX("pacmanDies.wav");
     }
 
-    public boolean isPlaying() {
+    private boolean isPlaying() {
         return clip.isActive();
     }
 
-    public void play() {
+    private void play() {
         try {
             if(!clip.isOpen())
                 clip.open(audioStream);
@@ -63,7 +73,7 @@ public class SoundFX {
         clip.start();
     }
 
-    public void loop() {
+    private void loop() {
         try {
             if (!clip.isOpen()) {
                 clip.open(audioStream);
@@ -74,72 +84,103 @@ public class SoundFX {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
-    public void stop() {
+    private void stop() {
         clip.stop();
         clip.setMicrosecondPosition(0);
     }
 
-    public static SoundFX getPrevEatSound() {
-        if (prev.equals("wa")) {
-            return ka;
-        } else {
-            return wa;
-        }
-    }
-
-    public static SoundFX getEatSound() {
-        if (prev.equals("wa")) {
-            prev = "ka";
-            return wa;
-        } else {
-            prev = "wa";
-            return ka;
-        }
-    }
-
     public static void stopGameSounds() {
-        startUp.stop();
-        powerUp.stop();
-        ghostSiren1.stop();
-        wa.stop();
-        ka.stop();
-        pacmanEatsGhost.stop();
+        stopStartUp();
+        stopPowerUp();
+        stopGhostSiren1();
+        stopWa();
+        stopKa();
+        stopPacmanEatsGhost();
     }
 
-    public static void gamePause(int num){
-        try {
-            Thread.sleep(num);
-        }
-        catch(InterruptedException ex) {
-            ex.printStackTrace();
-        }
+    public static void loopMenuTheme() {
+        menuTheme.loop();
     }
 
     public static void stopMenuSounds() {
+        stopMenuTheme();
+    }
+
+    public static void playStartUp() {
+        startUp.play();
+    }
+
+    public static void stopStartUp() {
+        startUp.stop();
+    }
+
+    private static void playWa() {
+        wa.play();
+    }
+
+    private static void stopWa() {
+        wa.stop();
+    }
+
+    private static void playKa() {
+        ka.play();
+    }
+
+    private static void stopKa() {
+        ka.stop();
+    }
+
+    public static void playPowerUp() {
+        powerUp.stop();
+        powerUp.play();
+    }
+
+    public static void stopPowerUp() {
+        powerUp.stop();
+    }
+
+    public static void playPacmanEatsGhost() {
+        pacmanEatsGhost.stop();
+        pacmanEatsGhost.play();
+    }
+
+    public static void stopPacmanEatsGhost() {
+        pacmanEatsGhost.stop();
+    }
+
+    public static void loopGhostSiren1() {
+        if (!powerUp.isPlaying()) {
+            stopPowerUp();
+            ghostSiren1.loop();
+        }
+    }
+
+    public static void stopGhostSiren1() {
+        ghostSiren1.stop();
+    }
+
+    public static void playPacmanDies() {
+        pacmanDies.stop();
+        pacmanDies.play();
+    }
+
+    public static void stopPacmanDies() {
+        pacmanDies.stop();
+    }
+
+    public static void stopMenuTheme() {
         menuTheme.stop();
     }
 
-    public static SoundFX getStartUp() {
-        return startUp;
-    }
-
-    public static SoundFX getPowerUp() {
-        return powerUp;
-    }
-
-    public static SoundFX getGhostSiren1() {
-        return ghostSiren1;
-    }
-
-    public static SoundFX getPacmanEatsGhost() {
-        return pacmanEatsGhost;
-    }
-
-    public static SoundFX getMenuTheme() {
-        return menuTheme;
-    }
-
-    public static SoundFX getPacmanDies() {
-        return pacmanDies;
+    public static void playEatSound() {
+        if (prev.equals("ka")) {
+            prev = "wa";
+            stopKa();
+            playWa();
+        } else {
+            prev = "ka";
+            stopWa();
+            playKa();
+        }
     }
 }

@@ -49,8 +49,7 @@ public class PacmanController extends GameController {
             if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
                 alreadyPlayed = true;
                 SoundFX.stopGameSounds();
-                SoundFX.getPacmanDies().stop();
-                SoundFX.getPacmanDies().play();
+                SoundFX.playPacmanDies();
                 game.setState(new MenuState(new Menu()));
                 try{
                     Thread.sleep(1500);
@@ -84,8 +83,7 @@ public class PacmanController extends GameController {
             if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
                 if (!alreadyPlayed) {
                     SoundFX.stopGameSounds();
-                    SoundFX.getPacmanDies().stop();
-                    SoundFX.getPacmanDies().play();
+                    SoundFX.playPacmanDies();
                     game.setState(new MenuState(new Menu()));
                     try{
                         Thread.sleep(1500);
