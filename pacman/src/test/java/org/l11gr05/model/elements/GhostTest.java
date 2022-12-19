@@ -20,45 +20,45 @@ public class GhostTest {
 
     @Test
     public void PositionTest(){
-        Blinky blinky = new Blinky(5, 10);
+        Blinky blinky = new Blinky(5, 10, new BlinkyStrategy());
         Position expected = new Position(5, 10);
         Assertions.assertEquals(expected, blinky.getPosition());
     }
 
     @Test
     public void BlinkyStrategyTest(){
-        Blinky blinky = new Blinky(10, 10);
+        Blinky blinky = new Blinky(10, 10, new BlinkyStrategy());
         Assertions.assertEquals(blinky.getStrategy().getClass(), BlinkyStrategy.class);
     }
 
     @Test
     public void ClydeStrategyTest(){
-        Clyde clyde = new Clyde(10, 10);
+        Clyde clyde = new Clyde(10, 10, new ClydeStrategy());
         Assertions.assertEquals(clyde.getStrategy().getClass(), ClydeStrategy.class);
     }
 
     @Test
     public void InkyStrategy(){
-        Inky inky = new Inky(10, 10);
+        Inky inky = new Inky(10, 10, new InkyStrategy());
         Assertions.assertEquals(inky.getStrategy().getClass(), InkyStrategy.class);
     }
 
     @Test
     public void PinkyStrategy(){
-        Pinky pinky = new Pinky(10, 10);
+        Pinky pinky = new Pinky(10, 10, new PinkyStrategy());
         Assertions.assertEquals(pinky.getStrategy().getClass(), PinkyStrategy.class);
     }
 
     @Test
     public void powerPelletHouseState(){
-        Clyde clyde = new Clyde(10, 10);
+        Clyde clyde = new Clyde(10, 10, new ClydeStrategy());
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), HouseState.class);
     }
 
     @Test
     public void powerPelletHunterState(){
-        Clyde clyde = new Clyde(10, 10);
+        Clyde clyde = new Clyde(10, 10, new ClydeStrategy());
         clyde.setState(new HunterState(clyde));
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), ChasedState.class);
@@ -66,7 +66,7 @@ public class GhostTest {
 
     @Test
     public void powerPelletChasedState(){
-        Clyde clyde = new Clyde (10, 10);
+        Clyde clyde = new Clyde (10, 10, new ClydeStrategy());
         clyde.setState(new ChasedState(clyde));
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), ChasedState.class);
@@ -74,7 +74,7 @@ public class GhostTest {
 
     @Test
     public void powerPelletEatenState(){
-        Clyde clyde = new Clyde(10, 10);
+        Clyde clyde = new Clyde(10, 10, new ClydeStrategy());
         clyde.setState(new EatenState(clyde));
         clyde.powerPelletEaten();
         Assertions.assertEquals(clyde.getState().getClass(), HunterState.class);
@@ -82,15 +82,15 @@ public class GhostTest {
 
     @Test
     public void pacManCollisionChasedState(){
-        Inky inky = new Inky(10, 10);
+        Inky inky = new Inky(10, 10, new InkyStrategy());
         inky.setState(new ChasedState(inky));
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), EatenState.class);
     }
 
     @Test
-    public void pacManCollisionEatenState() throws NullPointerException{
-        Inky inky = new Inky(10, 10);
+    public void pacManCollisionEatenState(){
+        Inky inky = new Inky(10, 10, new InkyStrategy());
         inky.setState(new EatenState(inky));
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), EatenState.class);
@@ -98,7 +98,7 @@ public class GhostTest {
 
     @Test
     public void pacManCollisionHouseState(){
-        Inky inky = new Inky(10, 10);
+        Inky inky = new Inky(10, 10, new InkyStrategy());
         inky.setState(new HouseState(inky));
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), HouseState.class);
@@ -106,7 +106,7 @@ public class GhostTest {
 
     @Test
     public void pacManCollisionHunterState(){
-        Inky inky = new Inky (10, 10);
+        Inky inky = new Inky (10, 10, new InkyStrategy());
         inky.setState(new HunterState(inky));
         inky.pacManCollision();
         Assertions.assertEquals(inky.getState().getClass(), HunterState.class);

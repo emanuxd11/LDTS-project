@@ -1,5 +1,6 @@
 package org.l11gr05.model.elements.ghost;
 
+import org.l11gr05.model.elements.Element;
 import org.l11gr05.model.elements.Pacman;
 import org.l11gr05.model.elements.Position;
 import org.l11gr05.model.elements.ghost.ghostStates.ChasedState;
@@ -15,8 +16,9 @@ public abstract class Ghost extends Element implements IArenaObserver {
     protected IGhostStrategy strategy;
     protected IGhostState state;
 
-    public Ghost(int x, int y){
+    public Ghost(int x, int y, IGhostStrategy strategy){
         super(x, y);
+        this.strategy = strategy;
         this.state = new HouseState(this);
     }
 
@@ -45,6 +47,10 @@ public abstract class Ghost extends Element implements IArenaObserver {
 
     public void setState(IGhostState state){
         this.state = state;
+    }
+
+    public void setStrategy(IGhostStrategy strategy){
+        this.strategy = strategy;
     }
 
     public void pacManCollision() {

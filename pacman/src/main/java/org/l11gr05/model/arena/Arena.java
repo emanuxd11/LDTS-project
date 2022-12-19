@@ -137,10 +137,7 @@ public class Arena implements IArenaObservable {
     public void pacDotRemove(Position position) {
         for (int i = 0; i < this.pacDots.size(); i++) {
             if (pacDots.get(i).getPosition().equals(position)) {
-                try {
-                    SoundFX.playEatSound();
-                }catch(NullPointerException e){}
-
+                SoundFX.playEatSound();
                 this.pacDots.remove(pacDots.get(i));
                 this.getPacman().increaseScore(PACDOT_SCORE);
                 break;
@@ -151,12 +148,7 @@ public class Arena implements IArenaObservable {
     public void powerPelletRemove(Position position) {
         for (int i = 0; i < this.powerPellets.size(); i++) {
             if (powerPellets.get(i).getPosition().equals(position)) {
-                try {
-                    SoundFX.playEatSound();
-                    SoundFX.stopGhostSiren1();
-                    SoundFX.playPowerUp();
-                } catch(NullPointerException e){}
-
+                SoundFX.powerPelletEatenSound();
                 this.powerPellets.remove(powerPellets.get(i));
                 powerPelletEaten();
                 this.getPacman().increaseScore(POWER_PELLET_SCORE);

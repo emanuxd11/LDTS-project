@@ -1,6 +1,8 @@
 package org.l11gr05.sound;
 
 
+import com.googlecode.lanterna.terminal.swing.TerminalScrollController;
+
 import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.*;
@@ -85,17 +87,21 @@ public class SoundFX {
     }
 
     private void stop() {
-        clip.stop();
-        clip.setMicrosecondPosition(0);
+        try {
+            clip.stop();
+            clip.setMicrosecondPosition(0);
+        } catch(NullPointerException e){}
     }
 
     public static void stopGameSounds() {
-        stopStartUp();
-        stopPowerUp();
-        stopGhostSiren1();
-        stopWa();
-        stopKa();
-        stopPacmanEatsGhost();
+        try {
+            stopStartUp();
+            stopPowerUp();
+            stopGhostSiren1();
+            stopWa();
+            stopKa();
+            stopPacmanEatsGhost();
+        } catch (NullPointerException e){}
     }
 
     public static void loopMenuTheme() {
@@ -103,7 +109,9 @@ public class SoundFX {
     }
 
     public static void stopMenuSounds() {
-        stopMenuTheme();
+        try {
+            stopMenuTheme();
+        }catch(NullPointerException e){}
     }
 
     public static void playStartUp() {
@@ -111,7 +119,9 @@ public class SoundFX {
     }
 
     public static void stopStartUp() {
-        startUp.stop();
+        try {
+            startUp.stop();
+        } catch (NullPointerException e){}
     }
 
     private static void playWa() {
@@ -131,8 +141,10 @@ public class SoundFX {
     }
 
     public static void playPowerUp() {
-        powerUp.stop();
-        powerUp.play();
+        try {
+            powerUp.stop();
+            powerUp.play();
+        } catch(NullPointerException e){}
     }
 
     public static void stopPowerUp() {
@@ -140,8 +152,10 @@ public class SoundFX {
     }
 
     public static void playPacmanEatsGhost() {
-        pacmanEatsGhost.stop();
-        pacmanEatsGhost.play();
+        try {
+            pacmanEatsGhost.stop();
+            pacmanEatsGhost.play();
+        } catch(NullPointerException e){}
     }
 
     public static void stopPacmanEatsGhost() {
@@ -173,14 +187,24 @@ public class SoundFX {
     }
 
     public static void playEatSound() {
-        if (prev.equals("ka")) {
-            prev = "wa";
-            stopKa();
-            playWa();
-        } else {
-            prev = "ka";
-            stopWa();
-            playKa();
-        }
+        try {
+            if (prev.equals("ka")) {
+                prev = "wa";
+                stopKa();
+                playWa();
+            } else {
+                prev = "ka";
+                stopWa();
+                playKa();
+            }
+        }catch(NullPointerException e){}
+    }
+
+    public static void powerPelletEatenSound(){
+        try{
+            SoundFX.playEatSound();
+            SoundFX.stopGhostSiren1();
+            SoundFX.playPowerUp();
+        }catch(NullPointerException e){}
     }
 }

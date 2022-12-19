@@ -1,7 +1,5 @@
 package org.l11gr05.model.elements;
 
-import org.l11gr05.model.elements.ghost.Element;
-
 import java.io.*;
 
 public class Pacman extends Element {

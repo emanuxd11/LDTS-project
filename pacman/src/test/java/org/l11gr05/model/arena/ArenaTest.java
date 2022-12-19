@@ -7,6 +7,7 @@ import org.l11gr05.model.arena.ArenaFactory;
 import org.l11gr05.model.elements.Position;
 import org.l11gr05.model.elements.PowerPellet;
 import org.l11gr05.model.elements.ghost.Blinky;
+import org.l11gr05.model.elements.ghost.ghostStrategies.BlinkyStrategy;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class ArenaTest {
     public void isGhostTest() throws IOException {
         ArenaFactory temp = new ArenaFactory();
         Arena arena = temp.createArena("maps/map.txt");
-        Blinky blinky = new Blinky(10, 10);
+        Blinky blinky = new Blinky(10, 10, new BlinkyStrategy());
         arena.setBlinky(blinky);
         Position position = new Position(10, 10);
         Assertions.assertTrue(arena.isGhost(position) == arena.getBlinky());

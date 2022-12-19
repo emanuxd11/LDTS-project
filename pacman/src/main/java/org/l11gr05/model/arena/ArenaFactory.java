@@ -6,6 +6,10 @@ import org.l11gr05.model.elements.ghost.Blinky;
 import org.l11gr05.model.elements.ghost.Clyde;
 import org.l11gr05.model.elements.ghost.Inky;
 import org.l11gr05.model.elements.ghost.Pinky;
+import org.l11gr05.model.elements.ghost.ghostStrategies.BlinkyStrategy;
+import org.l11gr05.model.elements.ghost.ghostStrategies.ClydeStrategy;
+import org.l11gr05.model.elements.ghost.ghostStrategies.InkyStrategy;
+import org.l11gr05.model.elements.ghost.ghostStrategies.PinkyStrategy;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -43,10 +47,10 @@ public class ArenaFactory {
                     case '.' -> arena.addPacDot(new PacDot(new Position(j, i)));
                     case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, i)));
                     case 'P' -> arena.setPacman(new Pacman(new Position(j, i), '0'));
-                    case 'B' -> arena.setBlinky(new Blinky(j, i));
-                    case 'I' -> arena.setInky(new Inky(j, i));
-                    case 'N' -> arena.setPinky(new Pinky(j, i));
-                    case 'C' -> arena.setClyde(new Clyde(j, i));
+                    case 'B' -> arena.setBlinky(new Blinky(j, i, new BlinkyStrategy()));
+                    case 'I' -> arena.setInky(new Inky(j, i, new InkyStrategy()));
+                    case 'N' -> arena.setPinky(new Pinky(j, i, new PinkyStrategy()));
+                    case 'C' -> arena.setClyde(new Clyde(j, i, new ClydeStrategy()));
 
                 }
             }

@@ -1,6 +1,4 @@
-package org.l11gr05.model.elements.ghost;
-
-import org.l11gr05.model.elements.Position;
+package org.l11gr05.model.elements;
 
 import java.util.ArrayList;
 import java.util.List;

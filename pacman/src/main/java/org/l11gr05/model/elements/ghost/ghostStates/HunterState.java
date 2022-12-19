@@ -16,9 +16,7 @@ public class HunterState implements IGhostState{
 
     @Override
     public void pacManCollision() {
-        try {
-            SoundFX.stopGameSounds();
-        }catch (NullPointerException e){}
+        SoundFX.stopGameSounds();
         this.ghost.setState(new HunterState(this.ghost));
     }
 

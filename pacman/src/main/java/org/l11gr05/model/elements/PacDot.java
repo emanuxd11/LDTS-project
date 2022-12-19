@@ -1,7 +1,5 @@
 package org.l11gr05.model.elements;
 
-import org.l11gr05.model.elements.ghost.Element;
-
 public class PacDot extends Element {
 
 
