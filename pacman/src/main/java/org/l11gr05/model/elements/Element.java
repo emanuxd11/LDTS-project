@@ -7,26 +7,26 @@ public abstract class Element {
 
     protected Position position;
 
-    public Element(Position position){
+    public Element(Position position) {
         this.position = position;
     }
 
-    public Element(int x, int y){
+    public Element(int x, int y) {
         this.position = new Position(x, y);
     }
 
-    public Position getPosition(){
+    public Position getPosition() {
         return this.position;
     }
 
-    public void setPosition(Position position){
+    public void setPosition(Position position) {
         this.position = position;
     }
 
-    public List<Position> getAllNeighbours(){
+    public List<Position> getAllNeighbours() {
         List<Position> neighbours = new ArrayList<>();
-        Position right = new Position(position.getX()+1, position.getY());
-        Position left = new Position(position.getX()-1, position.getY());
+        Position right = new Position(position.getX() + 1, position.getY());
+        Position left = new Position(position.getX() - 1, position.getY());
 
         neighbours.add(left);
         neighbours.add(right);
@@ -44,10 +44,5 @@ public abstract class Element {
         if (getClass() != o.getClass()) return false;
         Position p = ((Element) o).getPosition();
         return this.getPosition().equals(p);
-    }
-
-    @Override
-    public int hashCode(){
-        return this.position.getX()+this.position.getY();
     }
 }

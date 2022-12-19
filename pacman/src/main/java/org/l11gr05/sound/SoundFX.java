@@ -115,7 +115,9 @@ public class SoundFX {
     }
 
     public static void playStartUp() {
-        startUp.play();
+        try {
+            startUp.play();
+        }catch(NullPointerException e){}
     }
 
     public static void stopStartUp() {
@@ -125,7 +127,9 @@ public class SoundFX {
     }
 
     private static void playWa() {
-        wa.play();
+        try {
+            wa.play();
+        } catch(NullPointerException e){}
     }
 
     private static void stopWa() {
@@ -174,8 +178,10 @@ public class SoundFX {
     }
 
     public static void playPacmanDies() {
-        pacmanDies.stop();
-        pacmanDies.play();
+        try {
+            pacmanDies.stop();
+            pacmanDies.play();
+        } catch(NullPointerException e){}
     }
 
     public static void stopPacmanDies() {

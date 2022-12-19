@@ -1,5 +1,6 @@
 package org.l11gr05.model.arena;
 
+import com.googlecode.lanterna.terminal.swing.TerminalScrollController;
 import org.l11gr05.model.elements.*;
 import org.l11gr05.model.elements.ghost.*;
 import org.l11gr05.model.elements.*;
@@ -163,29 +164,33 @@ public class Arena implements IArenaObservable {
             return;
         }
 
-        for (Ghost ghost : this.getGhosts()) {
-            if (ghost.getState().isBeingChased()) {
-                return;
+        try {
+            for (Ghost ghost : this.getGhosts()) {
+                if (ghost.getState().isBeingChased()) {
+                    return;
+                }
             }
-        }
+        }catch(NullPointerException e){}
 
         multiplier = 1;
     }
 
     @Override
     public Ghost isGhost(Position position) {
-        resetMultiplier();
-        for (Ghost ghost : this.getGhosts()) {
-            if (ghost.getPosition().equals(position)) {
-                if (ghost.getState().isBeingChased()) {
-                    this.getPacman().increaseScore(
-                            BASELINE_GHOST_SCORE * multiplier);
-                    multiplier *= 2;
+        try {
+            resetMultiplier();
+            for (Ghost ghost : this.getGhosts()) {
+                if (ghost.getPosition().equals(position)) {
+                    if (ghost.getState().isBeingChased()) {
+                        this.getPacman().increaseScore(
+                                BASELINE_GHOST_SCORE * multiplier);
+                        multiplier *= 2;
+                    }
+                    ghost.pacManCollision();
+                    return ghost;
                 }
-                ghost.pacManCollision();
-                return ghost;
             }
-        }
+        } catch(NullPointerException e){}
 
         return null;
     }

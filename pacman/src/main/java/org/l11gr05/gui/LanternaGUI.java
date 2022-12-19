@@ -90,16 +90,6 @@ public class LanternaGUI implements GUI {
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         return fontConfig;
 
-
-
-
-        /*
-        Font font1  = new Font("pacman", Font.TRUETYPE_FONT, 25);
-        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(font1);
-        return fontConfig;
-
-         */
-
     }
 
     public ACTION getNextAction() throws IOException {

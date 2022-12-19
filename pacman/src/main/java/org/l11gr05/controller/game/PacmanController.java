@@ -19,7 +19,7 @@ public class PacmanController extends GameController {
         return getModel().isEmpty(position);
     }
 
-    private void movePacman(Position position) {
+    public void movePacman(Position position) {
         if (canMove(position)) this.getModel().getPacman().setPosition(position);
     }
 
