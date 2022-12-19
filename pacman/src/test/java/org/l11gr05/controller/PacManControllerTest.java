@@ -50,7 +50,6 @@ public class PacManControllerTest {
 
         gui = mock(GUI.class);
         game = mock(Game.class);
-        game.setState(new GameState(arena));
     }
 
 
@@ -187,7 +186,4 @@ public class PacManControllerTest {
         Assertions.assertEquals(blinky, arena.isGhost(pacman.getPosition()));
 
     }
-
-
-
 }

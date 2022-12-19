@@ -27,14 +27,16 @@ public class GhostController extends GameController {
         List<Position> neighbours;
         if (time - lastmovement > 150) {
             for (Ghost ghost : this.getModel().getGhosts()) {
-                neighbours = ghost.getAllNeighbours();
-                neighbours.removeIf(n -> !getModel().isEmpty(n));
-                Position temp = ghost.nextMove(neighbours, this.getModel().getPacman());
-                if (temp.equals(new Position(0, 0))){
-                    temp = new Position(15, 14);
-                    ghost.setState(new HouseState(ghost));
-                }
-                moveGhost(ghost, temp);
+                try {
+                    neighbours = ghost.getAllNeighbours();
+                    neighbours.removeIf(n -> !getModel().isEmpty(n));
+                    Position temp = ghost.nextMove(neighbours, this.getModel().getPacman());
+                    if (temp.equals(new Position(0, 0))) {
+                        temp = new Position(15, 14);
+                        ghost.setState(new HouseState(ghost));
+                    }
+                    moveGhost(ghost, temp);
+                } catch (NullPointerException e){}
             }
             this.lastmovement = time;
         }

@@ -38,15 +38,22 @@ public class GhostTest {
     }
 
     @Test
-    public void InkyStrategy(){
+    public void InkyStrategyTest(){
         Inky inky = new Inky(10, 10, new InkyStrategy());
         Assertions.assertEquals(inky.getStrategy().getClass(), InkyStrategy.class);
     }
 
     @Test
-    public void PinkyStrategy(){
+    public void PinkyStrategyTest(){
         Pinky pinky = new Pinky(10, 10, new PinkyStrategy());
         Assertions.assertEquals(pinky.getStrategy().getClass(), PinkyStrategy.class);
+    }
+
+    @Test
+    public void setStrategyTest(){
+        Pinky pinky = new Pinky(10, 10, new PinkyStrategy());
+        pinky.setStrategy(new BlinkyStrategy());
+        Assertions.assertEquals(pinky.getStrategy().getClass(), BlinkyStrategy.class);
     }
 
     @Test
