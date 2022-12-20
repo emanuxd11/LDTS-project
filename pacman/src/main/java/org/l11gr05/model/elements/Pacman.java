@@ -6,6 +6,7 @@ public class Pacman extends Element {
     private char direction;
     private int score;
     private int highScore;
+
     public Pacman(Position position, char direction) {
         super(position);
         this.direction = direction;

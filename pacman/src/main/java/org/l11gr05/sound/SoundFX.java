@@ -1,11 +1,9 @@
 package org.l11gr05.sound;
 
 
-import com.googlecode.lanterna.terminal.swing.TerminalScrollController;
-
+import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
-import javax.sound.sampled.*;
 
 public class SoundFX {
     private final String effect;
@@ -66,31 +64,31 @@ public class SoundFX {
     }
 
     private void play() {
-        try {
+        /* try {
             if(!clip.isOpen())
                 clip.open(audioStream);
         } catch (LineUnavailableException | IOException e) {
             throw new RuntimeException(e);
         }
-        clip.start();
+        clip.start(); */
     }
 
     private void loop() {
-        try {
+        /* try {
             if (!clip.isOpen()) {
                 clip.open(audioStream);
             }
         } catch (LineUnavailableException | IOException e) {
             throw new RuntimeException(e);
         }
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
+        clip.loop(Clip.LOOP_CONTINUOUSLY); */
     }
 
     private void stop() {
-        try {
+        /* try {
             clip.stop();
             clip.setMicrosecondPosition(0);
-        } catch(NullPointerException e){}
+        } catch(NullPointerException e){} */
     }
 
     public static void stopGameSounds() {
