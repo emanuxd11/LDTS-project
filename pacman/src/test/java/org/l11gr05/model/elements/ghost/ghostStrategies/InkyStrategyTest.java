@@ -21,7 +21,7 @@ public class InkyStrategyTest {
 
     @BeforeEach
     public void setUp() {
-        pacman = new Pacman(new Position(0, 0), 'l');
+        pacman = new Pacman(new Position(0, 0), 'l', "src/main/resources/scores/highscore.txt");
         inkyStrategy = new InkyStrategy();
         possibles = new ArrayList<>();
         possibles.add(new Position(1, 2));

@@ -18,7 +18,7 @@ public class PinkyStrategyTest {
 
     @BeforeEach
     public void setUp() {
-        pacman = new Pacman(new Position(0, 0), 'l');
+        pacman = new Pacman(new Position(0, 0), 'l', "src/main/resources/scores/highscore.txt");
         pinkyStrategy = new PinkyStrategy();
         possibles = new ArrayList<>();
         possibles.add(new Position(1, 2));
@@ -43,12 +43,12 @@ public class PinkyStrategyTest {
     @Test
     public void nextScatorMoveTest() {
         expectedNextPosition = new Position(0, 1);
-        nextPosition = pinkyStrategy.nextTargetMove(pacman, possibles);
+        nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
         Assertions.assertEquals(expectedNextPosition, nextPosition);
 
         pacman.setDirection('u');
         expectedNextPosition = new Position(8, 8);
-        nextPosition = pinkyStrategy.nextTargetMove(pacman, possibles);
+        nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
         Assertions.assertEquals(expectedNextPosition, nextPosition);
     }
 }
