@@ -7,18 +7,18 @@ public class Pacman extends Element {
     private int score;
     private int highScore;
 
-    public Pacman(Position position, char direction) {
+    public Pacman(Position position, char direction, String file) {
         super(position);
         this.direction = direction;
         this.score = 0;
-        this.highScore = readHighScore();
+        this.highScore = readHighScore(file);
     }
 
-    private int readHighScore() {
+    private int readHighScore(String filename) {
         FileReader reader;
         BufferedReader bufferedReader;
         try {
-            reader = new FileReader("src/main/resources/scores/highscore.txt");
+            reader = new FileReader(filename);
             bufferedReader = new BufferedReader(reader);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

@@ -7,7 +7,4 @@ public class PacDot extends Element {
         super(position);
     }
 
-    public PacDot(int x, int y){
-        super(x, y);
-    }
 }
