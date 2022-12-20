@@ -44,7 +44,7 @@ public class GhostControllerTest {
     public void moveBlinkyTest() throws IOException {
         arena.setBlinky(new Blinky(3, 3, new BlinkyStrategy()));
         arena.getBlinky().setState(new HunterState(arena.getBlinky()));
-        arena.setPacman(new Pacman(new Position(7, 6), '0'));
+        arena.setPacman(new Pacman(new Position(7, 6), '0', "src/main/resources/scores/highscore.txt"));
         Mockito.when(gui.getNextAction()).thenReturn(GUI.ACTION.DOWN);
         GUI.ACTION action = gui.getNextAction();
         controller.step(game, action, 500);

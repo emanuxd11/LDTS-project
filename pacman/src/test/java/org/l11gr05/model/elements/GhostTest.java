@@ -119,4 +119,18 @@ public class GhostTest {
         Assertions.assertEquals(inky.getState().getClass(), HunterState.class);
     }
 
+    @Test
+    public void equalsNullTest(){
+        Pinky pinky1 = null;
+        Pinky pinky2 = new Pinky(10,10, new PinkyStrategy());
+        Assertions.assertFalse(pinky2.equals(pinky1));
+    }
+
+    @Test
+    public void equalsDifferentClassTest(){
+        Inky inky = new Inky(10, 10, new InkyStrategy());
+        Pinky pinky = new Pinky(10,10, new PinkyStrategy());
+        Assertions.assertFalse(pinky.equals(inky));
+    }
+
 }

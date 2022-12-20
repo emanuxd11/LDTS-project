@@ -42,7 +42,7 @@ public class PacManControllerTest {
     void setUp() {
         arena = new Arena();
 
-        pacman = new Pacman(new Position(10, 10), '0');
+        pacman = new Pacman(new Position(10, 10), '0', "src/main/resources/scores/highscore.txt");
         arena.setPacman(pacman);
 
         controller = new PacmanController(arena);

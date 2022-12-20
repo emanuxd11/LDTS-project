@@ -46,7 +46,7 @@ public class ArenaFactory {
                     case '#' -> arena.addWall(new Wall(new Position(j, i)));
                     case '.' -> arena.addPacDot(new PacDot(new Position(j, i)));
                     case 'o' -> arena.addPowerPellet(new PowerPellet(new Position(j, i)));
-                    case 'P' -> arena.setPacman(new Pacman(new Position(j, i), '0'));
+                    case 'P' -> arena.setPacman(new Pacman(new Position(j, i), '0', "src/main/resources/scores/highscore.txt"));
                     case 'B' -> arena.setBlinky(new Blinky(j, i, new BlinkyStrategy()));
                     case 'I' -> arena.setInky(new Inky(j, i, new InkyStrategy()));
                     case 'N' -> arena.setPinky(new Pinky(j, i, new PinkyStrategy()));

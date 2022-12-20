@@ -38,8 +38,4 @@ public class Position {
         Position p = (Position) o;
         return x == p.getX() && y == p.getY();
     }
-
-    public int hashCode(){
-        return this.x + this.y;
-    }
 }

@@ -3,6 +3,8 @@ package org.l11gr05.model.elements;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.l11gr05.model.elements.Position;
+import org.l11gr05.model.elements.ghost.Pinky;
+import org.l11gr05.model.elements.ghost.ghostStrategies.PinkyStrategy;
 
 public class PositionTest {
     private Position position1, position2;
@@ -54,5 +56,25 @@ public class PositionTest {
         Position t1 = new Position(1, 10);
         t1.setY(7);
         Assertions.assertEquals(t1.getY(), 7);
+    }
+
+    @Test
+    public void noParametersTest(){
+        Position t1 = new Position();
+        Assertions.assertEquals(new Position(0,0),t1);
+    }
+
+    @Test
+    public void equalsNullTest(){
+        Position position1 = null;
+        Position position2 = new Position(5, 5);
+        Assertions.assertFalse(position2.equals(position1));
+    }
+
+    @Test
+    public void equalsDifferentClassTest(){
+        Position position = new Position(10, 10);
+        Pinky pinky = new Pinky(10,10, new PinkyStrategy());
+        Assertions.assertFalse(position.equals(pinky));
     }
 }
