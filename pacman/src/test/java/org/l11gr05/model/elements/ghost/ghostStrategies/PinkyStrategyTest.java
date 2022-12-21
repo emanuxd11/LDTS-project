@@ -38,17 +38,46 @@ public class PinkyStrategyTest {
         expectedNextPosition = new Position(8, 8);
         nextPosition = pinkyStrategy.nextTargetMove(pacman, possibles);
         Assertions.assertEquals(expectedNextPosition, nextPosition);
+
+        pacman.setDirection('d');
+        expectedNextPosition = new Position(8, 0);
+        nextPosition = pinkyStrategy.nextTargetMove(pacman, possibles);
+        Assertions.assertEquals(expectedNextPosition, nextPosition);
+
+        pacman.setDirection('r');
+        nextPosition = pinkyStrategy.nextTargetMove(pacman, possibles);
+        Assertions.assertEquals(expectedNextPosition, nextPosition);
+
+        pacman.setDirection('f');
+        nextPosition = pinkyStrategy.nextTargetMove(pacman, possibles);
+        expectedNextPosition = new Position(0, 0);
+        Assertions.assertEquals(expectedNextPosition, nextPosition);
     }
 
     @Test
     public void nextScatorMoveTest() {
-        expectedNextPosition = new Position(0, 1);
+        expectedNextPosition = new Position(8, 8);
         nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
         Assertions.assertEquals(expectedNextPosition, nextPosition);
 
         pacman.setDirection('u');
-        expectedNextPosition = new Position(8, 8);
+        expectedNextPosition = new Position(8, 0);
         nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
+        Assertions.assertEquals(expectedNextPosition, nextPosition);
+
+        pacman.setDirection('d');
+        expectedNextPosition = new Position(0, 1);
+        nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
+        Assertions.assertEquals(expectedNextPosition, nextPosition);
+
+        pacman.setDirection('r');
+        expectedNextPosition = new Position(8, 0);
+        nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
+        Assertions.assertEquals(expectedNextPosition, nextPosition);
+
+        pacman.setDirection('f');
+        nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
+        expectedNextPosition = new Position(0, 0);
         Assertions.assertEquals(expectedNextPosition, nextPosition);
     }
 }

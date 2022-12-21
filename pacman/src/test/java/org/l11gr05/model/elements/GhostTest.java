@@ -15,6 +15,12 @@ import org.l11gr05.model.elements.ghost.ghostStrategies.BlinkyStrategy;
 import org.l11gr05.model.elements.ghost.ghostStrategies.ClydeStrategy;
 import org.l11gr05.model.elements.ghost.ghostStrategies.InkyStrategy;
 import org.l11gr05.model.elements.ghost.ghostStrategies.PinkyStrategy;
+import org.mockito.Mockito;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.mockito.Mockito.mock;
 
 public class GhostTest {
 
@@ -131,6 +137,20 @@ public class GhostTest {
         Inky inky = new Inky(10, 10, new InkyStrategy());
         Pinky pinky = new Pinky(10,10, new PinkyStrategy());
         Assertions.assertFalse(pinky.equals(inky));
+    }
+
+    @Test
+    public void chasedStateTest(){
+        Blinky blinky = new Blinky(1, 2, new BlinkyStrategy());
+        Pacman pacman = mock(Pacman.class);
+        Mockito.when(pacman.getPosition()).thenReturn(new Position(5,6));
+        List<Position> neighbours = new ArrayList<>();
+        neighbours.add(new Position(2, 2));
+        neighbours.add(new Position(0, 2));
+        neighbours.add(new Position(1, 3));
+        neighbours.add(new Position(1, 1));
+        blinky.setState(new ChasedState(blinky));
+        Assertions.assertNotEquals(blinky.getStrategy(), blinky.nextMove(neighbours, pacman));
     }
 
 }
