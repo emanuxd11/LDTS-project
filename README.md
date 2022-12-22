@@ -17,3 +17,14 @@ The following screenshots illustrate the general look of our game, as well as th
 </p>
 <br>
 <br />
+
+### Menu
+
+<p align="center" justify="center">
+  <img src="docs/gifs/menu.gif"/>
+</p>
+<p align="center">
+  <b><i>Gif 2. Main Menu</i></b>
+</p>
+<br>
+<br />
