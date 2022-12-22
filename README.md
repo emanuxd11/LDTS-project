@@ -28,3 +28,7 @@ The following screenshots illustrate the general look of our game, as well as th
 </p>
 <br>
 <br />
+
+### Video Demo
+
+![Video](./docs/video%20demo.mp4)
