@@ -61,11 +61,17 @@ public class PacmanController extends GameController {
             case 'u' -> movePacman(new Position(pacmanPosition.getX(), pacmanPosition.getY() - 1));
             case 'd' -> movePacman((new Position(pacmanPosition.getX(), pacmanPosition.getY() + 1)));
             case 'l' -> {
-                if (pacmanPosition.equals(new Position(-1, 14))) movePacman(new Position(27, 14));
+                if (pacmanPosition.getX() <= 0 || pacmanPosition.getY() <= 0) {
+                    this.getModel().getPacman().setDirection('l');
+                    movePacman(this.getModel().getRightPortal());
+                }
                 else movePacman(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()));
             }
             case 'r' -> {
-                if (pacmanPosition.equals(new Position(27, 14))) movePacman(new Position(0, 14));
+                if (pacmanPosition.getX() >= this.getModel().getWidth()-1 || pacmanPosition.getY() > this.getModel().getHeight()) {
+                    movePacman(this.getModel().getLeftPortal());
+                    this.getModel().getPacman().setDirection('r');
+                }
                 else movePacman(new Position(pacmanPosition.getX() + 1, pacmanPosition.getY()));
             }
         }
@@ -73,7 +79,7 @@ public class PacmanController extends GameController {
         this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());
         this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());
 
-        // player won game :)   
+
         if (this.getModel().getPacDots().isEmpty() && this.getModel().getPowerPellets().isEmpty()) {
             SoundFX.stopGameSounds();
             game.setState(new MenuState(new Menu()));

@@ -18,13 +18,11 @@ import org.l11gr05.model.elements.ghost.Clyde;
 import org.l11gr05.model.elements.ghost.Inky;
 import org.l11gr05.model.elements.ghost.Pinky;
 import org.l11gr05.model.elements.ghost.ghostStates.ChasedState;
-
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-
 import static java.awt.Font.PLAIN;
 import static java.awt.Font.TRUETYPE_FONT;
 
@@ -42,7 +40,6 @@ public class LanternaGUI implements GUI {
         TextGraphics graphics = this.screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString("#111111"));
         graphics.fillRectangle(new TerminalPosition(1, 1), new TerminalSize(width, height), ' ');
-        //floorColor("#FFFFFF", width, height);
     }
 
     private void floorColor(String color, int width, int height){
@@ -52,13 +49,11 @@ public class LanternaGUI implements GUI {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
         tg.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
-        //tg.putString(x, y + 1, ' ' + c);
     }
 
     private Screen createScreen(Terminal terminal) throws IOException {
         final Screen screen;
         screen = new TerminalScreen(terminal);
-
         screen.setCursorPosition(null);
         screen.startScreen();
         screen.doResizeIfNecessary();
@@ -113,7 +108,6 @@ public class LanternaGUI implements GUI {
     public void drawPacman(Pacman pacman) {
         switch (pacman.getDirection()) {
             case 'r' -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '<', "#FFD700");
-            case 'l' -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '>', "#FFD700");
             case 'u' -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), 'V', "#FFD700");
             case 'd' -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '^', "#FFD700");
             default -> drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '>', "#FFD700");

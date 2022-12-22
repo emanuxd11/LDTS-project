@@ -61,17 +61,17 @@ public class GhostController extends GameController {
                 ghost.setState(new HunterState(ghost));
             }
             ghost.getState().increaseTimer();
-            if(position.getX() < 0 || position.getY() < 0)
+            if(position.getX() <= 0 || position.getY() <= 0)
                 ghost.setPosition(this.getModel().getRightPortal());
-            else if(position.getY() > this.getModel().getHeight() || position.getX() > this.getModel().getWidth())
+            else if(position.getY() >= this.getModel().getHeight()-1 || position.getX() >= this.getModel().getWidth()-1)
                 ghost.setPosition(this.getModel().getLeftPortal());
             else ghost.setPosition(position);
         }
 
         else {
-            if (position.getX() < 0 || position.getY() < 0)
+            if (position.getX() <= 0 || position.getY() <= 0)
                 ghost.setPosition(this.getModel().getRightPortal());
-            else if (position.getY() > this.getModel().getHeight() || position.getX() > this.getModel().getWidth())
+            else if (position.getY() >= this.getModel().getHeight()-1 || position.getX() >= this.getModel().getWidth()-1)
                 ghost.setPosition(this.getModel().getLeftPortal());
             else ghost.setPosition(position);
 

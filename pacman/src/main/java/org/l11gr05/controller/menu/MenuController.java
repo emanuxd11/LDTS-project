@@ -19,7 +19,6 @@ public class MenuController extends Controller<Menu> {
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        // SoundFX.stopGameSounds();
         SoundFX.loopMenuTheme();
         switch (action) {
             case UP -> this.getModel().previousEntry();
@@ -31,8 +30,6 @@ public class MenuController extends Controller<Menu> {
                 }
                 if (getModel().startSelected()) {
                     SoundFX.stopMenuSounds();
-                    // comentei porque fica irritante sem o delay no início
-                    ////////////////////////
                     ArenaFactory temp = new ArenaFactory();
                     Arena arena = temp.createArena("maps/map.txt");
                     game.setState(new GameState(arena));

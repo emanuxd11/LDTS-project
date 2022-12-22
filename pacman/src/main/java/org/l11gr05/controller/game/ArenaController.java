@@ -23,7 +23,6 @@ public class ArenaController extends GameController{
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         if (action == GUI.ACTION.QUIT) {
-            // Stop game sounds when the player quits
             SoundFX.stopGameSounds();
             game.setState(new MenuState(new Menu()));
         } else {
