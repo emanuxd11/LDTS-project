@@ -39,7 +39,6 @@ public class GameViewer extends Viewer<Arena> {
         WallViewer wallViewer = new WallViewer();
         PacDotViewer pacDotViewer = new PacDotViewer();
         PowerPelletsViewer powerPelletsViewer = new PowerPelletsViewer();
-
         BlinkyViewer blinkyViewer = new BlinkyViewer();
         InkyViewer inkyViewer = new InkyViewer();
         PinkyViewer pinkyViewer = new PinkyViewer();

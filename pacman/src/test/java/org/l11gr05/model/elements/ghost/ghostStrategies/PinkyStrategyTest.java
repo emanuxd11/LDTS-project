@@ -47,11 +47,6 @@ public class PinkyStrategyTest {
         pacman.setDirection('r');
         nextPosition = pinkyStrategy.nextTargetMove(pacman, possibles);
         Assertions.assertEquals(expectedNextPosition, nextPosition);
-
-        pacman.setDirection('f');
-        nextPosition = pinkyStrategy.nextTargetMove(pacman, possibles);
-        expectedNextPosition = new Position(0, 0);
-        Assertions.assertEquals(expectedNextPosition, nextPosition);
     }
 
     @Test
@@ -73,11 +68,6 @@ public class PinkyStrategyTest {
         pacman.setDirection('r');
         expectedNextPosition = new Position(8, 0);
         nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
-        Assertions.assertEquals(expectedNextPosition, nextPosition);
-
-        pacman.setDirection('f');
-        nextPosition = pinkyStrategy.nextScatorMove(pacman, possibles);
-        expectedNextPosition = new Position(0, 0);
         Assertions.assertEquals(expectedNextPosition, nextPosition);
     }
 }
