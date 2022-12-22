@@ -58,8 +58,8 @@ public class PinkyStrategy implements IGhostStrategy {
         switch(direction){
             case 'u' -> position = right;
             case 'd' -> position = left;
-            case 'r' -> position = down;
             case 'l' -> position = up;
+            default -> position = down;
         }
 
         return position;

@@ -103,7 +103,9 @@ public class SoundFX {
     }
 
     public static void loopMenuTheme() {
-        menuTheme.loop();
+        try {
+            menuTheme.loop();
+        }catch(NullPointerException e){}
     }
 
     public static void stopMenuSounds() {
