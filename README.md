@@ -29,6 +29,14 @@ The following screenshots illustrate the general look of our game, as well as th
 <br>
 <br />
 
-### Video Demo
+### Chased State
 
-![Video](./docs/video%20demo.mp4)
+<p align="center" justify="center">
+  <img src="docs/gifs/Chased Ghosts.gif"/>
+</p>
+<p align="center">
+  <b><i>Gif 3. Ghost State after Pacman eats a Power Pellet</i></b>
+</p>
+<br>
+<br />
+
