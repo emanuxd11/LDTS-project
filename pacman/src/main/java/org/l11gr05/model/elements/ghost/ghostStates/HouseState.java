@@ -6,6 +6,8 @@ public class HouseState implements IGhostState{
 
     private int timer;
     private Ghost ghost;
+
+    public static final int MAX_TIME = 20;
     public HouseState(Ghost ghost){
         this.timer = 0;
         this.ghost = ghost;

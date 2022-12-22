@@ -31,10 +31,6 @@ public class GhostController extends GameController {
                     neighbours = ghost.getAllNeighbours();
                     neighbours.removeIf(n -> !getModel().isEmpty(n));
                     Position temp = ghost.nextMove(neighbours, this.getModel().getPacman());
-                    if (temp.equals(new Position(0, 0))) {
-                        temp = new Position(15, 14);
-                        ghost.setState(new HouseState(ghost));
-                    }
                     moveGhost(ghost, temp);
                 } catch (NullPointerException e){}
             }
@@ -44,13 +40,13 @@ public class GhostController extends GameController {
 
     private void moveGhost(Ghost ghost, Position position) {
         if (ghost.getState().getClass() == EatenState.class){
-            ghost.setPosition(new Position(13, 14));
+            ghost.setPosition(this.getModel().getHouseSpawn());
             ghost.setState(new HouseState(ghost));
         }
 
         else if (ghost.getState().getClass() == HouseState.class){
-            if (ghost.getState().getTimer() > 10) {
-                ghost.setPosition(new Position(15, 11));
+            if (ghost.getState().getTimer() > HouseState.MAX_TIME) {
+                ghost.setPosition(this.getModel().getHunterSpawn());
                 ghost.setState(new HunterState(ghost));
             }
             else {
@@ -60,19 +56,23 @@ public class GhostController extends GameController {
         }
 
         else if (ghost.getState().getClass() == ChasedState.class){
-            if (ghost.getState().getTimer() > 60) {
+            if (ghost.getState().getTimer() > ChasedState.MAX_TIME) {
                 SoundFX.loopGhostSiren1();
                 ghost.setState(new HunterState(ghost));
             }
             ghost.getState().increaseTimer();
-            if(position.equals(new Position(-1, 14)) || position.equals(new Position(-2, 14))) ghost.setPosition(new Position(27, 14));
-            else if(position.equals(new Position(27, 14)) || position.equals(new Position(28, 14))) ghost.setPosition(new Position(0, 14));
+            if(position.getX() < 0 || position.getY() < 0)
+                ghost.setPosition(this.getModel().getRightPortal());
+            else if(position.getY() > this.getModel().getHeight() || position.getX() > this.getModel().getWidth())
+                ghost.setPosition(this.getModel().getLeftPortal());
             else ghost.setPosition(position);
         }
 
         else {
-            if (position.equals(new Position(0, 14))) ghost.setPosition(new Position(27, 14));
-            else if (position.equals(new Position(27, 14))) ghost.setPosition(new Position(0, 14));
+            if (position.getX() < 0 || position.getY() < 0)
+                ghost.setPosition(this.getModel().getRightPortal());
+            else if (position.getY() > this.getModel().getHeight() || position.getX() > this.getModel().getWidth())
+                ghost.setPosition(this.getModel().getLeftPortal());
             else ghost.setPosition(position);
 
             if (this.getModel().getPacman().getPosition().equals(ghost.getPosition())) {

@@ -51,7 +51,10 @@ public class ArenaFactory {
                     case 'I' -> arena.setInky(new Inky(j, i, new InkyStrategy()));
                     case 'N' -> arena.setPinky(new Pinky(j, i, new PinkyStrategy()));
                     case 'C' -> arena.setClyde(new Clyde(j, i, new ClydeStrategy()));
-
+                    case 'H' -> arena.setHouseSpawn(new Position(j, i));
+                    case 'U' -> arena.setHunterSpawn(new Position(j, i));
+                    case 'L' -> arena.setLeftPortal(new Position(j, i));
+                    case 'R' -> arena.setRightPortal(new Position(j, i));
                 }
             }
         }

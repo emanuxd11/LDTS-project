@@ -7,6 +7,8 @@ public class ChasedState implements IGhostState {
 
     private int timer;
     private Ghost ghost;
+
+    public static final int MAX_TIME = 45;
     public ChasedState(Ghost ghost){
         this.timer = 0;
         this.ghost = ghost;

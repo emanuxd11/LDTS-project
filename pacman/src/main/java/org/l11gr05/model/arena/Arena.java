@@ -1,12 +1,7 @@
 package org.l11gr05.model.arena;
-
-import com.googlecode.lanterna.terminal.swing.TerminalScrollController;
-import org.l11gr05.model.elements.*;
-import org.l11gr05.model.elements.ghost.*;
 import org.l11gr05.model.elements.*;
 import org.l11gr05.model.elements.ghost.*;
 import org.l11gr05.sound.SoundFX;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +18,14 @@ public class Arena implements IArenaObservable {
     private Inky inky;
     private Pinky pinky;
     private Clyde clyde;
+
+    private Position hunterSpawn;
+
+    private Position houseSpawn;
+
+    private Position leftPortal;
+
+    private Position rightPortal;
 
     List<Wall> walls = new ArrayList<Wall>();
     List<PacDot> pacDots = new ArrayList<PacDot>();
@@ -193,5 +196,37 @@ public class Arena implements IArenaObservable {
         } catch(NullPointerException e){}
 
         return null;
+    }
+
+    public void setHunterSpawn(Position hunterSpawn){
+        this.hunterSpawn = hunterSpawn;
+    }
+
+    public Position getHunterSpawn(){
+        return this.hunterSpawn;
+    }
+
+    public void setHouseSpawn(Position houseSpawn){
+        this.houseSpawn = houseSpawn;
+    }
+
+    public Position getHouseSpawn(){
+        return this.houseSpawn;
+    }
+
+    public void setLeftPortal(Position leftPortal){
+        this.leftPortal = leftPortal;
+    }
+
+    public Position getLeftPortal(){
+        return this.leftPortal;
+    }
+
+    public void setRightPortal(Position rightPortal){
+        this.rightPortal = rightPortal;
+    }
+
+    public Position getRightPortal(){
+        return this.rightPortal;
     }
 }

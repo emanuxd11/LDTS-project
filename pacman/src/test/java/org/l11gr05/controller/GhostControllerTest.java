@@ -35,6 +35,7 @@ public class GhostControllerTest {
     @BeforeEach
     public void setUp() throws IOException {
         arena = new Arena();
+        arena.setSize(20, 20);
         controller = new GhostController(arena);
         gui = mock(GUI.class);
         game = mock(Game.class);
