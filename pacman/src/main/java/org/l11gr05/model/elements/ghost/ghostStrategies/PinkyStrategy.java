@@ -30,7 +30,6 @@ public class PinkyStrategy implements IGhostStrategy {
             case 'u' -> position = up;
             case 'd' -> position = down;
             case 'r' -> position = right;
-            case 'l' -> position = left;
             default -> position = left;
         }
 

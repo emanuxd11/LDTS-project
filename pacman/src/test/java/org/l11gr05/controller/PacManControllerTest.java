@@ -41,6 +41,7 @@ public class PacManControllerTest {
     @BeforeEach
     void setUp() {
         arena = new Arena();
+        arena.setSize(20, 20);
 
         pacman = new Pacman(new Position(10, 10), '0', "src/main/resources/scores/highscore.txt");
         arena.setPacman(pacman);
