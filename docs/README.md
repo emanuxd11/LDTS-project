@@ -1,13 +1,13 @@
 ## LDTS_11_05 - PACMAN
 
-In this project, we developed a pacman clone written in Java with the GUI Framework "Lanterna". In it, you control pacman through different arenas collecting all the PacDots and PowerPellets you can while being chased by 4 different enemy characters.
+In this project, we developed a pacman clone written in Java with the GUI Framework "Lanterna". In it, you control pacman through the arena collecting all the PacDots and PowerPellets you can while being chased by 4 different enemy characters.
 
 This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pinto Teixeira (up202109860@fe.up.pt) and Emanuel Rui Tavano Maia (up202107486@fe.up.pt) for LDTS 2022⁄23.
 
 ### IMPLEMENTED FEATURES
 
 - **Menu** - An introductory screen that appears when the game is booted, it displays the name of the game and allows you to start the level when the "Play" option is selected or exit the game when the "Quit" option is selected by pressing the "ENTER" key.
-- **Player Character** - The player character (Pacman) will be able to move in 4 different directions depending on the key that is pressed: UP, when "W" is pressed, DOWN, when "S" is pressed, LEFT, when "A" is pressed and RIGHT, when "D" is pressed.
+- **Player Character** - The player character (Pacman) will be able to move in 4 different directions depending on the key that is pressed: UP, when "⬆" is pressed, DOWN, when "⬇" is pressed, LEFT, when "⬅" is pressed and RIGHT, when "➡" is pressed.
 - **Enemy Characters** - There are 4 enemy characters (Ghosts) which will chase Pacman until capture if in HunterState or run away from Pacman if in ChasedState. In the case of them being in HouseState or in EatenState they'll  be unreachable by Pacman.
 - **Level** - An arena through which the player will collect PacDots and PowerPellets while escaping the ghosts.
 - **PacDots** - Pacman can eat PacDots laid throughout the arena, increasing the score the player has. When the arena is fully cleared of PacDots, the player will reach the high score, beating the game and return to the main menu.
