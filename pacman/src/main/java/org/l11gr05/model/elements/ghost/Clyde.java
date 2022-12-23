@@ -1,6 +1,5 @@
 package org.l11gr05.model.elements.ghost;
 
-import org.l11gr05.model.elements.ghost.ghostStrategies.ClydeStrategy;
 import org.l11gr05.model.elements.ghost.ghostStrategies.IGhostStrategy;
 
 public class Clyde extends Ghost {

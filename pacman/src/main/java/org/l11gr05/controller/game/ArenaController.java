@@ -6,7 +6,6 @@ import org.l11gr05.gui.GUI;
 import org.l11gr05.menu.Menu;
 import org.l11gr05.sound.SoundFX;
 import org.l11gr05.states.MenuState;
-
 import java.io.IOException;
 
 public class ArenaController extends GameController{

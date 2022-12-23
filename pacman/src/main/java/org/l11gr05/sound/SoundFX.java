@@ -1,6 +1,5 @@
 package org.l11gr05.sound;
 
-
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
@@ -35,16 +34,6 @@ public class SoundFX {
             clip = AudioSystem.getClip();
         } catch (LineUnavailableException e) {
             throw new RuntimeException(e);
-        }
-    }
-
-    /* ? */
-    public static void gamePause(int num){
-        try {
-            Thread.sleep(num);
-        }
-        catch(InterruptedException ex) {
-            ex.printStackTrace();
         }
     }
 
@@ -182,10 +171,6 @@ public class SoundFX {
             pacmanDies.stop();
             pacmanDies.play();
         } catch(NullPointerException e){}
-    }
-
-    public static void stopPacmanDies() {
-        pacmanDies.stop();
     }
 
     public static void stopMenuTheme() {

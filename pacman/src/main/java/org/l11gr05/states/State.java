@@ -4,14 +4,12 @@ import org.l11gr05.Game;
 import org.l11gr05.controller.Controller;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.viewer.Viewer;
-
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public abstract class State<T> {
     private final T model;
-    // private final Controller<T> controller;
     private final Viewer<T> viewer;
 
     private final Controller<T> controller;

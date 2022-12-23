@@ -77,6 +77,4 @@ public class Pacman extends Element {
             writeHighScore(this.highScore);
         }
     }
-
-    // meti só estes por agora, ver aqui https://pacman.fandom.com/wiki/Point_Configurations para mais
 }

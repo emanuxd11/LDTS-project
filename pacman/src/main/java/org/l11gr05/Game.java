@@ -24,10 +24,6 @@ public class Game {
         this.state = state;
     }
 
-    public State getState(){
-        return this.state;
-    }
-
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
         new Game().start();
     }

@@ -10,7 +10,6 @@ import org.l11gr05.model.elements.ghost.ghostStates.HouseState;
 import org.l11gr05.model.elements.ghost.ghostStates.HunterState;
 import org.l11gr05.gui.GUI;
 import org.l11gr05.sound.SoundFX;
-
 import java.util.List;
 
 public class GhostController extends GameController {
