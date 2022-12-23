@@ -38,10 +38,10 @@ public class GhostController extends GameController {
     }
 
     private void moveGhost(Ghost ghost, Position position) {
-        if (ghost.getState().getClass() == EatenState.class){
+        if (ghost.getState().getClass() == EatenState.class) {
             ghost.setPosition(this.getModel().getHouseSpawn());
             ghost.setState(new HouseState(ghost));
-        } else if (ghost.getState().getClass() == HouseState.class){
+        } else if (ghost.getState().getClass() == HouseState.class) {
             if (ghost.getState().getTimer() > HouseState.MAX_TIME) {
                 ghost.setPosition(this.getModel().getHunterSpawn());
                 ghost.setState(new HunterState(ghost));

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.l11gr05.controller.game.PacManControllerTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2022-12-23T21:35:33" hostname="archvivobook" time="3.078">
+<testsuite name="org.l11gr05.controller.game.PacManControllerTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2022-12-23T21:40:46" hostname="archvivobook" time="3.109">
   <properties/>
-  <testcase name="leftDirectionTestFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.041"/>
-  <testcase name="ghostCollision()" classname="org.l11gr05.controller.game.PacManControllerTest" time="1.502"/>
-  <testcase name="upDirectionFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.001"/>
-  <testcase name="downDirectionTestDone()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
-  <testcase name="nothingHappens()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.003"/>
-  <testcase name="isGhostTest()" classname="org.l11gr05.controller.game.PacManControllerTest" time="1.503"/>
+  <testcase name="leftDirectionTestFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.075"/>
+  <testcase name="ghostCollision()" classname="org.l11gr05.controller.game.PacManControllerTest" time="1.505"/>
+  <testcase name="upDirectionFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
+  <testcase name="downDirectionTestDone()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.003"/>
+  <testcase name="nothingHappens()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
+  <testcase name="isGhostTest()" classname="org.l11gr05.controller.game.PacManControllerTest" time="1.502"/>
   <testcase name="downDirectionTestFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
-  <testcase name="upDirectionDone()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
+  <testcase name="upDirectionDone()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.001"/>
   <testcase name="leftDirectionTestDone()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
-  <testcase name="rightDirectionTestFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.003"/>
-  <testcase name="rightDirectionTestDone()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.003"/>
+  <testcase name="rightDirectionTestFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
+  <testcase name="rightDirectionTestDone()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
   <testcase name="upDirectionTestDone()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.002"/>
-  <testcase name="upDirectionTestFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.003"/>
+  <testcase name="upDirectionTestFailed()" classname="org.l11gr05.controller.game.PacManControllerTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
