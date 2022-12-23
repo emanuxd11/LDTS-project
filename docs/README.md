@@ -60,7 +60,7 @@ The use of the Observer Pattern prevents the Ghosts from having to constantly ha
   <img src="images/UML/ObserverPattern.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 2. ???</i></b>
+  <b><i>Fig 2. Observer Pattern UML</i></b>
 </p>
 
 #### WE NEED TO MAKE SURE THE GAME/MENU CONTROLLER AND VIEWER ARE ONLY USED IN THE PROPER CIRCUMSTANCES
@@ -83,7 +83,7 @@ Facade Pattern
   <img src="images/UML/FacadePattern.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 3. ???</i></b>
+  <b><i>Fig 3. FacadePattern UML</i></b>
 </p>
 
 #### THERE NEEDS TO BE A WAY TO CONTINUOUSLY PROCESS USER INPUT AND GAME STATE
@@ -129,7 +129,7 @@ Through this you can have different states for game and menu, which allows one t
   <img src="images/UML/StatePatternGame.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 5. ???</i></b>
+  <b><i>Fig 5. State Pattern UML for the game and menu</i></b>
 </p>
 
 #### THE GHOSTS NEED TO MOVE IN TANDEM WITH THEIR STATES
@@ -152,7 +152,7 @@ This way, their state can be implemented in a way that is coherent with their mo
   <img src="images/UML/StatePatternGhosts.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 6. ???</i></b>
+  <b><i>Fig 6. State Pattern UML for the Ghost states</i></b>
 </p>
 
 #### EACH GHOST NEEDS TO BEHAVE DIFFERENTLY FROM EACH OTHER
@@ -175,7 +175,7 @@ This way one can easily create different behaviour for each ghost without requir
   <img src="images/UML/StrategyPattern.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 7. ???</i></b>
+  <b><i>Fig 7. Strategy Pattern UML</i></b>
 </p>
 
 #### IMPLEMENTATION
@@ -195,7 +195,7 @@ This UML shows how all design patterns we used were mapped to our different clas
 
 ### Screenshot of coverage report
 <p align="center">
-  <img src="images/screenshots/?????"/>
+  <img src="images/TestCoverage"/>
 </p>
 <p align="center">
   <b><i>Fig 9. Code coverage screenshot</i></b>
