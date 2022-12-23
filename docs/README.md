@@ -25,6 +25,10 @@ This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pi
 
 Since we wanted to have a game that implements independently the objects in the game, the entity that manipulates them and the way the game is shown to the user, we realized that we would need to implement a specific architecture for our game.
 
+**The Pattern:**
+
+To solve this problem, we decided to use MVC Architecture. MVC means Model, Viewer, Controller, respectively. The model stores the data of the game and has methods that allows the controller to manipulate them. In its turn, the controller has implemented the logic of the game and is the entity that is responsible for use the data from the model, coherently. The viewer has two main functionalities. The first one, is to show to the player what is happening in the game. The second one, is to read the input that is given by the player and send it to the controller.
+
 **Implementation:**
 
 The MVC architecture is implemented this way:
@@ -34,10 +38,6 @@ The MVC architecture is implemented this way:
 <p align="center">
   <b><i>Fig 1. MVC architecture UML</i></b>
 </p>
-
-**The Pattern:**
-
-To solve this problem, we decided to use MVC Architecture. MVC means Model, Viewer, Controller, respectively. The model stores the data of the game and has methods that allows the controller to manipulate them. In its turn, the controller has implemented the logic of the game and is the entity that is responsible for use the data from the model, coherently. The viewer has two main functionalities. The first one, is to show to the player what is happening in the game. The second one, is to read the input that is given by the player and send it to the controller.
 
 #### THE GHOSTS NEED TO CHANGE THEIR STATE WHEN PACMAN EATS A POWERPELLET
 
@@ -58,14 +58,14 @@ To achieve this we decided to use an Observer Pattern. The PowerPellets are laid
   <b><i>Fig 2. Observer Pattern UML</i></b>
 </p>
 
-**Consequences**
-
-The use of the Observer Pattern prevents the Ghosts from having to constantly have to check the Arena for any changes to it.
-
 - [Arena](../pacman/src/main/java/org/l11gr05/model/arena/Arena.java)
 - [Observable](../pacman/src/main/java/org/l11gr05/model/arena/IArenaObservable.java)
 - [Observer](../pacman/src/main/java/org/l11gr05/model/elements/ghost/IArenaObserver.java)
 - [Ghost](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
+
+**Consequences**
+
+The use of the Observer Pattern prevents the Ghosts from having to constantly have to check the Arena for any changes to it.
 
 #### WE NEED AN INTERFACE FOR LANTERNA
 
@@ -86,13 +86,13 @@ The best way to do this, is by using the Facade Pattern. This structural design 
   <b><i>Fig 3. FacadePattern UML</i></b>
 </p>
 
-**Consequences**
-
-With this design pattern we can just use the features we need through the class we created.
-
 - [Game](../pacman/src/main/java/org/l11gr05/Game.java)
 - [GUI](../pacman/src/main/java/org/l11gr05/gui/GUI.java)
 - [LanternaGUI class](../pacman/src/main/java/org/l11gr05/gui/LanternaGUI.java)
+
+**Consequences**
+
+With this design pattern we can just use the features we need through the class we created.
 
 #### THERE NEEDS TO BE A WAY TO CONTINUOUSLY PROCESS USER INPUT AND GAME STATE
 
@@ -104,11 +104,11 @@ There needs to be a way to continually check for any inputs the player might mak
 
 One can achieve this with the Game Loop Pattern. Through this, with each turn of the loop, you can process user input and update the game state.
 
+**Implementation**
+
 **Consequences**
 
 The game time can be tracked independently of processor speed and, therefore, process user input without blocking and continuously update the game state.
-
-**Implementation**
 
 #### WE NEED A STATE FOR BOTH IN-GAME AND MENU
 
@@ -120,10 +120,6 @@ We need a way for the game to behave in a different way depending on whether it'
 
 The best way for this to be efficiently achieved is through a State Pattern.
 
-**Consequences**
-
-Through this you can have different states for game and menu, which allows one to easily change the behaviour of the game depending on the situation.
-
 **Implementation**
 
 <p align="center">
@@ -132,6 +128,17 @@ Through this you can have different states for game and menu, which allows one t
 <p align="center">
   <b><i>Fig 4. State Pattern UML for the game and menu</i></b>
 </p>
+
+- [Game](../pacman/src/main/java/org/l11gr05/Game.java)
+- [State](../pacman/src/main/java/org/l11gr05/states/State.java)
+- [GameState](../pacman/src/main/java/org/l11gr05/states/GameState.java)
+- [Arena](../pacman/src/main/java/org/l11gr05/model/arena/Arena.java)
+- [MenuState](../pacman/src/main/java/org/l11gr05/states/MenuState.java)
+- [Menu](../pacman/src/main/java/org/l11gr05/menu/Menu.java)
+
+**Consequences**
+
+Through this you can have different states for game and menu, which allows one to easily change the behaviour of the game depending on the situation.
 
 #### THE GHOSTS NEED TO MOVE IN TANDEM WITH THEIR STATES
 
@@ -143,10 +150,6 @@ We need a way for the ghosts to move in a different way depending on whether the
 
 The best way for this to be efficiently achieved is through a State Pattern.
 
-**Consequences**
-
-This way, their state can be implemented in a way that is coherent with their movement.
-
 **Implementation**
 
 <p align="center">
@@ -155,6 +158,17 @@ This way, their state can be implemented in a way that is coherent with their mo
 <p align="center">
   <b><i>Fig 5. State Pattern UML for the Ghost states</i></b>
 </p>
+
+- [Ghost](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
+- [IGhostState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/IGhostState.java)
+- [HunterState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/HunterState.java)
+- [ChasedState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/ChasedState.java)
+- [HouseState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/HouseState.java)
+- [EatenState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/EatenState.java)
+
+**Consequences**
+
+This way, their state can be implemented in a way that is coherent with their movement.
 
 #### EACH GHOST NEEDS TO BEHAVE DIFFERENTLY FROM EACH OTHER
 
@@ -166,10 +180,6 @@ There needs to be a way for each ghost to both share some movement code and stat
 
 With a Strategy Pattern, one can keep shared context, while still allowing for different behaviour.
 
-**Consequences**
-
-This way one can easily create different behaviour for each ghost without requiring redundant code.
-
 **Implementation**
 
 <p align="center">
@@ -178,6 +188,21 @@ This way one can easily create different behaviour for each ghost without requir
 <p align="center">
   <b><i>Fig 6. Strategy Pattern UML</i></b>
 </p>
+
+- [Ghost](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
+- [Blinky](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Blinky.java)
+- [Pinky](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Pinky.java)
+- [Clyde](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Clyde.java)
+- [Inky](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Inky.java)
+- [IGhostStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/IGhostStrategy.java)
+- [BlinkyStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/BlinkyStrategy.java)
+- [PinkyStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/PinkyStrategy.java)
+- [ClydeStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/ClydeStrategy.java)
+- [InkyStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/InkyStrategy.java)
+
+**Consequences**
+
+This way one can easily create different behaviour for each ghost without requiring redundant code.
 
 #### IMPLEMENTATION
 
