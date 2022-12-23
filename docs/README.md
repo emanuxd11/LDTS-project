@@ -142,7 +142,7 @@ Through this you can have different states for game and menu, which allows one t
 
 **Problem in Context**
 
-We need a way for the ghosts to move in a different way depending on whether their state.
+We need a way for the ghosts to move in a different way depending on their state.
 
 **The Pattern**
 
