@@ -4,6 +4,8 @@ In this project, we developed a pacman clone written in Java with the GUI Framew
 
 This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pinto Teixeira (up202109860@fe.up.pt) and Emanuel Rui Tavano Maia (up202107486@fe.up.pt) for LDTS 2022⁄23.
 
+You can find more details about the development of the game [here](docs/README.md).
+
 ## Screenshots
 
 The following screenshots illustrate the general look of our game, as well as the divergent functionalities:
