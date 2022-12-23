@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>State.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pacman</a> &gt; <a href="index.source.html" class="el_package">org.l11gr05.states</a> &gt; <span class="el_source">State.java</span></div><h1>State.java</h1><pre class="source lang-java linenums">package org.l11gr05.states;
+
+import org.l11gr05.Game;
+import org.l11gr05.controller.Controller;
+import org.l11gr05.gui.GUI;
+import org.l11gr05.viewer.Viewer;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
+public abstract class State&lt;T&gt; {
+    private final T model;
+    private final Viewer&lt;T&gt; viewer;
+
+    private final Controller&lt;T&gt; controller;
+
+<span class="fc" id="L17">    public State(T model) {</span>
+<span class="fc" id="L18">        this.model = model;</span>
+<span class="fc" id="L19">        this.viewer = getViewer();</span>
+<span class="fc" id="L20">        this.controller = getController();</span>
+<span class="fc" id="L21">    }</span>
+
+    protected abstract Controller&lt;T&gt; getController();
+
+    public T getModel() {
+<span class="fc" id="L26">        return this.model;</span>
+    }
+
+    public abstract Viewer&lt;T&gt; getViewer();
+
+    public void step(Game game, GUI gui, long time) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+<span class="nc" id="L32">        GUI.ACTION action = gui.getNextAction();</span>
+<span class="nc" id="L33">        controller.step(game, action, time);</span>
+<span class="nc" id="L34">        viewer.draw(gui);</span>
+<span class="nc" id="L35">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

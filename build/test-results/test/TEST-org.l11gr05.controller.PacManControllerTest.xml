@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.l11gr05.controller.PacManControllerTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2022-12-23T20:59:46" hostname="Air-de-Davide.Home" time="3.143">
+  <properties/>
+  <testcase name="leftDirectionTestFailed()" classname="org.l11gr05.controller.PacManControllerTest" time="0.004"/>
+  <testcase name="ghostCollision()" classname="org.l11gr05.controller.PacManControllerTest" time="1.511"/>
+  <testcase name="upDirectionFailed()" classname="org.l11gr05.controller.PacManControllerTest" time="0.005"/>
+  <testcase name="downDirectionTestDone()" classname="org.l11gr05.controller.PacManControllerTest" time="0.007"/>
+  <testcase name="nothingHappens()" classname="org.l11gr05.controller.PacManControllerTest" time="0.01"/>
+  <testcase name="isGhostTest()" classname="org.l11gr05.controller.PacManControllerTest" time="1.519"/>
+  <testcase name="downDirectionTestFailed()" classname="org.l11gr05.controller.PacManControllerTest" time="0.012"/>
+  <testcase name="upDirectionDone()" classname="org.l11gr05.controller.PacManControllerTest" time="0.003"/>
+  <testcase name="leftDirectionTestDone()" classname="org.l11gr05.controller.PacManControllerTest" time="0.012"/>
+  <testcase name="rightDirectionTestFailed()" classname="org.l11gr05.controller.PacManControllerTest" time="0.003"/>
+  <testcase name="rightDirectionTestDone()" classname="org.l11gr05.controller.PacManControllerTest" time="0.003"/>
+  <testcase name="upDirectionTestDone()" classname="org.l11gr05.controller.PacManControllerTest" time="0.002"/>
+  <testcase name="upDirectionTestFailed()" classname="org.l11gr05.controller.PacManControllerTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

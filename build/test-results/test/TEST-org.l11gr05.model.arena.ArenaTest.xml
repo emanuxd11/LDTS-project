@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.l11gr05.model.arena.ArenaTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-12-23T20:59:49" hostname="Air-de-Davide.Home" time="0.054">
+  <properties/>
+  <testcase name="isGhostTest()" classname="org.l11gr05.model.arena.ArenaTest" time="0.039"/>
+  <testcase name="pacDotTest()" classname="org.l11gr05.model.arena.ArenaTest" time="0.003"/>
+  <testcase name="powerPelletsTest()" classname="org.l11gr05.model.arena.ArenaTest" time="0.001"/>
+  <testcase name="pacDotRemove()" classname="org.l11gr05.model.arena.ArenaTest" time="0.001"/>
+  <testcase name="wallsTest()" classname="org.l11gr05.model.arena.ArenaTest" time="0.001"/>
+  <testcase name="powerPelletRemove()" classname="org.l11gr05.model.arena.ArenaTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

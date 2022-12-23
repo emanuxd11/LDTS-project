@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.l11gr05.model.elements.PacmanTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-23T20:59:49" hostname="Air-de-Davide.Home" time="0.016">
+  <properties/>
+  <testcase name="increaseScoreTest()" classname="org.l11gr05.model.elements.PacmanTest" time="0.0"/>
+  <testcase name="readHighScoreError()" classname="org.l11gr05.model.elements.PacmanTest" time="0.01"/>
+  <testcase name="highScoreTest()" classname="org.l11gr05.model.elements.PacmanTest" time="0.002"/>
+  <testcase name="initialScoreTest()" classname="org.l11gr05.model.elements.PacmanTest" time="0.001"/>
+  <testcase name="readHighScoreError2()" classname="org.l11gr05.model.elements.PacmanTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

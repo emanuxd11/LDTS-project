@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.l11gr05.Viewer.GameViewerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-23T20:59:46" hostname="Air-de-Davide.Home" time="0.369">
+  <properties/>
+  <testcase name="drawElementsTest()" classname="org.l11gr05.Viewer.GameViewerTest" time="0.369"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

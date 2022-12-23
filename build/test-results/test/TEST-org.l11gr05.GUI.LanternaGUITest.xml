@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.l11gr05.GUI.LanternaGUITest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-12-23T20:59:45" hostname="Air-de-Davide.Home" time="0.23">
+  <properties/>
+  <testcase name="getNextActionTestEOF()" classname="org.l11gr05.GUI.LanternaGUITest" time="0.193"/>
+  <testcase name="getNextActionTestCharacter()" classname="org.l11gr05.GUI.LanternaGUITest" time="0.005"/>
+  <testcase name="getNextActionTestArrowDown()" classname="org.l11gr05.GUI.LanternaGUITest" time="0.005"/>
+  <testcase name="getNextActionTestArrowUp()" classname="org.l11gr05.GUI.LanternaGUITest" time="0.003"/>
+  <testcase name="getNextActionTestLeft()" classname="org.l11gr05.GUI.LanternaGUITest" time="0.005"/>
+  <testcase name="getNextActionTestNull()" classname="org.l11gr05.GUI.LanternaGUITest" time="0.002"/>
+  <testcase name="getNextActionTestEnter()" classname="org.l11gr05.GUI.LanternaGUITest" time="0.003"/>
+  <testcase name="getNextActionTestRight()" classname="org.l11gr05.GUI.LanternaGUITest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

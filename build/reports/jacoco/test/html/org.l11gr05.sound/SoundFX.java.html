@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SoundFX.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pacman</a> &gt; <a href="index.source.html" class="el_package">org.l11gr05.sound</a> &gt; <span class="el_source">SoundFX.java</span></div><h1>SoundFX.java</h1><pre class="source lang-java linenums">package org.l11gr05.sound;
+
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+
+public class SoundFX {
+    private final String effect;
+    private final Clip clip;
+    private final AudioInputStream audioStream;
+<span class="fc" id="L11">    private static String prev = &quot;wa&quot;;</span>
+    private static SoundFX startUp;
+    private static SoundFX wa;
+    private static SoundFX ka;
+    private static SoundFX powerUp;
+    private static SoundFX pacmanEatsGhost;
+    private static SoundFX ghostSiren1;
+    private static SoundFX pacmanDies;
+    private static SoundFX menuTheme;
+
+    private String getResourcePath() {
+<span class="nc" id="L22">        return System.getProperty(&quot;user.dir&quot;) + &quot;/src/main/resources/audio/&quot; + effect;</span>
+    }
+
+<span class="nc" id="L25">    private SoundFX(String effect) {</span>
+<span class="nc" id="L26">        this.effect = effect;</span>
+<span class="nc" id="L27">        File file = new File(getResourcePath());</span>
+        try {
+<span class="nc" id="L29">            audioStream = AudioSystem.getAudioInputStream(file);</span>
+<span class="nc" id="L30">        } catch (UnsupportedAudioFileException | IOException e) {</span>
+<span class="nc" id="L31">            throw new RuntimeException(e);</span>
+<span class="nc" id="L32">        }</span>
+        try {
+<span class="nc" id="L34">            clip = AudioSystem.getClip();</span>
+<span class="nc" id="L35">        } catch (LineUnavailableException e) {</span>
+<span class="nc" id="L36">            throw new RuntimeException(e);</span>
+<span class="nc" id="L37">        }</span>
+<span class="nc" id="L38">    }</span>
+
+    public static void initSounds() {
+<span class="nc" id="L41">        startUp = new SoundFX(&quot;startUp.wav&quot;);</span>
+<span class="nc" id="L42">        wa = new SoundFX(&quot;wa.wav&quot;);</span>
+<span class="nc" id="L43">        ka = new SoundFX(&quot;ka.wav&quot;);</span>
+<span class="nc" id="L44">        ghostSiren1 = new SoundFX(&quot;ghostSiren.wav&quot;);</span>
+<span class="nc" id="L45">        pacmanEatsGhost = new SoundFX(&quot;pacmanEatsGhost.wav&quot;);</span>
+<span class="nc" id="L46">        powerUp = new SoundFX(&quot;powerUp.wav&quot;);</span>
+<span class="nc" id="L47">        menuTheme = new SoundFX(&quot;menuTheme2.wav&quot;);</span>
+<span class="nc" id="L48">        pacmanDies = new SoundFX(&quot;pacmanDies.wav&quot;);</span>
+<span class="nc" id="L49">    }</span>
+
+    private boolean isPlaying() {
+<span class="nc" id="L52">        return clip.isActive();</span>
+    }
+
+    private void play() {
+        try {
+<span class="nc bnc" id="L57" title="All 2 branches missed.">            if(!clip.isOpen())</span>
+<span class="nc" id="L58">                clip.open(audioStream);</span>
+<span class="nc" id="L59">        } catch (LineUnavailableException | IOException e) {</span>
+<span class="nc" id="L60">            throw new RuntimeException(e);</span>
+<span class="nc" id="L61">        }</span>
+<span class="nc" id="L62">        clip.start();</span>
+<span class="nc" id="L63">    }</span>
+
+    private void loop() {
+         try {
+<span class="nc bnc" id="L67" title="All 2 branches missed.">            if (!clip.isOpen()) {</span>
+<span class="nc" id="L68">                clip.open(audioStream);</span>
+            }
+<span class="nc" id="L70">        } catch (LineUnavailableException | IOException e) {</span>
+<span class="nc" id="L71">            throw new RuntimeException(e);</span>
+<span class="nc" id="L72">        }</span>
+<span class="nc" id="L73">        clip.loop(Clip.LOOP_CONTINUOUSLY);</span>
+<span class="nc" id="L74">    }</span>
+
+    private void stop() {
+         try {
+<span class="nc" id="L78">            clip.stop();</span>
+<span class="nc" id="L79">            clip.setMicrosecondPosition(0);</span>
+<span class="nc" id="L80">        } catch(NullPointerException e){}</span>
+<span class="nc" id="L81">    }</span>
+
+    public static void stopGameSounds() {
+        try {
+<span class="fc" id="L85">            stopStartUp();</span>
+<span class="nc" id="L86">            stopPowerUp();</span>
+<span class="nc" id="L87">            stopGhostSiren1();</span>
+<span class="nc" id="L88">            stopWa();</span>
+<span class="nc" id="L89">            stopKa();</span>
+<span class="nc" id="L90">            stopPacmanEatsGhost();</span>
+<span class="pc" id="L91">        } catch (NullPointerException e){}</span>
+<span class="fc" id="L92">    }</span>
+
+    public static void loopMenuTheme() {
+        try {
+<span class="nc" id="L96">            menuTheme.loop();</span>
+<span class="pc" id="L97">        }catch(NullPointerException e){}</span>
+<span class="fc" id="L98">    }</span>
+
+    public static void stopMenuSounds() {
+        try {
+<span class="nc" id="L102">            stopMenuTheme();</span>
+<span class="nc" id="L103">        }catch(NullPointerException e){}</span>
+<span class="nc" id="L104">    }</span>
+
+    public static void playStartUp() {
+        try {
+<span class="nc" id="L108">            startUp.play();</span>
+<span class="pc" id="L109">        }catch(NullPointerException e){}</span>
+<span class="fc" id="L110">    }</span>
+
+    public static void stopStartUp() {
+        try {
+<span class="nc" id="L114">            startUp.stop();</span>
+<span class="pc" id="L115">        } catch (NullPointerException e){}</span>
+<span class="fc" id="L116">    }</span>
+
+    private static void playWa() {
+        try {
+<span class="nc" id="L120">            wa.play();</span>
+<span class="nc" id="L121">        } catch(NullPointerException e){}</span>
+<span class="nc" id="L122">    }</span>
+
+    private static void stopWa() {
+<span class="nc" id="L125">        wa.stop();</span>
+<span class="nc" id="L126">    }</span>
+
+    private static void playKa() {
+<span class="nc" id="L129">        ka.play();</span>
+<span class="nc" id="L130">    }</span>
+
+    private static void stopKa() {
+<span class="nc" id="L133">        ka.stop();</span>
+<span class="nc" id="L134">    }</span>
+
+    public static void playPowerUp() {
+        try {
+<span class="nc" id="L138">            powerUp.stop();</span>
+<span class="nc" id="L139">            powerUp.play();</span>
+<span class="nc" id="L140">        } catch(NullPointerException e){}</span>
+<span class="nc" id="L141">    }</span>
+
+    public static void stopPowerUp() {
+<span class="nc" id="L144">        powerUp.stop();</span>
+<span class="nc" id="L145">    }</span>
+
+    public static void playPacmanEatsGhost() {
+        try {
+<span class="nc" id="L149">            pacmanEatsGhost.stop();</span>
+<span class="nc" id="L150">            pacmanEatsGhost.play();</span>
+<span class="pc" id="L151">        } catch(NullPointerException e){}</span>
+<span class="fc" id="L152">    }</span>
+
+    public static void stopPacmanEatsGhost() {
+<span class="nc" id="L155">        pacmanEatsGhost.stop();</span>
+<span class="nc" id="L156">    }</span>
+
+    public static void loopGhostSiren1() {
+<span class="nc bnc" id="L159" title="All 2 branches missed.">        if (!powerUp.isPlaying()) {</span>
+<span class="nc" id="L160">            stopPowerUp();</span>
+<span class="nc" id="L161">            ghostSiren1.loop();</span>
+        }
+<span class="nc" id="L163">    }</span>
+
+    public static void stopGhostSiren1() {
+<span class="nc" id="L166">        ghostSiren1.stop();</span>
+<span class="nc" id="L167">    }</span>
+
+    public static void playPacmanDies() {
+        try {
+<span class="nc" id="L171">            pacmanDies.stop();</span>
+<span class="nc" id="L172">            pacmanDies.play();</span>
+<span class="pc" id="L173">        } catch(NullPointerException e){}</span>
+<span class="fc" id="L174">    }</span>
+
+    public static void stopMenuTheme() {
+<span class="nc" id="L177">        menuTheme.stop();</span>
+<span class="nc" id="L178">    }</span>
+
+    public static void playEatSound() {
+        try {
+<span class="fc bfc" id="L182" title="All 2 branches covered.">            if (prev.equals(&quot;ka&quot;)) {</span>
+<span class="fc" id="L183">                prev = &quot;wa&quot;;</span>
+<span class="nc" id="L184">                stopKa();</span>
+<span class="nc" id="L185">                playWa();</span>
+            } else {
+<span class="fc" id="L187">                prev = &quot;ka&quot;;</span>
+<span class="nc" id="L188">                stopWa();</span>
+<span class="nc" id="L189">                playKa();</span>
+            }
+<span class="pc" id="L191">        }catch(NullPointerException e){}</span>
+<span class="fc" id="L192">    }</span>
+
+    public static void powerPelletEatenSound(){
+        try{
+<span class="fc" id="L196">            SoundFX.playEatSound();</span>
+<span class="nc" id="L197">            SoundFX.stopGhostSiren1();</span>
+<span class="nc" id="L198">            SoundFX.playPowerUp();</span>
+<span class="pc" id="L199">        }catch(NullPointerException e){}</span>
+<span class="fc" id="L200">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

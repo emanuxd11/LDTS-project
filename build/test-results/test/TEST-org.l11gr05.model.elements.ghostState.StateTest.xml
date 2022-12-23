@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.l11gr05.model.elements.ghostState.StateTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-12-23T20:59:50" hostname="Air-de-Davide.Home" time="0.023">
+  <properties/>
+  <testcase name="isBeingChasedTrueTest()" classname="org.l11gr05.model.elements.ghostState.StateTest" time="0.002"/>
+  <testcase name="increaseTimerHunterTest()" classname="org.l11gr05.model.elements.ghostState.StateTest" time="0.004"/>
+  <testcase name="isBeingChasedFalseTest()" classname="org.l11gr05.model.elements.ghostState.StateTest" time="0.005"/>
+  <testcase name="increaseTimerHouseTest()" classname="org.l11gr05.model.elements.ghostState.StateTest" time="0.003"/>
+  <testcase name="increaseTimerChasedTest()" classname="org.l11gr05.model.elements.ghostState.StateTest" time="0.0"/>
+  <testcase name="increaseTimerEatenTest()" classname="org.l11gr05.model.elements.ghostState.StateTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
