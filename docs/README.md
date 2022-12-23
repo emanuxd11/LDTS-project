@@ -25,10 +25,6 @@ This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pi
 
 Since we wanted to have a game that implements independently the objects in the game, the entity that manipulates them and the way the game is shown to the user, we realized that we would need to implement a specific architecture for our game.
 
-**The Pattern:**
-
-To solve this problem, we decided to use MVC Architecture. MVC means Model, Viewer, Controller, respectively. The model stores the data of the game and has methods that allows the controller to manipulate them. In its turn, the controller has implemented the logic of the game and is the entity that is responsible for use the data from the model, coherently. The viewer has two main functionalities. The first one, is to show to the player what is happening in the game. The second one, is to read the input that is given by the player and send it to the controller.
-
 **Implementation:**
 
 The MVC architecture is implemented this way:
@@ -39,6 +35,9 @@ The MVC architecture is implemented this way:
   <b><i>Fig 1. MVC architecture UML</i></b>
 </p>
 
+**The Pattern:**
+
+To solve this problem, we decided to use MVC Architecture. MVC means Model, Viewer, Controller, respectively. The model stores the data of the game and has methods that allows the controller to manipulate them. In its turn, the controller has implemented the logic of the game and is the entity that is responsible for use the data from the model, coherently. The viewer has two main functionalities. The first one, is to show to the player what is happening in the game. The second one, is to read the input that is given by the player and send it to the controller.
 
 #### THE GHOSTS NEED TO CHANGE THEIR STATE WHEN PACMAN EATS A POWERPELLET
 
@@ -50,10 +49,6 @@ We needed a way for ghosts to immediately know if pacman has eaten a PowerPellet
 
 To achieve this we decided to use an Observer Pattern. The PowerPellets are laid throughout the Arena, therefore if the arena is an observable entity, the ghosts, as observers, can be immediately notified of this and change to the ChasedState.
 
-**Consequences**
-
-The use of the Observer Pattern prevents the Ghosts from having to constantly have to check the Arena for any changes to it.
-
 **Implementation**
 
 <p align="center">
@@ -62,6 +57,15 @@ The use of the Observer Pattern prevents the Ghosts from having to constantly ha
 <p align="center">
   <b><i>Fig 2. Observer Pattern UML</i></b>
 </p>
+
+**Consequences**
+
+The use of the Observer Pattern prevents the Ghosts from having to constantly have to check the Arena for any changes to it.
+
+- [Arena](../pacman/src/main/java/org/l11gr05/model/arena/Arena.java)
+- [Observable](../pacman/src/main/java/org/l11gr05/model/arena/IArenaObservable.java)
+- [Observer](../pacman/src/main/java/org/l11gr05/model/elements/ghost/IArenaObserver.java)
+- [Ghost](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
 
 #### WE NEED AN INTERFACE FOR LANTERNA
 
@@ -73,10 +77,6 @@ Lanterna is a complex library, and as such we need a way to interface with it mo
 
 The best way to do this, is by using the Facade Pattern. This structural design pattern provides a simplified interface to any complex subsystem.
 
-**Consequences**
-
-With this design pattern we can easily change the library we are using just by creating a class that implements GUI. To use Lanterna we created the [LanternaGUI class](../pacman/src/main/java/org/l11gr05/gui/LanternaGUI.java).
-
 **Implementation**
 
 <p align="center">
@@ -85,6 +85,14 @@ With this design pattern we can easily change the library we are using just by c
 <p align="center">
   <b><i>Fig 3. FacadePattern UML</i></b>
 </p>
+
+**Consequences**
+
+With this design pattern we can just use the features we need through the class we created.
+
+- [Game](../pacman/src/main/java/org/l11gr05/Game.java)
+- [GUI](../pacman/src/main/java/org/l11gr05/gui/GUI.java)
+- [LanternaGUI class](../pacman/src/main/java/org/l11gr05/gui/LanternaGUI.java)
 
 #### THERE NEEDS TO BE A WAY TO CONTINUOUSLY PROCESS USER INPUT AND GAME STATE
 
@@ -202,7 +210,7 @@ This UML shows how all design patterns we used were mapped to our different clas
 </p>
 
 ### Link to mutation testing report
-[Mutation tests](../pacman/build/reports/????)
+[Mutation tests](https://paginas.fe.up.pt/~up202109860/)
 
 ### SELF-EVALUATION
 
