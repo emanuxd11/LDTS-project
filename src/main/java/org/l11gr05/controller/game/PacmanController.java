@@ -82,7 +82,6 @@ public class PacmanController extends GameController {
         this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());
         this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());
 
-
         if (this.getModel().getPacDots().isEmpty() && this.getModel().getPowerPellets().isEmpty()) {
             SoundFX.stopGameSounds();
             game.setState(new MenuState(new Menu()));
