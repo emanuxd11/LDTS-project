@@ -6,14 +6,13 @@ This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pi
 
 ### IMPLEMENTED FEATURES
 
-- **Position** - Partial implementation of element position and early testing.
+- **Menu** - An introductory screen that appears when the game is booted, it displays the name of the game and allows you to start the level when the "Play" option is selected or exit the game when the "Quit" option is selected by pressing the "ENTER" key.
+- **Player Character** - The player character (Pacman) will be able to move in 4 different directions depending on the key that is pressed: UP, when "W" is pressed, DOWN, when "S" is pressed, LEFT, when "A" is pressed and RIGHT, when "D" is pressed.
+- **Enemy Characters** - There are 4 enemy characters (Ghosts) which will chase Pacman until capture if in HunterState or run away from Pacman if in ChasedState. In the case of them being in HouseState or in EatenState they'll  be unreachable by Pacman.
 
 ### PLANNED FEATURES
 
-- **Menu** - An introductory screen that appears when the game is booted, it will display the name of the game, the creators and will allow you to start the first level when the "ENTER" key is pressed.
-- **Levels** - Multiple arenas through which the player will traverse in a set order.
-- **Player Character** - The player character (Pacman) will be able to move in 4 different directions depending on the key that is pressed: UP, when "W" is pressed, DOWN, when "S" is pressed, LEFT, when "A" is pressed and RIGHT, when "D" is pressed.
-- **Enemy Characters** - There will be 4 enemy characters (Ghosts) which will chase Pacman until capture if in HunterState or run away from Pacman if in ChasedState. In the case of them being in HouseState or in EatenState they'll stay still and be unreachable by Pacman.
+- **Levels** - An arena through which the player will traverse in a set order.
 - **PacDots** - Pacman will be able to eat PacDots laid throughout the arena. When the arena is fully cleared of PacDots, the player will either proceed to the next one, or, in the case of it being the last one, will reach the WIN screen and beat the game.
 - **PowerPellets** - These have all the features of normal PacDots, but, in addition of that, will cause them to change from HunterState to ChasedState through an ObserverPattern, during which Pacman will be able to eat ghosts.
 - **Game Over Screen** - When Pacman is caught by the Ghosts, this screen will appear and allow you to restart the level.
@@ -36,19 +35,37 @@ To achieve this we decided to use an Observer Pattern. The PowerPellets are laid
 
 The use of the Observer Pattern prevents the Ghosts from having to constantly have to check the Arena for any changes to it.
 
+**Implementation**
+
+<p align="center" justify="center">
+  <img src="images/UML/StatePatternGhosts.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 1. ???</i></b>
+</p>
+
 #### WE NEED TO MAKE SURE THE GAME/MENU CONTROLLER AND VIEWER ARE ONLY USED IN THE PROPER CIRCUMSTANCES
 
 **Problem in Context**
 
-We need a way for us to use the Controller and Viewer properly depending on whether we are in-game or in the menu.
+.
 
 **The Pattern**
 
-The best way to achieve this is to use the Abstract Factory Pattern. This way we can avoid the redundancy that other ways to do this would require.
+Facade Pattern
 
 **Consequences**
 
-With the Abstract Factory Pattern, one can make sure that the Controllers and Viewers are appropriately used.
+.
+
+**Implementation**
+
+<p align="center" justify="center">
+  <img src="images/UML/FacadePattern.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. ???</i></b>
+</p>
 
 #### THERE NEEDS TO BE A WAY TO CONTINUOUSLY PROCESS USER INPUT AND GAME STATE
 
@@ -64,6 +81,15 @@ One can achieve this with the Game Loop Pattern. Through this, with each turn of
 
 The game time can be tracked independently of processor speed and, therefore, process user input without blocking and continuously update the game state.
 
+**Implementation**
+
+<p align="center" justify="center">
+  <img src="images/UML/???.png"/>
+</p>
+<p align="center">
+  <b><i>Fig ?. ???</i></b>
+</p>
+
 #### WE NEED A STATE FOR BOTH IN-GAME AND MENU
 
 **Problem in Context**
@@ -77,6 +103,15 @@ The best way for this to be efficiently achieved is through a State Pattern.
 **Consequences**
 
 Through this you can have different states for game and menu, which allows one to easily change the behaviour of the game depending on the situation.
+
+**Implementation**
+
+<p align="center" justify="center">
+  <img src="images/UML/???.png"/>
+</p>
+<p align="center">
+  <b><i>Fig ?. ???</i></b>
+</p>
 
 #### THE GHOSTS NEED TO MOVE IN TANDEM WITH THEIR STATES
 
@@ -92,6 +127,15 @@ The best way for this to be efficiently achieved is through a State Pattern.
 
 This way, their state can be implemented in a way that is coherent with their movement.
 
+**Implementation**
+
+<p align="center" justify="center">
+  <img src="images/UML/???.png"/>
+</p>
+<p align="center">
+  <b><i>Fig ?. ???</i></b>
+</p>
+
 #### EACH GHOST NEEDS TO BEHAVE DIFFERENTLY FROM EACH OTHER
 
 **Problem in Context**
@@ -106,17 +150,40 @@ With a Strategy Pattern, one can keep shared context, while still allowing for d
 
 This way one can easily create different behaviour for each ghost without requiring redundant code.
 
+**Implementation**
+
+<p align="center" justify="center">
+  <img src="images/UML/???.png"/>
+</p>
+<p align="center">
+  <b><i>Fig ?. ???</i></b>
+</p>
+
 #### IMPLEMENTATION
 
 This UML shows how all design patterns we used were mapped to our different classes.
 
-![UML](./finalUML.png)
+<p align="center" justify="center">
+  <img src="images/UML/finalUML.png"/>
+</p>
+<p align="center">
+  <b><i>Fig ?. Complete UML</i></b>
+</p>
 
 ### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
-### TESTING
+## Testing
 
-- [Early Position Testing](./pacman/src/test/java/PositionTest.java)
+### Screenshot of coverage report
+<p align="center" justify="center">
+  <img src="images/screenshots/?????"/>
+</p>
+<p align="center">
+  <b><i>Fig ?. Code coverage screenshot</i></b>
+</p>
+
+### Link to mutation testing report
+[Mutation tests](../build/reports/????)
 
 ### SELF-EVALUATION
 
