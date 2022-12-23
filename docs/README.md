@@ -32,11 +32,11 @@ To solve this problem, we decided to use MVC Architecture. MVC means Model, View
 **Implementation:**
 
 The MVC architecture is implemented this way:
-<p align="center" justify="center">
+<p align="center">
   <img src="images/MVC_Architecture.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 1. ???</i></b>
+  <b><i>Fig 1. MVC architecture UML</i></b>
 </p>
 
 
@@ -56,7 +56,7 @@ The use of the Observer Pattern prevents the Ghosts from having to constantly ha
 
 **Implementation**
 
-<p align="center" justify="center">
+<p align="center">
   <img src="images/UML/ObserverPattern.png"/>
 </p>
 <p align="center">
@@ -79,7 +79,7 @@ Facade Pattern
 
 **Implementation**
 
-<p align="center" justify="center">
+<p align="center">
   <img src="images/UML/FacadePattern.png"/>
 </p>
 <p align="center">
@@ -102,7 +102,7 @@ The game time can be tracked independently of processor speed and, therefore, pr
 
 **Implementation**
 
-<p align="center" justify="center">
+<p align="center">
   <img src="images/UML/???.png"/>
 </p>
 <p align="center">
@@ -125,7 +125,7 @@ Through this you can have different states for game and menu, which allows one t
 
 **Implementation**
 
-<p align="center" justify="center">
+<p align="center">
   <img src="images/UML/StatePatternGame.png"/>
 </p>
 <p align="center">
@@ -148,7 +148,7 @@ This way, their state can be implemented in a way that is coherent with their mo
 
 **Implementation**
 
-<p align="center" justify="center">
+<p align="center">
   <img src="images/UML/StatePatternGhosts.png"/>
 </p>
 <p align="center">
@@ -171,7 +171,7 @@ This way one can easily create different behaviour for each ghost without requir
 
 **Implementation**
 
-<p align="center" justify="center">
+<p align="center">
   <img src="images/UML/StrategyPattern.png"/>
 </p>
 <p align="center">
@@ -182,7 +182,7 @@ This way one can easily create different behaviour for each ghost without requir
 
 This UML shows how all design patterns we used were mapped to our different classes.
 
-<p align="center" justify="center">
+<p align="center">
   <img src="images/UML/UMLFINAL.png"/>
 </p>
 <p align="center">
@@ -194,7 +194,7 @@ This UML shows how all design patterns we used were mapped to our different clas
 ## Testing
 
 ### Screenshot of coverage report
-<p align="center" justify="center">
+<p align="center">
   <img src="images/screenshots/?????"/>
 </p>
 <p align="center">
@@ -202,7 +202,7 @@ This UML shows how all design patterns we used were mapped to our different clas
 </p>
 
 ### Link to mutation testing report
-[Mutation tests](../build/reports/????)
+[Mutation tests](../pacman/build/reports/????)
 
 ### SELF-EVALUATION
 

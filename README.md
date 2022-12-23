@@ -11,18 +11,18 @@ You can find more details about the development of the game [here](docs/README.m
 The following screenshots illustrate the general look of our game, as well as the divergent functionalities:
 ### Game preview
 
-<p align="center" justify="center">
+<p align="center">
   <img src="docs/gifs/preview.gif"/>
 </p>
 <p align="center">
-  <b><i>Gif 1. Sneak peak into the game</i></b>
+  <b><i>Gif 1. Sneak peek into the game</i></b>
 </p>
 <br>
 <br />
 
 ### Menu
 
-<p align="center" justify="center">
+<p align="center">
   <img src="docs/gifs/menu.gif"/>
 </p>
 <p align="center">
@@ -33,7 +33,7 @@ The following screenshots illustrate the general look of our game, as well as th
 
 ### Chased State
 
-<p align="center" justify="center">
+<p align="center">
   <img src="docs/gifs/Chased Ghosts.gif"/>
 </p>
 <p align="center">
