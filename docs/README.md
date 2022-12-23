@@ -216,6 +216,8 @@ This UML shows how all design patterns we used were mapped to our different clas
 </p>
 
 ### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
+#### **Large Class**
+The Arena Class contains a lot of methods. We think that the usage of a high quantity of methods is warranted in this case, because it is through the Arena class that all the different elements of the actual game interact.
 
 ## Testing
 
