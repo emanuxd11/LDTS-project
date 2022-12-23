@@ -63,15 +63,15 @@ The use of the Observer Pattern prevents the Ghosts from having to constantly ha
   <b><i>Fig 2. Observer Pattern UML</i></b>
 </p>
 
-#### WE NEED TO MAKE SURE THE GAME/MENU CONTROLLER AND VIEWER ARE ONLY USED IN THE PROPER CIRCUMSTANCES
+#### WE NEED AN INTERFACE FOR LANTERNA
 
 **Problem in Context**
 
-.
+Lanterna is a complex library, and as such we need a way to interface with it more easily
 
 **The Pattern**
 
-Facade Pattern
+The best way to do this, is by using the Facade Pattern. This structural design pattern provides a simplified interface to any complex subsystem.
 
 **Consequences**
 
