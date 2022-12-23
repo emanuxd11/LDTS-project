@@ -219,12 +219,16 @@ This UML shows how all design patterns we used were mapped to our different clas
 
 #### **Large Class**
 The Arena Class contains a lot of methods. We think that the usage of a high quantity of methods is warranted in this case, because it is through the Arena class that all the different elements of the actual game interact, and, as such, this is inevitable.
-
-
+- [Arena Class](../src/main/java/org/l11gr05/model/arena/Arena.java)
+- [Pacman's step() method](../src/main/java/org/l11gr05/controller/game/PacmanController.java)
+- [moveGhost() method](../src/main/java/org/l11gr05/controller/game/GhostController.java)
 #### **Dead code**
-This method was cleaned after we realized the it was not being used
+This method was cleaned after we realized that it was not being used
 <p align="center">
   <img src="images/deadcode.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 8. Dead Code</i></b>
 </p>
 
 ## Testing
@@ -234,7 +238,7 @@ This method was cleaned after we realized the it was not being used
   <img src="images/TestCoverage.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 8. Code coverage screenshot</i></b>
+  <b><i>Fig 9. Code coverage screenshot</i></b>
 </p>
 
 ### Link to mutation testing report
