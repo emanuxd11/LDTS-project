@@ -59,7 +59,7 @@ The use of the Observer Pattern prevents the Ghosts from having to constantly ha
 **Implementation**
 
 <p align="center" justify="center">
-  <img src="images/UML/StatePatternGhosts.png"/>
+  <img src="images/UML/ObserverPattern.png"/>
 </p>
 <p align="center">
   <b><i>Fig 2. ???</i></b>
