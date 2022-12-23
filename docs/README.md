@@ -22,6 +22,21 @@ This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pi
 
 ### DESIGN
 
+### The Architecture
+
+**Problem in Context:**
+
+Since we wanted to have a game that implementes independently the objects in the game, the entety that manipulates them and the way the game is shown to the user, we realized that we would need to implement a specific arquitecture for our game.
+
+**The Pattern:**
+
+To solve this problem, we decided to use MVC Architecture. MVC means Model, Viewer, Controller, respectively. The model stores the data of the game and has methods that allows the controller to manipulate them. In its turn, the controller has implemented the logic of the game and is the entity that is responsible for use the data from the model, coherently. The viewer has two main functionalities. The first one, is to show to the player what is happening in the game. The second one, is to read the input that is given by the player and send it to the controller.
+
+**Implementation:**
+
+The MVC architecture is implemented this way:
+
+
 #### THE GHOSTS NEED TO CHANGE THEIR STATE WHEN PACMAN EATS A POWERPELLET
 
 **Problem in Context**
