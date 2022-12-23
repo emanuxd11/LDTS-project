@@ -9,15 +9,13 @@ This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pi
 - **Menu** - An introductory screen that appears when the game is booted, it displays the name of the game and allows you to start the level when the "Play" option is selected or exit the game when the "Quit" option is selected by pressing the "ENTER" key.
 - **Player Character** - The player character (Pacman) will be able to move in 4 different directions depending on the key that is pressed: UP, when "W" is pressed, DOWN, when "S" is pressed, LEFT, when "A" is pressed and RIGHT, when "D" is pressed.
 - **Enemy Characters** - There are 4 enemy characters (Ghosts) which will chase Pacman until capture if in HunterState or run away from Pacman if in ChasedState. In the case of them being in HouseState or in EatenState they'll  be unreachable by Pacman.
+- **Level** - An arena through which the player will collect PacDots and PowerPellets while escaping the ghosts.
+- **PacDots** - Pacman can eat PacDots laid throughout the arena, increasing the score the player has. When the arena is fully cleared of PacDots, the player will reach the high score, beating the game and return to the main menu.
+- **PowerPellets** - These have all the features of normal PacDots, but, in addition of that, will cause the ghosts to change from HunterState to ChasedState through an ObserverPattern, during which Pacman will be able to eat ghosts.
+- **Game Over** - When Pacman is caught by the Ghosts, a death sound will play, and you will be brought back to the main menu.
 
 ### PLANNED FEATURES
-
-- **Levels** - An arena through which the player will traverse in a set order.
-- **PacDots** - Pacman will be able to eat PacDots laid throughout the arena. When the arena is fully cleared of PacDots, the player will either proceed to the next one, or, in the case of it being the last one, will reach the WIN screen and beat the game.
-- **PowerPellets** - These have all the features of normal PacDots, but, in addition of that, will cause them to change from HunterState to ChasedState through an ObserverPattern, during which Pacman will be able to eat ghosts.
-- **Game Over Screen** - When Pacman is caught by the Ghosts, this screen will appear and allow you to restart the level.
-- **Win Screen** - When the final level is finished, this screen will appear.
-- **Multiple Lives** - Pacman will have 3 Lives per level,which means he will be able to be caught up to 2 times and simply respawn in the center of the level, before the Game Over Screen is reached and the points the player caught in the level are reset.
+- **Multiple Levels** - Initially there were plans for multiple levels in the game.
 
 ### DESIGN
 
@@ -25,7 +23,7 @@ This game was developed by Tomás Pinto Macedo (up202108811@fe.up.pt), Davide Pi
 
 **Problem in Context:**
 
-Since we wanted to have a game that implementes independently the objects in the game, the entety that manipulates them and the way the game is shown to the user, we realized that we would need to implement a specific arquitecture for our game.
+Since we wanted to have a game that implements independently the objects in the game, the entity that manipulates them and the way the game is shown to the user, we realized that we would need to implement a specific architecture for our game.
 
 **The Pattern:**
 
