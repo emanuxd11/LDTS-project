@@ -58,10 +58,10 @@ To achieve this we decided to use an Observer Pattern. The PowerPellets are laid
   <b><i>Fig 2. Observer Pattern UML</i></b>
 </p>
 
-- [Arena](../pacman/src/main/java/org/l11gr05/model/arena/Arena.java)
-- [Observable](../pacman/src/main/java/org/l11gr05/model/arena/IArenaObservable.java)
-- [Observer](../pacman/src/main/java/org/l11gr05/model/elements/ghost/IArenaObserver.java)
-- [Ghost](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
+- [Arena](../src/main/java/org/l11gr05/model/arena/Arena.java)
+- [Observable](../src/main/java/org/l11gr05/model/arena/IArenaObservable.java)
+- [Observer](../src/main/java/org/l11gr05/model/elements/ghost/IArenaObserver.java)
+- [Ghost](../src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
 
 **Consequences**
 
@@ -86,9 +86,9 @@ The best way to do this, is by using the Facade Pattern. This structural design 
   <b><i>Fig 3. FacadePattern UML</i></b>
 </p>
 
-- [Game](../pacman/src/main/java/org/l11gr05/Game.java)
-- [GUI](../pacman/src/main/java/org/l11gr05/gui/GUI.java)
-- [LanternaGUI class](../pacman/src/main/java/org/l11gr05/gui/LanternaGUI.java)
+- [Game](../src/main/java/org/l11gr05/Game.java)
+- [GUI](../src/main/java/org/l11gr05/gui/GUI.java)
+- [LanternaGUI class](../src/main/java/org/l11gr05/gui/LanternaGUI.java)
 
 **Consequences**
 
@@ -129,12 +129,12 @@ The best way for this to be efficiently achieved is through a State Pattern.
   <b><i>Fig 4. State Pattern UML for the game and menu</i></b>
 </p>
 
-- [Game](../pacman/src/main/java/org/l11gr05/Game.java)
-- [State](../pacman/src/main/java/org/l11gr05/states/State.java)
-- [GameState](../pacman/src/main/java/org/l11gr05/states/GameState.java)
-- [Arena](../pacman/src/main/java/org/l11gr05/model/arena/Arena.java)
-- [MenuState](../pacman/src/main/java/org/l11gr05/states/MenuState.java)
-- [Menu](../pacman/src/main/java/org/l11gr05/menu/Menu.java)
+- [Game](../src/main/java/org/l11gr05/Game.java)
+- [State](../src/main/java/org/l11gr05/states/State.java)
+- [GameState](../src/main/java/org/l11gr05/states/GameState.java)
+- [Arena](../src/main/java/org/l11gr05/model/arena/Arena.java)
+- [MenuState](../src/main/java/org/l11gr05/states/MenuState.java)
+- [Menu](../src/main/java/org/l11gr05/menu/Menu.java)
 
 **Consequences**
 
@@ -159,12 +159,12 @@ The best way for this to be efficiently achieved is through a State Pattern.
   <b><i>Fig 5. State Pattern UML for the Ghost states</i></b>
 </p>
 
-- [Ghost](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
-- [IGhostState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/IGhostState.java)
-- [HunterState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/HunterState.java)
-- [ChasedState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/ChasedState.java)
-- [HouseState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/HouseState.java)
-- [EatenState](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStates/EatenState.java)
+- [Ghost](../src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
+- [IGhostState](../src/main/java/org/l11gr05/model/elements/ghost/ghostStates/IGhostState.java)
+- [HunterState](../src/main/java/org/l11gr05/model/elements/ghost/ghostStates/HunterState.java)
+- [ChasedState](../src/main/java/org/l11gr05/model/elements/ghost/ghostStates/ChasedState.java)
+- [HouseState](../src/main/java/org/l11gr05/model/elements/ghost/ghostStates/HouseState.java)
+- [EatenState](../src/main/java/org/l11gr05/model/elements/ghost/ghostStates/EatenState.java)
 
 **Consequences**
 
@@ -189,16 +189,16 @@ With a Strategy Pattern, one can keep shared context, while still allowing for d
   <b><i>Fig 6. Strategy Pattern UML</i></b>
 </p>
 
-- [Ghost](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
-- [Blinky](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Blinky.java)
-- [Pinky](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Pinky.java)
-- [Clyde](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Clyde.java)
-- [Inky](../pacman/src/main/java/org/l11gr05/model/elements/ghost/Inky.java)
-- [IGhostStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/IGhostStrategy.java)
-- [BlinkyStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/BlinkyStrategy.java)
-- [PinkyStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/PinkyStrategy.java)
-- [ClydeStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/ClydeStrategy.java)
-- [InkyStrategy](../pacman/src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/InkyStrategy.java)
+- [Ghost](../src/main/java/org/l11gr05/model/elements/ghost/Ghost.java)
+- [Blinky](../src/main/java/org/l11gr05/model/elements/ghost/Blinky.java)
+- [Pinky](../src/main/java/org/l11gr05/model/elements/ghost/Pinky.java)
+- [Clyde](../src/main/java/org/l11gr05/model/elements/ghost/Clyde.java)
+- [Inky](../src/main/java/org/l11gr05/model/elements/ghost/Inky.java)
+- [IGhostStrategy](../src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/IGhostStrategy.java)
+- [BlinkyStrategy](../src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/BlinkyStrategy.java)
+- [PinkyStrategy](../src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/PinkyStrategy.java)
+- [ClydeStrategy](../src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/ClydeStrategy.java)
+- [InkyStrategy](../src/main/java/org/l11gr05/model/elements/ghost/ghostStrategies/InkyStrategy.java)
 
 **Consequences**
 
