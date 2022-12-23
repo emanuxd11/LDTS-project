@@ -2,7 +2,6 @@ package org.l11gr05.model.elements.ghost.ghostStrategies;
 
 import org.l11gr05.model.elements.Pacman;
 import org.l11gr05.model.elements.Position;
-
 import java.util.List;
 
 public class PinkyStrategy implements IGhostStrategy {

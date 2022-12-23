@@ -1,7 +1,6 @@
 package org.l11gr05.viewer;
 
 import org.l11gr05.gui.GUI;
-
 import java.io.IOException;
 
 public abstract class Viewer<T> {

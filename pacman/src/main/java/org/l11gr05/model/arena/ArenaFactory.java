@@ -1,7 +1,6 @@
 package org.l11gr05.model.arena;
 
 import org.l11gr05.model.elements.*;
-import org.l11gr05.model.elements.*;
 import org.l11gr05.model.elements.ghost.Blinky;
 import org.l11gr05.model.elements.ghost.Clyde;
 import org.l11gr05.model.elements.ghost.Inky;
@@ -10,7 +9,6 @@ import org.l11gr05.model.elements.ghost.ghostStrategies.BlinkyStrategy;
 import org.l11gr05.model.elements.ghost.ghostStrategies.ClydeStrategy;
 import org.l11gr05.model.elements.ghost.ghostStrategies.InkyStrategy;
 import org.l11gr05.model.elements.ghost.ghostStrategies.PinkyStrategy;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;

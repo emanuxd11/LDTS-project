@@ -39,16 +39,8 @@ public class LanternaGUI implements GUI {
         this.screen = createScreen(terminal);
         TextGraphics graphics = this.screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString("#111111"));
-        graphics.fillRectangle(new TerminalPosition(1, 1), new TerminalSize(width, height), ' ');
-    }
-
-    private void floorColor(String color, int width, int height){
-        TextGraphics graphics = this.screen.newTextGraphics();
-        graphics.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF"));
-        graphics.fillRectangle(new TerminalPosition(1, 1), new TerminalSize(width, height), ' ');
-        TextGraphics tg = screen.newTextGraphics();
-        tg.setForegroundColor(TextColor.Factory.fromString(color));
-        tg.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
+        graphics.fillRectangle(new TerminalPosition(1, 1),
+                new TerminalSize(width, height), ' ');
     }
 
     private Screen createScreen(Terminal terminal) throws IOException {
@@ -60,7 +52,8 @@ public class LanternaGUI implements GUI {
         return screen;
     }
 
-    private Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig) throws IOException {
+    private Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig)
+            throws IOException {
         TerminalSize terminalSize = new TerminalSize(width, height + 1);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory()
                 .setInitialTerminalSize(terminalSize);
@@ -70,7 +63,8 @@ public class LanternaGUI implements GUI {
         return terminal;
     }
 
-    private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
+    private AWTTerminalFontConfiguration loadSquareFont()
+            throws URISyntaxException, FontFormatException, IOException {
 
         URL resource = getClass().getClassLoader().getResource("fonts/pacman.ttf");
         File fontFile = new File(resource.toURI());
@@ -178,7 +172,6 @@ public class LanternaGUI implements GUI {
             drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', "#FFB852");
         }
     }
-    /* ****************************************************************************** */
 
     @Override
     public void drawText(Position position, String text, String color) {

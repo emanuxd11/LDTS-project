@@ -13,7 +13,6 @@ import org.l11gr05.viewer.game.ghost.BlinkyViewer;
 import org.l11gr05.viewer.game.ghost.ClydeViewer;
 import org.l11gr05.viewer.game.ghost.InkyViewer;
 import org.l11gr05.viewer.game.ghost.PinkyViewer;
-
 import java.util.List;
 
 public class GameViewer extends Viewer<Arena> {

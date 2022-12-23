@@ -93,4 +93,5 @@ public class LanternaGUITest {
         GUI.ACTION expected = GUI.ACTION.SELECT;
         Assertions.assertEquals(expected, gui.getNextAction());
     }
+
 }

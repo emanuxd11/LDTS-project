@@ -4,7 +4,6 @@ import org.l11gr05.model.elements.ghost.Ghost;
 import org.l11gr05.sound.SoundFX;
 
 public class ChasedState implements IGhostState {
-
     private int timer;
     private Ghost ghost;
 

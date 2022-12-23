@@ -46,7 +46,8 @@ public class PacmanController extends GameController {
         }
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
-            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
+            if(this.getModel().isGhost(
+                    this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
                 alreadyPlayed = true;
                 SoundFX.stopGameSounds();
                 SoundFX.playPacmanDies();
@@ -68,7 +69,8 @@ public class PacmanController extends GameController {
                 else movePacman(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()));
             }
             case 'r' -> {
-                if (pacmanPosition.getX() >= this.getModel().getWidth()-1 || pacmanPosition.getY() > this.getModel().getHeight()) {
+                if (pacmanPosition.getX() >= this.getModel().getWidth()-1 ||
+                        pacmanPosition.getY() > this.getModel().getHeight()) {
                     movePacman(this.getModel().getLeftPortal());
                     this.getModel().getPacman().setDirection('r');
                 }
@@ -86,7 +88,8 @@ public class PacmanController extends GameController {
         }
 
         if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {
-            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {
+            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() ==
+                    HunterState.class) {
                 if (!alreadyPlayed) {
                     SoundFX.stopGameSounds();
                     SoundFX.playPacmanDies();

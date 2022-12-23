@@ -5,7 +5,6 @@ import org.l11gr05.menu.Menu;
 import org.l11gr05.sound.SoundFX;
 import org.l11gr05.states.MenuState;
 import org.l11gr05.states.State;
-
 import javax.sound.sampled.*;
 import java.awt.*;
 import java.io.IOException;
@@ -23,10 +22,6 @@ public class Game {
 
     public void setState(State state) {
         this.state = state;
-    }
-
-    public State getState(){
-        return this.state;
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
