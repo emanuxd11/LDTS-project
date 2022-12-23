@@ -67,7 +67,7 @@ The use of the Observer Pattern prevents the Ghosts from having to constantly ha
 
 **Problem in Context**
 
-Lanterna is a complex library, and as such we need a way to interface with it more easily
+Lanterna is a complex library, and as such we need a way to interface with it more easily.
 
 **The Pattern**
 
@@ -75,7 +75,7 @@ The best way to do this, is by using the Facade Pattern. This structural design 
 
 **Consequences**
 
-.
+With this design pattern we can easily change the library we are using just by creating a class that implements GUI. To use Lanterna we created the [LanternaGUI class](../pacman/src/main/java/org/l11gr05/gui/LanternaGUI.java).
 
 **Implementation**
 
