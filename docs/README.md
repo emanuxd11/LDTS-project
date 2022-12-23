@@ -108,6 +108,8 @@ One can achieve this with the Game Loop Pattern. Through this, with each turn of
 
 The game time can be tracked independently of processor speed and, therefore, process user input without blocking and continuously update the game state.
 
+**Implementation**
+
 #### WE NEED A STATE FOR BOTH IN-GAME AND MENU
 
 **Problem in Context**
@@ -128,7 +130,7 @@ Through this you can have different states for game and menu, which allows one t
   <img src="images/UML/StatePatternGame.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 5. State Pattern UML for the game and menu</i></b>
+  <b><i>Fig 4. State Pattern UML for the game and menu</i></b>
 </p>
 
 #### THE GHOSTS NEED TO MOVE IN TANDEM WITH THEIR STATES
@@ -151,7 +153,7 @@ This way, their state can be implemented in a way that is coherent with their mo
   <img src="images/UML/StatePatternGhosts.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 6. State Pattern UML for the Ghost states</i></b>
+  <b><i>Fig 5. State Pattern UML for the Ghost states</i></b>
 </p>
 
 #### EACH GHOST NEEDS TO BEHAVE DIFFERENTLY FROM EACH OTHER
@@ -174,7 +176,7 @@ This way one can easily create different behaviour for each ghost without requir
   <img src="images/UML/StrategyPattern.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 7. Strategy Pattern UML</i></b>
+  <b><i>Fig 6. Strategy Pattern UML</i></b>
 </p>
 
 #### IMPLEMENTATION
@@ -185,7 +187,7 @@ This UML shows how all design patterns we used were mapped to our different clas
   <img src="images/UML/UMLFINAL.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 8. Complete UML</i></b>
+  <b><i>Fig 7. Complete UML</i></b>
 </p>
 
 ### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
@@ -197,7 +199,7 @@ This UML shows how all design patterns we used were mapped to our different clas
   <img src="images/TestCoverage.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 9. Code coverage screenshot</i></b>
+  <b><i>Fig 8. Code coverage screenshot</i></b>
 </p>
 
 ### Link to mutation testing report
