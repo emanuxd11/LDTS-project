@@ -4,6 +4,7 @@ import org.l11gr05.model.elements.Wall;
 import org.l11gr05.gui.GUI;
 
 public class WallViewer implements IElementViewer<Wall> {
+
     @Override
     public void draw(Wall wall, GUI gui) {
         gui.drawWall(wall.getPosition());

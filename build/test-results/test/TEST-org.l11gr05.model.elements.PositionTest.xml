@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.l11gr05.model.elements.PositionTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-23T20:59:49" hostname="Air-de-Davide.Home" time="0.011">
+<testsuite name="org.l11gr05.model.elements.PositionTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-23T21:35:36" hostname="archvivobook" time="0.008">
   <properties/>
   <testcase name="equalsNullTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
-  <testcase name="equals()" classname="org.l11gr05.model.elements.PositionTest" time="0.002"/>
+  <testcase name="equals()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
   <testcase name="noParametersTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
   <testcase name="same()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
-  <testcase name="equalsDifferentClassTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
-  <testcase name="setXTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
-  <testcase name="setYTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
+  <testcase name="equalsDifferentClassTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.001"/>
+  <testcase name="setXTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.001"/>
+  <testcase name="setYTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.001"/>
   <testcase name="differs()" classname="org.l11gr05.model.elements.PositionTest" time="0.001"/>
-  <testcase name="getXTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
+  <testcase name="getXTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.001"/>
   <testcase name="getYTest()" classname="org.l11gr05.model.elements.PositionTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

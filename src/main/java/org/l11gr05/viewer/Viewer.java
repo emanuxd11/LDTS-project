@@ -4,6 +4,7 @@ import org.l11gr05.gui.GUI;
 import java.io.IOException;
 
 public abstract class Viewer<T> {
+
     private final T model;
 
     public Viewer(T model) {

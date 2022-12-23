@@ -59,153 +59,147 @@ public class LanternaGUI implements GUI {
 <span class="nc" id="L59">                .setInitialTerminalSize(terminalSize);</span>
 <span class="nc" id="L60">        terminalFactory.setForceAWTOverSwing(true);</span>
 <span class="nc" id="L61">        terminalFactory.setTerminalEmulatorFontConfiguration(fontConfig);</span>
-<span class="nc" id="L62">        Terminal terminal = terminalFactory.createTerminal();</span>
-<span class="nc" id="L63">        return terminal;</span>
+<span class="nc" id="L62">        return terminalFactory.createTerminal();</span>
     }
 
     private AWTTerminalFontConfiguration loadSquareFont()
             throws URISyntaxException, FontFormatException, IOException {
 
-<span class="nc" id="L69">        URL resource = getClass().getClassLoader().getResource(&quot;fonts/pacman.ttf&quot;);</span>
-<span class="nc" id="L70">        File fontFile = new File(resource.toURI());</span>
+<span class="nc" id="L68">        URL resource = getClass().getClassLoader().getResource(&quot;fonts/pacman.ttf&quot;);</span>
+<span class="nc" id="L69">        File fontFile = new File(resource.toURI());</span>
 
-<span class="nc" id="L72">        Font font = Font.createFont(TRUETYPE_FONT, fontFile);</span>
+<span class="nc" id="L71">        Font font = Font.createFont(TRUETYPE_FONT, fontFile);</span>
 
-<span class="nc" id="L74">        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();</span>
-<span class="nc" id="L75">        ge.registerFont(font);</span>
+<span class="nc" id="L73">        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();</span>
+<span class="nc" id="L74">        ge.registerFont(font);</span>
 
-<span class="nc" id="L77">        Font loadedFont = font.deriveFont(PLAIN, 24);</span>
+<span class="nc" id="L76">        Font loadedFont = font.deriveFont(PLAIN, 24);</span>
 
-<span class="nc" id="L79">        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);</span>
-<span class="nc" id="L80">        return fontConfig;</span>
-
+<span class="nc" id="L78">        return AWTTerminalFontConfiguration.newInstance(loadedFont);</span>
     }
 
     public ACTION getNextAction() throws IOException {
-<span class="fc" id="L85">        KeyStroke keyStroke = screen.pollInput();</span>
-<span class="pc bpc" id="L86" title="1 of 2 branches missed.">        if (keyStroke == null) return ACTION.NONE;</span>
+<span class="fc" id="L82">        KeyStroke keyStroke = screen.pollInput();</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">        if (keyStroke == null) return ACTION.NONE;</span>
 
-<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;</span>
-<span class="pc bpc" id="L89" title="1 of 4 branches missed.">        if (keyStroke.getKeyType() == KeyType.Character &amp;&amp; keyStroke.getCharacter() == 'q') return ACTION.QUIT;</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;</span>
+<span class="pc bpc" id="L86" title="1 of 4 branches missed.">        if (keyStroke.getKeyType() == KeyType.Character &amp;&amp; keyStroke.getCharacter() == 'q') return ACTION.QUIT;</span>
 
-<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;</span>
-<span class="fc bfc" id="L92" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;</span>
-<span class="fc bfc" id="L93" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;</span>
-<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;</span>
 
-<span class="fc bfc" id="L96" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;</span>
 
-<span class="fc" id="L98">        return ACTION.NONE;</span>
+<span class="fc" id="L95">        return ACTION.NONE;</span>
     }
 
     @Override
     public void drawPacman(Pacman pacman) {
-<span class="nc bnc" id="L103" title="All 4 branches missed.">        switch (pacman.getDirection()) {</span>
-<span class="nc" id="L104">            case 'r' -&gt; drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '&lt;', &quot;#FFD700&quot;);</span>
-<span class="nc" id="L105">            case 'u' -&gt; drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), 'V', &quot;#FFD700&quot;);</span>
-<span class="nc" id="L106">            case 'd' -&gt; drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '^', &quot;#FFD700&quot;);</span>
-<span class="nc" id="L107">            default -&gt; drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '&gt;', &quot;#FFD700&quot;);</span>
+<span class="nc bnc" id="L100" title="All 4 branches missed.">        switch (pacman.getDirection()) {</span>
+<span class="nc" id="L101">            case 'r' -&gt; drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '&lt;', &quot;#FFD700&quot;);</span>
+<span class="nc" id="L102">            case 'u' -&gt; drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), 'V', &quot;#FFD700&quot;);</span>
+<span class="nc" id="L103">            case 'd' -&gt; drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '^', &quot;#FFD700&quot;);</span>
+<span class="nc" id="L104">            default -&gt; drawCharacter(pacman.getPosition().getX(), pacman.getPosition().getY(), '&gt;', &quot;#FFD700&quot;);</span>
         }
-<span class="nc" id="L109">    }</span>
+<span class="nc" id="L106">    }</span>
 
     @Override
     public void drawWall(Position position) {
-<span class="nc" id="L113">        paintSquare(position.getX(), position.getY(), &quot;#3333FF&quot;);</span>
-<span class="nc" id="L114">    }</span>
+<span class="nc" id="L110">        paintSquare(position.getX(), position.getY(), &quot;#3333FF&quot;);</span>
+<span class="nc" id="L111">    }</span>
 
     @Override
     public void drawPacDot(Position position) {
-<span class="nc" id="L118">        drawCharacter(position.getX(), position.getY(), '.', &quot;#FFFFFF&quot;);</span>
-<span class="nc" id="L119">    }</span>
+<span class="nc" id="L115">        drawCharacter(position.getX(), position.getY(), '.', &quot;#FFFFFF&quot;);</span>
+<span class="nc" id="L116">    }</span>
 
     @Override
     public void drawPowerPellet(Position position) {
-<span class="nc" id="L123">        drawCharacter(position.getX(), position.getY(), '*', &quot;#FFFFFF&quot;);</span>
-<span class="nc" id="L124">    }</span>
+<span class="nc" id="L120">        drawCharacter(position.getX(), position.getY(), '*', &quot;#FFFFFF&quot;);</span>
+<span class="nc" id="L121">    }</span>
 
     @Override
     public void drawBlinky(Blinky blinky) {
-<span class="nc bnc" id="L128" title="All 2 branches missed.">        if(blinky.getState().getClass() == ChasedState.class){</span>
-<span class="nc bnc" id="L129" title="All 4 branches missed.">            if (blinky.getState().getTimer() % 2 == 0 &amp;&amp; blinky.getState().getTimer() &gt; 30)</span>
-<span class="nc" id="L130">            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', &quot;#FFFFFF&quot;);</span>
-<span class="nc" id="L131">            else drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', &quot;#5259E8&quot;);</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">        if(blinky.getState().getClass() == ChasedState.class){</span>
+<span class="nc bnc" id="L126" title="All 4 branches missed.">            if (blinky.getState().getTimer() % 2 == 0 &amp;&amp; blinky.getState().getTimer() &gt; 30)</span>
+<span class="nc" id="L127">            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', &quot;#FFFFFF&quot;);</span>
+<span class="nc" id="L128">            else drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', &quot;#5259E8&quot;);</span>
         }
         else {
-<span class="nc" id="L134">            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', &quot;#FF0000&quot;);</span>
+<span class="nc" id="L131">            drawCharacter(blinky.getPosition().getX(), blinky.getPosition().getY(), '@', &quot;#FF0000&quot;);</span>
         }
-<span class="nc" id="L136">    }</span>
+<span class="nc" id="L133">    }</span>
 
     @Override
     public void drawPinky(Pinky pinky) {
-<span class="nc bnc" id="L140" title="All 2 branches missed.">        if(pinky.getState().getClass() == ChasedState.class){</span>
-<span class="nc bnc" id="L141" title="All 4 branches missed.">            if (pinky.getState().getTimer() % 2 == 0 &amp;&amp; pinky.getState().getTimer() &gt; 30)</span>
-<span class="nc" id="L142">            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', &quot;#FFFFFF&quot;);</span>
-<span class="nc" id="L143">            else drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', &quot;#5259E8&quot;);</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">        if(pinky.getState().getClass() == ChasedState.class){</span>
+<span class="nc bnc" id="L138" title="All 4 branches missed.">            if (pinky.getState().getTimer() % 2 == 0 &amp;&amp; pinky.getState().getTimer() &gt; 30)</span>
+<span class="nc" id="L139">            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', &quot;#FFFFFF&quot;);</span>
+<span class="nc" id="L140">            else drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', &quot;#5259E8&quot;);</span>
+        } else {
+<span class="nc" id="L142">            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', &quot;#FFB8FF&quot;);</span>
         }
-        else {
-<span class="nc" id="L146">            drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', &quot;#FFB8FF&quot;);</span>
-        }
-<span class="nc" id="L148">    }</span>
+<span class="nc" id="L144">    }</span>
 
     @Override
     public void drawInky(Inky inky) {
-<span class="nc bnc" id="L152" title="All 2 branches missed.">        if(inky.getState().getClass() == ChasedState.class){</span>
-<span class="nc bnc" id="L153" title="All 4 branches missed.">            if (inky.getState().getTimer() % 2 == 0 &amp;&amp; inky.getState().getTimer() &gt; 30)</span>
-<span class="nc" id="L154">            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', &quot;#FFFFFF&quot;);</span>
-<span class="nc" id="L155">            else drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', &quot;#5259E8&quot;);</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">        if(inky.getState().getClass() == ChasedState.class){</span>
+<span class="nc bnc" id="L149" title="All 4 branches missed.">            if (inky.getState().getTimer() % 2 == 0 &amp;&amp; inky.getState().getTimer() &gt; 30)</span>
+<span class="nc" id="L150">            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', &quot;#FFFFFF&quot;);</span>
+<span class="nc" id="L151">            else drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', &quot;#5259E8&quot;);</span>
 
+        } else {
+<span class="nc" id="L154">            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', &quot;#00FFFF&quot;);</span>
         }
-        else {
-<span class="nc" id="L159">            drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', &quot;#00FFFF&quot;);</span>
-        }
-<span class="nc" id="L161">    }</span>
+<span class="nc" id="L156">    }</span>
 
     @Override
     public void drawClyde(Clyde clyde) {
-<span class="nc bnc" id="L165" title="All 2 branches missed.">        if(clyde.getState().getClass() == ChasedState.class){</span>
-<span class="nc bnc" id="L166" title="All 4 branches missed.">            if (clyde.getState().getTimer() % 2 == 0 &amp;&amp; clyde.getState().getTimer() &gt;30)</span>
-<span class="nc" id="L167">            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', &quot;#FFFFFF&quot;);</span>
+<span class="nc bnc" id="L160" title="All 2 branches missed.">        if(clyde.getState().getClass() == ChasedState.class){</span>
+<span class="nc bnc" id="L161" title="All 4 branches missed.">            if (clyde.getState().getTimer() % 2 == 0 &amp;&amp; clyde.getState().getTimer() &gt;30)</span>
+<span class="nc" id="L162">            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', &quot;#FFFFFF&quot;);</span>
             else
-<span class="nc" id="L169">                drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', &quot;#5259E8&quot;);</span>
+<span class="nc" id="L164">                drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', &quot;#5259E8&quot;);</span>
+        } else {
+<span class="nc" id="L166">            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', &quot;#FFB852&quot;);</span>
         }
-        else {
-<span class="nc" id="L172">            drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', &quot;#FFB852&quot;);</span>
-        }
-<span class="nc" id="L174">    }</span>
+<span class="nc" id="L168">    }</span>
 
     @Override
     public void drawText(Position position, String text, String color) {
-<span class="nc" id="L178">        TextGraphics tg = screen.newTextGraphics();</span>
-<span class="nc" id="L179">        tg.setForegroundColor(TextColor.Factory.fromString(color));</span>
-<span class="nc" id="L180">        tg.putString(position.getX(), position.getY(), text);</span>
-<span class="nc" id="L181">    }</span>
+<span class="nc" id="L172">        TextGraphics tg = screen.newTextGraphics();</span>
+<span class="nc" id="L173">        tg.setForegroundColor(TextColor.Factory.fromString(color));</span>
+<span class="nc" id="L174">        tg.putString(position.getX(), position.getY(), text);</span>
+<span class="nc" id="L175">    }</span>
 
     private void drawCharacter(int x, int y, char c, String color) {
-<span class="nc" id="L184">        TextGraphics tg = screen.newTextGraphics();</span>
-<span class="nc" id="L185">        tg.setForegroundColor(TextColor.Factory.fromString(color));</span>
-<span class="nc" id="L186">        tg.putString(x, y + 1, &quot;&quot; + c);</span>
-<span class="nc" id="L187">    }</span>
+<span class="nc" id="L178">        TextGraphics tg = screen.newTextGraphics();</span>
+<span class="nc" id="L179">        tg.setForegroundColor(TextColor.Factory.fromString(color));</span>
+<span class="nc" id="L180">        tg.putString(x, y + 1, &quot;&quot; + c);</span>
+<span class="nc" id="L181">    }</span>
 
     private void paintSquare(int x, int y, String color) {
-<span class="nc" id="L190">        TextGraphics tg = screen.newTextGraphics();</span>
-<span class="nc" id="L191">        tg.setBackgroundColor(TextColor.Factory.fromString(color));</span>
-<span class="nc" id="L192">        tg.setForegroundColor(TextColor.Factory.fromString(color));</span>
-<span class="nc" id="L193">        tg.putString(x, y + 1, &quot;#&quot;);</span>
-<span class="nc" id="L194">    }</span>
+<span class="nc" id="L184">        TextGraphics tg = screen.newTextGraphics();</span>
+<span class="nc" id="L185">        tg.setBackgroundColor(TextColor.Factory.fromString(color));</span>
+<span class="nc" id="L186">        tg.setForegroundColor(TextColor.Factory.fromString(color));</span>
+<span class="nc" id="L187">        tg.putString(x, y + 1, &quot;#&quot;);</span>
+<span class="nc" id="L188">    }</span>
 
     @Override
     public void clear() {
-<span class="nc" id="L198">        screen.clear();</span>
-<span class="nc" id="L199">    }</span>
+<span class="nc" id="L192">        screen.clear();</span>
+<span class="nc" id="L193">    }</span>
 
     @Override
     public void refresh() throws IOException {
-<span class="nc" id="L203">        screen.refresh();</span>
-<span class="nc" id="L204">    }</span>
+<span class="nc" id="L197">        screen.refresh();</span>
+<span class="nc" id="L198">    }</span>
 
     @Override
     public void close() throws IOException {
-<span class="nc" id="L208">        screen.close();</span>
-<span class="nc" id="L209">    }</span>
+<span class="nc" id="L202">        screen.close();</span>
+<span class="nc" id="L203">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

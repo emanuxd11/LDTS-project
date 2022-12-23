@@ -1,9 +1,11 @@
 package org.l11gr05.model.arena;
+
 import org.l11gr05.model.elements.*;
 import org.l11gr05.model.elements.ghost.*;
 import org.l11gr05.sound.SoundFX;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Arena implements IArenaObservable {
     private static final int MAX_MULTIPLIER = 8;
@@ -18,13 +20,9 @@ public class Arena implements IArenaObservable {
     private Inky inky;
     private Pinky pinky;
     private Clyde clyde;
-
     private Position hunterSpawn;
-
     private Position houseSpawn;
-
     private Position leftPortal;
-
     private Position rightPortal;
 
     List<Wall> walls = new ArrayList<Wall>();
@@ -173,7 +171,7 @@ public class Arena implements IArenaObservable {
                     return;
                 }
             }
-        }catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
 
         multiplier = 1;
     }
@@ -193,7 +191,7 @@ public class Arena implements IArenaObservable {
                     return ghost;
                 }
             }
-        } catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
 
         return null;
     }

@@ -3,6 +3,7 @@ package org.l11gr05.model.elements;
 import java.io.*;
 
 public class Pacman extends Element {
+
     private char direction;
     private int score;
     private int highScore;

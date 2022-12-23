@@ -43,15 +43,15 @@ public class GameViewer extends Viewer<Arena> {
         PinkyViewer pinkyViewer = new PinkyViewer();
         ClydeViewer clydeViewer = new ClydeViewer();
 
-        for (Wall wall : walls){
+        for (Wall wall : walls) {
             wallViewer.draw(wall, gui);
         }
 
-        for (PacDot pacDot : pacDots){
+        for (PacDot pacDot : pacDots) {
             pacDotViewer.draw(pacDot, gui);
         }
 
-        for (PowerPellet powerPellet : powerPellets){
+        for (PowerPellet powerPellet : powerPellets) {
             powerPelletsViewer.draw(powerPellet, gui);
         }
 
@@ -61,6 +61,5 @@ public class GameViewer extends Viewer<Arena> {
         clydeViewer.draw(this.getModel().getClyde(), gui);
 
         pacmanViewer.draw(pacman, gui);
-
     }
 }

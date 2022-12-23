@@ -6,7 +6,7 @@ public class EatenState implements IGhostState {
 
     private final Ghost ghost;
 
-<span class="fc" id="L9">    public EatenState(Ghost ghost){</span>
+<span class="fc" id="L9">    public EatenState(Ghost ghost) {</span>
 <span class="fc" id="L10">        this.ghost = ghost;</span>
 <span class="fc" id="L11">    }</span>
 
@@ -17,22 +17,19 @@ public class EatenState implements IGhostState {
 <span class="fc" id="L17">    }</span>
 
     @Override
-    public void pacManCollision() {
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L20">    public void pacManCollision() {}</span>
 
     @Override
     public boolean isBeingChased() {
-<span class="fc" id="L25">        return false;</span>
+<span class="fc" id="L24">        return false;</span>
     }
 
     @Override
     public int getTimer() {
-<span class="fc" id="L30">        return 0;</span>
+<span class="fc" id="L29">        return 0;</span>
     }
 
     @Override
-    public void increaseTimer() {
-
-<span class="fc" id="L36">    }</span>
+<span class="fc" id="L33">    public void increaseTimer() {}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

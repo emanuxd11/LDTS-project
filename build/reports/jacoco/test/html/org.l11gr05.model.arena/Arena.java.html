@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Arena.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pacman</a> &gt; <a href="index.source.html" class="el_package">org.l11gr05.model.arena</a> &gt; <span class="el_source">Arena.java</span></div><h1>Arena.java</h1><pre class="source lang-java linenums">package org.l11gr05.model.arena;
+
 import org.l11gr05.model.elements.*;
 import org.l11gr05.model.elements.ghost.*;
 import org.l11gr05.sound.SoundFX;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Arena implements IArenaObservable {
     private static final int MAX_MULTIPLIER = 8;
@@ -18,216 +20,212 @@ public class Arena implements IArenaObservable {
     private Inky inky;
     private Pinky pinky;
     private Clyde clyde;
-
     private Position hunterSpawn;
-
     private Position houseSpawn;
-
     private Position leftPortal;
-
     private Position rightPortal;
 
-<span class="fc" id="L30">    List&lt;Wall&gt; walls = new ArrayList&lt;Wall&gt;();</span>
-<span class="fc" id="L31">    List&lt;PacDot&gt; pacDots = new ArrayList&lt;PacDot&gt;();</span>
-<span class="fc" id="L32">    List&lt;PowerPellet&gt; powerPellets = new ArrayList&lt;PowerPellet&gt;();</span>
+<span class="fc" id="L28">    List&lt;Wall&gt; walls = new ArrayList&lt;Wall&gt;();</span>
+<span class="fc" id="L29">    List&lt;PacDot&gt; pacDots = new ArrayList&lt;PacDot&gt;();</span>
+<span class="fc" id="L30">    List&lt;PowerPellet&gt; powerPellets = new ArrayList&lt;PowerPellet&gt;();</span>
 
     public Blinky getBlinky() {
-<span class="fc" id="L35">        return this.blinky;</span>
+<span class="fc" id="L33">        return this.blinky;</span>
     }
 
     public Inky getInky() {
-<span class="nc" id="L39">        return this.inky;</span>
+<span class="nc" id="L37">        return this.inky;</span>
     }
 
     public Pinky getPinky() {
-<span class="nc" id="L43">        return this.pinky;</span>
+<span class="nc" id="L41">        return this.pinky;</span>
     }
 
     public Clyde getClyde() {
-<span class="nc" id="L47">        return this.clyde;</span>
+<span class="nc" id="L45">        return this.clyde;</span>
     }
 
     public void setBlinky(Blinky blinky) {
-<span class="fc" id="L51">        this.blinky = blinky;</span>
-<span class="fc" id="L52">    }</span>
+<span class="fc" id="L49">        this.blinky = blinky;</span>
+<span class="fc" id="L50">    }</span>
 
     public void setInky(Inky inky) {
-<span class="fc" id="L55">        this.inky = inky;</span>
-<span class="fc" id="L56">    }</span>
+<span class="fc" id="L53">        this.inky = inky;</span>
+<span class="fc" id="L54">    }</span>
 
     public void setPinky(Pinky pinky) {
-<span class="fc" id="L59">        this.pinky = pinky;</span>
-<span class="fc" id="L60">    }</span>
+<span class="fc" id="L57">        this.pinky = pinky;</span>
+<span class="fc" id="L58">    }</span>
 
     public void setClyde(Clyde clyde) {
-<span class="fc" id="L63">        this.clyde = clyde;</span>
-<span class="fc" id="L64">    }</span>
+<span class="fc" id="L61">        this.clyde = clyde;</span>
+<span class="fc" id="L62">    }</span>
 
     public List&lt;PacDot&gt; getPacDots() {
-<span class="fc" id="L67">        return this.pacDots;</span>
+<span class="fc" id="L65">        return this.pacDots;</span>
     }
 
     public Pacman getPacman() {
-<span class="fc" id="L71">        return this.pacman;</span>
+<span class="fc" id="L69">        return this.pacman;</span>
     }
 
     public void setPacman(Pacman pacman) {
-<span class="fc" id="L75">        this.pacman = pacman;</span>
-<span class="fc" id="L76">    }</span>
+<span class="fc" id="L73">        this.pacman = pacman;</span>
+<span class="fc" id="L74">    }</span>
 
-<span class="fc" id="L78">    public Arena() {</span>
-<span class="fc" id="L79">        this.multiplier = 1;</span>
-<span class="fc" id="L80">        this.width = 0;</span>
-<span class="fc" id="L81">        this.height = 0;</span>
-<span class="fc" id="L82">    }</span>
+<span class="fc" id="L76">    public Arena() {</span>
+<span class="fc" id="L77">        this.multiplier = 1;</span>
+<span class="fc" id="L78">        this.width = 0;</span>
+<span class="fc" id="L79">        this.height = 0;</span>
+<span class="fc" id="L80">    }</span>
 
     public void setSize(int width, int height) {
-<span class="fc" id="L85">        this.width = width;</span>
-<span class="fc" id="L86">        this.height = height;</span>
-<span class="fc" id="L87">    }</span>
+<span class="fc" id="L83">        this.width = width;</span>
+<span class="fc" id="L84">        this.height = height;</span>
+<span class="fc" id="L85">    }</span>
 
     public void addWall(Wall wall) {
-<span class="fc" id="L90">        walls.add(wall);</span>
-<span class="fc" id="L91">    }</span>
+<span class="fc" id="L88">        walls.add(wall);</span>
+<span class="fc" id="L89">    }</span>
 
     public void addPacDot(PacDot pacDot) {
-<span class="fc" id="L94">        pacDots.add(pacDot);</span>
-<span class="fc" id="L95">    }</span>
+<span class="fc" id="L92">        pacDots.add(pacDot);</span>
+<span class="fc" id="L93">    }</span>
 
     public List&lt;Ghost&gt; getGhosts() {
-<span class="fc" id="L98">        List&lt;Ghost&gt; temp = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L99">        temp.add(this.blinky);</span>
-<span class="fc" id="L100">        temp.add(this.clyde);</span>
-<span class="fc" id="L101">        temp.add(this.inky);</span>
-<span class="fc" id="L102">        temp.add(this.pinky);</span>
-<span class="fc" id="L103">        return temp;</span>
+<span class="fc" id="L96">        List&lt;Ghost&gt; temp = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L97">        temp.add(this.blinky);</span>
+<span class="fc" id="L98">        temp.add(this.clyde);</span>
+<span class="fc" id="L99">        temp.add(this.inky);</span>
+<span class="fc" id="L100">        temp.add(this.pinky);</span>
+<span class="fc" id="L101">        return temp;</span>
     }
 
     public void addPowerPellet(PowerPellet powerPellet) {
-<span class="fc" id="L107">        powerPellets.add(powerPellet);</span>
-<span class="fc" id="L108">    }</span>
+<span class="fc" id="L105">        powerPellets.add(powerPellet);</span>
+<span class="fc" id="L106">    }</span>
 
     public int getHeight() {
-<span class="fc" id="L111">        return this.height;</span>
+<span class="fc" id="L109">        return this.height;</span>
     }
 
     public List&lt;Wall&gt; getWalls() {
-<span class="fc" id="L115">        return this.walls;</span>
+<span class="fc" id="L113">        return this.walls;</span>
     }
 
     public List&lt;PowerPellet&gt; getPowerPellets() {
-<span class="fc" id="L119">        return this.powerPellets;</span>
+<span class="fc" id="L117">        return this.powerPellets;</span>
     }
 
     public int getWidth() {
-<span class="fc" id="L123">        return this.width;</span>
+<span class="fc" id="L121">        return this.width;</span>
     }
 
     public boolean isEmpty(Position position) {
-<span class="fc bfc" id="L127" title="All 2 branches covered.">        for (Wall wall : walls)</span>
-<span class="pc bpc" id="L128" title="1 of 2 branches missed.">            if (wall.getPosition().equals(position))</span>
-<span class="fc" id="L129">                return false;</span>
-<span class="fc" id="L130">        return true;</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">        for (Wall wall : walls)</span>
+<span class="pc bpc" id="L126" title="1 of 2 branches missed.">            if (wall.getPosition().equals(position))</span>
+<span class="fc" id="L127">                return false;</span>
+<span class="fc" id="L128">        return true;</span>
     }
 
     @Override
     public void powerPelletEaten() {
-<span class="fc" id="L135">        this.blinky.powerPelletEaten();</span>
-<span class="fc" id="L136">        this.inky.powerPelletEaten();</span>
-<span class="fc" id="L137">        this.clyde.powerPelletEaten();</span>
-<span class="fc" id="L138">        this.pinky.powerPelletEaten();</span>
-<span class="fc" id="L139">    }</span>
+<span class="fc" id="L133">        this.blinky.powerPelletEaten();</span>
+<span class="fc" id="L134">        this.inky.powerPelletEaten();</span>
+<span class="fc" id="L135">        this.clyde.powerPelletEaten();</span>
+<span class="fc" id="L136">        this.pinky.powerPelletEaten();</span>
+<span class="fc" id="L137">    }</span>
 
     public void pacDotRemove(Position position) {
-<span class="fc bfc" id="L142" title="All 2 branches covered.">        for (int i = 0; i &lt; this.pacDots.size(); i++) {</span>
-<span class="fc bfc" id="L143" title="All 2 branches covered.">            if (pacDots.get(i).getPosition().equals(position)) {</span>
-<span class="fc" id="L144">                SoundFX.playEatSound();</span>
-<span class="fc" id="L145">                this.pacDots.remove(pacDots.get(i));</span>
-<span class="fc" id="L146">                this.getPacman().increaseScore(PACDOT_SCORE);</span>
-<span class="fc" id="L147">                break;</span>
+<span class="fc bfc" id="L140" title="All 2 branches covered.">        for (int i = 0; i &lt; this.pacDots.size(); i++) {</span>
+<span class="fc bfc" id="L141" title="All 2 branches covered.">            if (pacDots.get(i).getPosition().equals(position)) {</span>
+<span class="fc" id="L142">                SoundFX.playEatSound();</span>
+<span class="fc" id="L143">                this.pacDots.remove(pacDots.get(i));</span>
+<span class="fc" id="L144">                this.getPacman().increaseScore(PACDOT_SCORE);</span>
+<span class="fc" id="L145">                break;</span>
             }
         }
-<span class="fc" id="L150">    }</span>
+<span class="fc" id="L148">    }</span>
 
     public void powerPelletRemove(Position position) {
-<span class="pc bfc" id="L153" title="All 2 branches covered.">        for (int i = 0; i &lt; this.powerPellets.size(); i++) {</span>
-<span class="pc bpc" id="L154" title="1 of 2 branches missed.">            if (powerPellets.get(i).getPosition().equals(position)) {</span>
-<span class="fc" id="L155">                SoundFX.powerPelletEatenSound();</span>
-<span class="fc" id="L156">                this.powerPellets.remove(powerPellets.get(i));</span>
-<span class="fc" id="L157">                powerPelletEaten();</span>
-<span class="fc" id="L158">                this.getPacman().increaseScore(POWER_PELLET_SCORE);</span>
-<span class="fc" id="L159">                break;</span>
+<span class="pc bfc" id="L151" title="All 2 branches covered.">        for (int i = 0; i &lt; this.powerPellets.size(); i++) {</span>
+<span class="pc bpc" id="L152" title="1 of 2 branches missed.">            if (powerPellets.get(i).getPosition().equals(position)) {</span>
+<span class="fc" id="L153">                SoundFX.powerPelletEatenSound();</span>
+<span class="fc" id="L154">                this.powerPellets.remove(powerPellets.get(i));</span>
+<span class="fc" id="L155">                powerPelletEaten();</span>
+<span class="fc" id="L156">                this.getPacman().increaseScore(POWER_PELLET_SCORE);</span>
+<span class="fc" id="L157">                break;</span>
             }
         }
-<span class="fc" id="L162">    }</span>
+<span class="fc" id="L160">    }</span>
 
     private void resetMultiplier() {
-<span class="pc bpc" id="L165" title="1 of 2 branches missed.">        if (multiplier == MAX_MULTIPLIER) {</span>
-<span class="nc" id="L166">            multiplier = 1;</span>
-<span class="nc" id="L167">            return;</span>
+<span class="pc bpc" id="L163" title="1 of 2 branches missed.">        if (multiplier == MAX_MULTIPLIER) {</span>
+<span class="nc" id="L164">            multiplier = 1;</span>
+<span class="nc" id="L165">            return;</span>
         }
 
         try {
-<span class="fc bfc" id="L171" title="All 2 branches covered.">            for (Ghost ghost : this.getGhosts()) {</span>
-<span class="pc bpc" id="L172" title="1 of 2 branches missed.">                if (ghost.getState().isBeingChased()) {</span>
-<span class="nc" id="L173">                    return;</span>
+<span class="fc bfc" id="L169" title="All 2 branches covered.">            for (Ghost ghost : this.getGhosts()) {</span>
+<span class="pc bpc" id="L170" title="1 of 2 branches missed.">                if (ghost.getState().isBeingChased()) {</span>
+<span class="nc" id="L171">                    return;</span>
                 }
-<span class="fc" id="L175">            }</span>
-<span class="fc" id="L176">        }catch(NullPointerException e){}</span>
+<span class="fc" id="L173">            }</span>
+<span class="fc" id="L174">        } catch(NullPointerException ignored) {}</span>
 
-<span class="fc" id="L178">        multiplier = 1;</span>
-<span class="fc" id="L179">    }</span>
+<span class="fc" id="L176">        multiplier = 1;</span>
+<span class="fc" id="L177">    }</span>
 
     @Override
     public Ghost isGhost(Position position) {
         try {
-<span class="fc" id="L184">            resetMultiplier();</span>
-<span class="pc bpc" id="L185" title="1 of 2 branches missed.">            for (Ghost ghost : this.getGhosts()) {</span>
-<span class="fc bfc" id="L186" title="All 2 branches covered.">                if (ghost.getPosition().equals(position)) {</span>
-<span class="pc bpc" id="L187" title="1 of 2 branches missed.">                    if (ghost.getState().isBeingChased()) {</span>
-<span class="nc" id="L188">                        this.getPacman().increaseScore(</span>
+<span class="fc" id="L182">            resetMultiplier();</span>
+<span class="pc bpc" id="L183" title="1 of 2 branches missed.">            for (Ghost ghost : this.getGhosts()) {</span>
+<span class="fc bfc" id="L184" title="All 2 branches covered.">                if (ghost.getPosition().equals(position)) {</span>
+<span class="pc bpc" id="L185" title="1 of 2 branches missed.">                    if (ghost.getState().isBeingChased()) {</span>
+<span class="nc" id="L186">                        this.getPacman().increaseScore(</span>
                                 BASELINE_GHOST_SCORE * multiplier);
-<span class="nc" id="L190">                        multiplier *= 2;</span>
+<span class="nc" id="L188">                        multiplier *= 2;</span>
                     }
-<span class="fc" id="L192">                    ghost.pacManCollision();</span>
-<span class="fc" id="L193">                    return ghost;</span>
+<span class="fc" id="L190">                    ghost.pacManCollision();</span>
+<span class="fc" id="L191">                    return ghost;</span>
                 }
-<span class="fc" id="L195">            }</span>
-<span class="pc" id="L196">        } catch(NullPointerException e){}</span>
+<span class="fc" id="L193">            }</span>
+<span class="pc" id="L194">        } catch(NullPointerException ignored) {}</span>
 
-<span class="fc" id="L198">        return null;</span>
+<span class="fc" id="L196">        return null;</span>
     }
 
     public void setHunterSpawn(Position hunterSpawn){
-<span class="fc" id="L202">        this.hunterSpawn = hunterSpawn;</span>
-<span class="fc" id="L203">    }</span>
+<span class="fc" id="L200">        this.hunterSpawn = hunterSpawn;</span>
+<span class="fc" id="L201">    }</span>
 
     public Position getHunterSpawn(){
-<span class="nc" id="L206">        return this.hunterSpawn;</span>
+<span class="nc" id="L204">        return this.hunterSpawn;</span>
     }
 
     public void setHouseSpawn(Position houseSpawn){
-<span class="fc" id="L210">        this.houseSpawn = houseSpawn;</span>
-<span class="fc" id="L211">    }</span>
+<span class="fc" id="L208">        this.houseSpawn = houseSpawn;</span>
+<span class="fc" id="L209">    }</span>
 
     public Position getHouseSpawn(){
-<span class="nc" id="L214">        return this.houseSpawn;</span>
+<span class="nc" id="L212">        return this.houseSpawn;</span>
     }
 
     public void setLeftPortal(Position leftPortal){
-<span class="fc" id="L218">        this.leftPortal = leftPortal;</span>
-<span class="fc" id="L219">    }</span>
+<span class="fc" id="L216">        this.leftPortal = leftPortal;</span>
+<span class="fc" id="L217">    }</span>
 
     public Position getLeftPortal(){
-<span class="nc" id="L222">        return this.leftPortal;</span>
+<span class="nc" id="L220">        return this.leftPortal;</span>
     }
 
     public void setRightPortal(Position rightPortal){
-<span class="fc" id="L226">        this.rightPortal = rightPortal;</span>
-<span class="fc" id="L227">    }</span>
+<span class="fc" id="L224">        this.rightPortal = rightPortal;</span>
+<span class="fc" id="L225">    }</span>
 
     public Position getRightPortal(){
-<span class="nc" id="L230">        return this.rightPortal;</span>
+<span class="nc" id="L228">        return this.rightPortal;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

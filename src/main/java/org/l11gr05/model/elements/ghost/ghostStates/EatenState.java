@@ -6,7 +6,7 @@ public class EatenState implements IGhostState {
 
     private final Ghost ghost;
 
-    public EatenState(Ghost ghost){
+    public EatenState(Ghost ghost) {
         this.ghost = ghost;
     }
 
@@ -17,8 +17,7 @@ public class EatenState implements IGhostState {
     }
 
     @Override
-    public void pacManCollision() {
-    }
+    public void pacManCollision() {}
 
     @Override
     public boolean isBeingChased() {
@@ -31,7 +30,5 @@ public class EatenState implements IGhostState {
     }
 
     @Override
-    public void increaseTimer() {
-
-    }
+    public void increaseTimer() {}
 }

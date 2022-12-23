@@ -6,8 +6,7 @@ public class Wall extends Element {
         super(position);
     }
 
-    public Wall(int x, int y){
+    public Wall(int x, int y) {
         super(x, y);
     }
-
 }

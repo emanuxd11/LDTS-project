@@ -43,15 +43,15 @@ public class GameViewer extends Viewer&lt;Arena&gt; {
 <span class="fc" id="L43">        PinkyViewer pinkyViewer = new PinkyViewer();</span>
 <span class="fc" id="L44">        ClydeViewer clydeViewer = new ClydeViewer();</span>
 
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        for (Wall wall : walls){</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        for (Wall wall : walls) {</span>
 <span class="fc" id="L47">            wallViewer.draw(wall, gui);</span>
 <span class="fc" id="L48">        }</span>
 
-<span class="fc bfc" id="L50" title="All 2 branches covered.">        for (PacDot pacDot : pacDots){</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        for (PacDot pacDot : pacDots) {</span>
 <span class="fc" id="L51">            pacDotViewer.draw(pacDot, gui);</span>
 <span class="fc" id="L52">        }</span>
 
-<span class="fc bfc" id="L54" title="All 2 branches covered.">        for (PowerPellet powerPellet : powerPellets){</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        for (PowerPellet powerPellet : powerPellets) {</span>
 <span class="fc" id="L55">            powerPelletsViewer.draw(powerPellet, gui);</span>
 <span class="fc" id="L56">        }</span>
 
@@ -61,7 +61,6 @@ public class GameViewer extends Viewer&lt;Arena&gt; {
 <span class="fc" id="L61">        clydeViewer.draw(this.getModel().getClyde(), gui);</span>
 
 <span class="fc" id="L63">        pacmanViewer.draw(pacman, gui);</span>
-
-<span class="fc" id="L65">    }</span>
+<span class="fc" id="L64">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

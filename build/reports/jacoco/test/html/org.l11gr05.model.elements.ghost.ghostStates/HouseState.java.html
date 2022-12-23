@@ -5,16 +5,16 @@ import org.l11gr05.model.elements.ghost.Ghost;
 public class HouseState implements IGhostState{
 
     private int timer;
-    private Ghost ghost;
-
+    private final Ghost ghost;
     public static final int MAX_TIME = 20;
-<span class="fc" id="L11">    public HouseState(Ghost ghost){</span>
+
+<span class="fc" id="L11">    public HouseState(Ghost ghost) {</span>
 <span class="fc" id="L12">        this.timer = 0;</span>
 <span class="fc" id="L13">        this.ghost = ghost;</span>
 <span class="fc" id="L14">    }</span>
+
     @Override
-    public void powerPelletEaten() {
-<span class="fc" id="L17">    }</span>
+<span class="fc" id="L17">    public void powerPelletEaten() {}</span>
 
     @Override
     public void pacManCollision() {
@@ -26,11 +26,11 @@ public class HouseState implements IGhostState{
 <span class="fc" id="L26">        return false;</span>
     }
 
-    public void increaseTimer(){
+    public void increaseTimer() {
 <span class="fc" id="L30">        this.timer++;</span>
 <span class="fc" id="L31">    }</span>
 
-    public int getTimer(){
+    public int getTimer() {
 <span class="fc" id="L34">        return this.timer;</span>
     }
 }

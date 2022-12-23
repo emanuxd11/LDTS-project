@@ -9,5 +9,4 @@ public class Blinky extends Ghost {
         super(x, y, strategy);
         this.state = new HunterState(this);
     }
-
 }

@@ -63,7 +63,7 @@ public class SoundFX {
     }
 
     private void loop() {
-         try {
+        try {
             if (!clip.isOpen()) {
                 clip.open(audioStream);
             }
@@ -74,10 +74,10 @@ public class SoundFX {
     }
 
     private void stop() {
-         try {
+        try {
             clip.stop();
             clip.setMicrosecondPosition(0);
-        } catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     public static void stopGameSounds() {
@@ -88,37 +88,37 @@ public class SoundFX {
             stopWa();
             stopKa();
             stopPacmanEatsGhost();
-        } catch (NullPointerException e){}
+        } catch (NullPointerException ignored) {}
     }
 
     public static void loopMenuTheme() {
         try {
             menuTheme.loop();
-        }catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     public static void stopMenuSounds() {
         try {
             stopMenuTheme();
-        }catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     public static void playStartUp() {
         try {
             startUp.play();
-        }catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     public static void stopStartUp() {
         try {
             startUp.stop();
-        } catch (NullPointerException e){}
+        } catch (NullPointerException ignored) {}
     }
 
     private static void playWa() {
         try {
             wa.play();
-        } catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     private static void stopWa() {
@@ -137,7 +137,7 @@ public class SoundFX {
         try {
             powerUp.stop();
             powerUp.play();
-        } catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     public static void stopPowerUp() {
@@ -148,7 +148,7 @@ public class SoundFX {
         try {
             pacmanEatsGhost.stop();
             pacmanEatsGhost.play();
-        } catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     public static void stopPacmanEatsGhost() {
@@ -170,7 +170,7 @@ public class SoundFX {
         try {
             pacmanDies.stop();
             pacmanDies.play();
-        } catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     public static void stopMenuTheme() {
@@ -188,7 +188,7 @@ public class SoundFX {
                 stopWa();
                 playKa();
             }
-        }catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 
     public static void powerPelletEatenSound(){
@@ -196,6 +196,6 @@ public class SoundFX {
             SoundFX.playEatSound();
             SoundFX.stopGhostSiren1();
             SoundFX.playPowerUp();
-        }catch(NullPointerException e){}
+        } catch(NullPointerException ignored) {}
     }
 }

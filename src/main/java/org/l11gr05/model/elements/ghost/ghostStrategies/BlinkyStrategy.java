@@ -12,6 +12,7 @@ public class BlinkyStrategy implements IGhostStrategy {
         double min = 20000;
         int index = 0;
         double distance;
+
         for (int i = 0; i < possibles.size(); i++) {
             Position position = possibles.get(i);
             distance = Math.sqrt((Math.pow((position.getX() - pacmanPosition.getX()), 2) +
@@ -21,6 +22,7 @@ public class BlinkyStrategy implements IGhostStrategy {
                 index = i;
             }
         }
+
         return possibles.get(index);
     }
 

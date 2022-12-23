@@ -56,5 +56,4 @@ public abstract class Ghost extends Element implements IArenaObserver {
     public void pacManCollision() {
         this.state.pacManCollision();
     }
-
 }

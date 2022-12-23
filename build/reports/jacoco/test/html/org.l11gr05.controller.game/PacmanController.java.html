@@ -11,95 +11,96 @@ import org.l11gr05.states.MenuState;
 
 public class PacmanController extends GameController {
 <span class="fc" id="L13">    public boolean alreadyPlayed = false;</span>
+
     public PacmanController(Arena arena) {
-<span class="fc" id="L15">        super(arena);</span>
-<span class="fc" id="L16">    }</span>
+<span class="fc" id="L16">        super(arena);</span>
+<span class="fc" id="L17">    }</span>
 
     private boolean canMove(Position position) {
-<span class="fc" id="L19">        return getModel().isEmpty(position);</span>
+<span class="fc" id="L20">        return getModel().isEmpty(position);</span>
     }
 
     public void movePacman(Position position) {
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (canMove(position)) this.getModel().getPacman().setPosition(position);</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (canMove(position)) this.getModel().getPacman().setPosition(position);</span>
+<span class="fc" id="L25">    }</span>
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
-<span class="fc" id="L28">        Position pacmanPosition = this.getModel().getPacman().getPosition();</span>
+<span class="fc" id="L29">        Position pacmanPosition = this.getModel().getPacman().getPosition();</span>
 
-<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (action == GUI.ACTION.UP) {</span>
-<span class="fc bfc" id="L31" title="All 2 branches covered.">            if (canMove(new Position(pacmanPosition.getX(), pacmanPosition.getY() - 1))) {</span>
-<span class="fc" id="L32">                this.getModel().getPacman().setDirection('u');</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (action == GUI.ACTION.UP) {</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">            if (canMove(new Position(pacmanPosition.getX(), pacmanPosition.getY() - 1))) {</span>
+<span class="fc" id="L33">                this.getModel().getPacman().setDirection('u');</span>
             }
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        } else if (action == GUI.ACTION.DOWN) {</span>
-<span class="fc bfc" id="L35" title="All 2 branches covered.">            if (canMove(new Position(pacmanPosition.getX(), pacmanPosition.getY() + 1))) {</span>
-<span class="fc" id="L36">                this.getModel().getPacman().setDirection('d');</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        } else if (action == GUI.ACTION.DOWN) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if (canMove(new Position(pacmanPosition.getX(), pacmanPosition.getY() + 1))) {</span>
+<span class="fc" id="L37">                this.getModel().getPacman().setDirection('d');</span>
             }
-<span class="fc bfc" id="L38" title="All 2 branches covered.">        } else if (action == GUI.ACTION.RIGHT) {</span>
-<span class="fc bfc" id="L39" title="All 2 branches covered.">            if (canMove(new Position(pacmanPosition.getX() + 1, pacmanPosition.getY()))) {</span>
-<span class="fc" id="L40">                this.getModel().getPacman().setDirection('r');</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        } else if (action == GUI.ACTION.RIGHT) {</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            if (canMove(new Position(pacmanPosition.getX() + 1, pacmanPosition.getY()))) {</span>
+<span class="fc" id="L41">                this.getModel().getPacman().setDirection('r');</span>
             }
-<span class="fc bfc" id="L42" title="All 2 branches covered.">        } else if (action == GUI.ACTION.LEFT) {</span>
-<span class="fc bfc" id="L43" title="All 2 branches covered.">            if (canMove(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()))) {</span>
-<span class="fc" id="L44">                this.getModel().getPacman().setDirection('l');</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        } else if (action == GUI.ACTION.LEFT) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            if (canMove(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()))) {</span>
+<span class="fc" id="L45">                this.getModel().getPacman().setDirection('l');</span>
             }
         }
 
-<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {</span>
-<span class="nc" id="L49">            if(this.getModel().isGhost(</span>
-<span class="nc bnc" id="L50" title="All 2 branches missed.">                    this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {</span>
-<span class="nc" id="L51">                alreadyPlayed = true;</span>
-<span class="nc" id="L52">                SoundFX.stopGameSounds();</span>
-<span class="nc" id="L53">                SoundFX.playPacmanDies();</span>
-<span class="nc" id="L54">                game.setState(new MenuState(new Menu()));</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {</span>
+<span class="nc" id="L50">            if(this.getModel().isGhost(</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">                    this.getModel().getPacman().getPosition()).getState().getClass() == HunterState.class) {</span>
+<span class="nc" id="L52">                alreadyPlayed = true;</span>
+<span class="nc" id="L53">                SoundFX.stopGameSounds();</span>
+<span class="nc" id="L54">                SoundFX.playPacmanDies();</span>
+<span class="nc" id="L55">                game.setState(new MenuState(new Menu()));</span>
                 try{
-<span class="nc" id="L56">                    Thread.sleep(1500);</span>
-<span class="nc" id="L57">                }catch(InterruptedException ignored){}</span>
+<span class="nc" id="L57">                    Thread.sleep(1500);</span>
+<span class="nc" id="L58">                }catch(InterruptedException ignored){}</span>
             }
         }
 
-<span class="fc bfc" id="L61" title="All 5 branches covered.">        switch (this.getModel().getPacman().getDirection()) {</span>
-<span class="fc" id="L62">            case 'u' -&gt; movePacman(new Position(pacmanPosition.getX(), pacmanPosition.getY() - 1));</span>
-<span class="fc" id="L63">            case 'd' -&gt; movePacman((new Position(pacmanPosition.getX(), pacmanPosition.getY() + 1)));</span>
-<span class="fc" id="L64">            case 'l' -&gt; {</span>
-<span class="pc bpc" id="L65" title="2 of 4 branches missed.">                if (pacmanPosition.getX() &lt;= 0 || pacmanPosition.getY() &lt;= 0) {</span>
-<span class="nc" id="L66">                    this.getModel().getPacman().setDirection('l');</span>
-<span class="nc" id="L67">                    movePacman(this.getModel().getRightPortal());</span>
+<span class="fc bfc" id="L62" title="All 5 branches covered.">        switch (this.getModel().getPacman().getDirection()) {</span>
+<span class="fc" id="L63">            case 'u' -&gt; movePacman(new Position(pacmanPosition.getX(), pacmanPosition.getY() - 1));</span>
+<span class="fc" id="L64">            case 'd' -&gt; movePacman((new Position(pacmanPosition.getX(), pacmanPosition.getY() + 1)));</span>
+            case 'l' -&gt; {
+<span class="pc bpc" id="L66" title="2 of 4 branches missed.">                if (pacmanPosition.getX() &lt;= 0 || pacmanPosition.getY() &lt;= 0) {</span>
+<span class="nc" id="L67">                    this.getModel().getPacman().setDirection('l');</span>
+<span class="nc" id="L68">                    movePacman(this.getModel().getRightPortal());</span>
                 }
-<span class="fc" id="L69">                else movePacman(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()));</span>
-            }
+<span class="fc" id="L70">                else movePacman(new Position(pacmanPosition.getX() - 1, pacmanPosition.getY()));</span>
+<span class="fc" id="L71">            }</span>
             case 'r' -&gt; {
-<span class="pc bpc" id="L72" title="1 of 2 branches missed.">                if (pacmanPosition.getX() &gt;= this.getModel().getWidth()-1 ||</span>
-<span class="pc bpc" id="L73" title="1 of 2 branches missed.">                        pacmanPosition.getY() &gt; this.getModel().getHeight()) {</span>
-<span class="nc" id="L74">                    movePacman(this.getModel().getLeftPortal());</span>
-<span class="nc" id="L75">                    this.getModel().getPacman().setDirection('r');</span>
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">                if (pacmanPosition.getX() &gt;= this.getModel().getWidth()-1 ||</span>
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">                        pacmanPosition.getY() &gt; this.getModel().getHeight()) {</span>
+<span class="nc" id="L75">                    movePacman(this.getModel().getLeftPortal());</span>
+<span class="nc" id="L76">                    this.getModel().getPacman().setDirection('r');</span>
                 }
-<span class="fc" id="L77">                else movePacman(new Position(pacmanPosition.getX() + 1, pacmanPosition.getY()));</span>
+<span class="fc" id="L78">                else movePacman(new Position(pacmanPosition.getX() + 1, pacmanPosition.getY()));</span>
             }
         }
 
-<span class="fc" id="L81">        this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());</span>
-<span class="fc" id="L82">        this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());</span>
+<span class="fc" id="L82">        this.getModel().pacDotRemove(this.getModel().getPacman().getPosition());</span>
+<span class="fc" id="L83">        this.getModel().powerPelletRemove(this.getModel().getPacman().getPosition());</span>
 
 
-<span class="pc bpc" id="L85" title="2 of 4 branches missed.">        if (this.getModel().getPacDots().isEmpty() &amp;&amp; this.getModel().getPowerPellets().isEmpty()) {</span>
-<span class="fc" id="L86">            SoundFX.stopGameSounds();</span>
-<span class="fc" id="L87">            game.setState(new MenuState(new Menu()));</span>
+<span class="pc bpc" id="L86" title="2 of 4 branches missed.">        if (this.getModel().getPacDots().isEmpty() &amp;&amp; this.getModel().getPowerPellets().isEmpty()) {</span>
+<span class="fc" id="L87">            SoundFX.stopGameSounds();</span>
+<span class="fc" id="L88">            game.setState(new MenuState(new Menu()));</span>
         }
 
-<span class="fc bfc" id="L90" title="All 2 branches covered.">        if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {</span>
-<span class="pc bpc" id="L91" title="1 of 2 branches missed.">            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() ==</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (this.getModel().isGhost(this.getModel().getPacman().getPosition()) != null) {</span>
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">            if(this.getModel().isGhost(this.getModel().getPacman().getPosition()).getState().getClass() ==</span>
                     HunterState.class) {
-<span class="pc bpc" id="L93" title="1 of 2 branches missed.">                if (!alreadyPlayed) {</span>
-<span class="fc" id="L94">                    SoundFX.stopGameSounds();</span>
-<span class="fc" id="L95">                    SoundFX.playPacmanDies();</span>
-<span class="fc" id="L96">                    game.setState(new MenuState(new Menu()));</span>
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">                if (!alreadyPlayed) {</span>
+<span class="fc" id="L95">                    SoundFX.stopGameSounds();</span>
+<span class="fc" id="L96">                    SoundFX.playPacmanDies();</span>
+<span class="fc" id="L97">                    game.setState(new MenuState(new Menu()));</span>
                     try{
-<span class="fc" id="L98">                        Thread.sleep(1500);</span>
-<span class="pc" id="L99">                    }catch(InterruptedException ignored){}</span>
+<span class="fc" id="L99">                        Thread.sleep(1500);</span>
+<span class="pc" id="L100">                    }catch(InterruptedException ignored){}</span>
                 }
             }
         }
-<span class="fc" id="L103">    }</span>
+<span class="fc" id="L104">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public class InkyStrategy implements IGhostStrategy {
+
     @Override
     public Position nextTargetMove(Pacman pacman, List<Position> possibles) {
         Random random = new Random();
