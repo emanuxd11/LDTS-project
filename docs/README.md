@@ -108,15 +108,6 @@ One can achieve this with the Game Loop Pattern. Through this, with each turn of
 
 The game time can be tracked independently of processor speed and, therefore, process user input without blocking and continuously update the game state.
 
-**Implementation**
-
-<p align="center">
-  <img src="images/UML/???.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 4. ???</i></b>
-</p>
-
 #### WE NEED A STATE FOR BOTH IN-GAME AND MENU
 
 **Problem in Context**
