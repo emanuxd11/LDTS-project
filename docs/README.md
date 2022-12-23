@@ -104,8 +104,6 @@ There needs to be a way to continually check for any inputs the player might mak
 
 One can achieve this with the Game Loop Pattern. Through this, with each turn of the loop, you can process user input and update the game state.
 
-**Implementation**
-
 **Consequences**
 
 The game time can be tracked independently of processor speed and, therefore, process user input without blocking and continuously update the game state.
@@ -219,6 +217,8 @@ This UML shows how all design patterns we used were mapped to our different clas
 
 #### **Large Class**
 The Arena Class contains a lot of methods. We think that the usage of a high quantity of methods is warranted in this case, because it is through the Arena class that all the different elements of the actual game interact, and, as such, this is inevitable.
+
+In addition to this, PacmanController's step() method and GhostController's moveGhost() method are also very large due to all that is involved in the movement of Pacman and the Ghosts.
 - [Arena Class](../src/main/java/org/l11gr05/model/arena/Arena.java)
 - [Pacman's step() method](../src/main/java/org/l11gr05/controller/game/PacmanController.java)
 - [moveGhost() method](../src/main/java/org/l11gr05/controller/game/GhostController.java)
