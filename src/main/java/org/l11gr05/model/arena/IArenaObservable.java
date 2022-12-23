@@ -7,6 +7,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public interface IArenaObservable {
+
     void powerPelletEaten();
 
     Ghost isGhost(Position position) throws UnsupportedAudioFileException, LineUnavailableException, IOException;

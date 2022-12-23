@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Position.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pacman</a> &gt; <a href="index.source.html" class="el_package">org.l11gr05.model.elements</a> &gt; <span class="el_source">Position.java</span></div><h1>Position.java</h1><pre class="source lang-java linenums">package org.l11gr05.model.elements;
 
 public class Position {
+
     private int x;
     private int y;
 
-<span class="fc" id="L7">    public Position() {</span>
-<span class="fc" id="L8">        x = 0;</span>
-<span class="fc" id="L9">        y = 0;</span>
-<span class="fc" id="L10">    }</span>
+<span class="fc" id="L8">    public Position() {</span>
+<span class="fc" id="L9">        x = 0;</span>
+<span class="fc" id="L10">        y = 0;</span>
+<span class="fc" id="L11">    }</span>
 
-<span class="fc" id="L12">    public Position(int x, int y) {</span>
-<span class="fc" id="L13">        this.x = x;</span>
-<span class="fc" id="L14">        this.y = y;</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L13">    public Position(int x, int y) {</span>
+<span class="fc" id="L14">        this.x = x;</span>
+<span class="fc" id="L15">        this.y = y;</span>
+<span class="fc" id="L16">    }</span>
 
     public int getX() {
-<span class="fc" id="L18">        return x;</span>
+<span class="fc" id="L19">        return x;</span>
     }
 
     public int getY() {
-<span class="fc" id="L22">        return y;</span>
+<span class="fc" id="L23">        return y;</span>
     }
 
     public void setX(int x) {
-<span class="fc" id="L26">        this.x = x;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L27">        this.x = x;</span>
+<span class="fc" id="L28">    }</span>
 
     public void setY(int y) {
-<span class="fc" id="L30">        this.y = y;</span>
-<span class="fc" id="L31">    }</span>
+<span class="fc" id="L31">        this.y = y;</span>
+<span class="fc" id="L32">    }</span>
 
     @Override
     public boolean equals(Object o) {
-<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (this == o) return true;</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (o == null) return false;</span>
-<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (getClass() != o.getClass()) return false;</span>
-<span class="fc" id="L38">        Position p = (Position) o;</span>
-<span class="fc bfc" id="L39" title="All 4 branches covered.">        return x == p.getX() &amp;&amp; y == p.getY();</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (this == o) return true;</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (o == null) return false;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L39">        Position p = (Position) o;</span>
+<span class="fc bfc" id="L40" title="All 4 branches covered.">        return x == p.getX() &amp;&amp; y == p.getY();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

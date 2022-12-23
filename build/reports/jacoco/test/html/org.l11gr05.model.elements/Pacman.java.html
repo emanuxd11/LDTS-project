@@ -3,35 +3,36 @@
 import java.io.*;
 
 public class Pacman extends Element {
+
     private char direction;
     private int score;
     private int highScore;
 
     public Pacman(Position position, char direction, String file) {
-<span class="fc" id="L11">        super(position);</span>
-<span class="fc" id="L12">        this.direction = direction;</span>
-<span class="fc" id="L13">        this.score = 0;</span>
-<span class="fc" id="L14">        this.highScore = readHighScore(file);</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L12">        super(position);</span>
+<span class="fc" id="L13">        this.direction = direction;</span>
+<span class="fc" id="L14">        this.score = 0;</span>
+<span class="fc" id="L15">        this.highScore = readHighScore(file);</span>
+<span class="fc" id="L16">    }</span>
 
     private int readHighScore(String filename) {
         FileReader reader;
         BufferedReader bufferedReader;
         try {
-<span class="fc" id="L21">            reader = new FileReader(filename);</span>
-<span class="fc" id="L22">            bufferedReader = new BufferedReader(reader);</span>
-<span class="fc" id="L23">        } catch (FileNotFoundException e) {</span>
-<span class="fc" id="L24">            throw new RuntimeException(e);</span>
-<span class="fc" id="L25">        }</span>
+<span class="fc" id="L22">            reader = new FileReader(filename);</span>
+<span class="fc" id="L23">            bufferedReader = new BufferedReader(reader);</span>
+<span class="fc" id="L24">        } catch (FileNotFoundException e) {</span>
+<span class="fc" id="L25">            throw new RuntimeException(e);</span>
+<span class="fc" id="L26">        }</span>
 
         int newHighScore;
         try {
-<span class="fc" id="L29">            newHighScore = Integer.parseInt(bufferedReader.readLine());</span>
-<span class="nc" id="L30">        } catch (IOException e) {</span>
-<span class="nc" id="L31">            throw new RuntimeException(e);</span>
-<span class="fc" id="L32">        }</span>
+<span class="fc" id="L30">            newHighScore = Integer.parseInt(bufferedReader.readLine());</span>
+<span class="nc" id="L31">        } catch (IOException e) {</span>
+<span class="nc" id="L32">            throw new RuntimeException(e);</span>
+<span class="fc" id="L33">        }</span>
 
-<span class="fc" id="L34">        return newHighScore;</span>
+<span class="fc" id="L35">        return newHighScore;</span>
     }
 
     private void writeHighScore(int newHighScore) {
@@ -39,43 +40,43 @@ public class Pacman extends Element {
         BufferedWriter bufferedWriter;
 
         try {
-<span class="fc" id="L42">            writer = new FileWriter(&quot;src/main/resources/scores/highscore.txt&quot;);</span>
-<span class="fc" id="L43">            bufferedWriter = new BufferedWriter(writer);</span>
-<span class="nc" id="L44">        } catch (IOException e) {</span>
-<span class="nc" id="L45">            throw new RuntimeException(e);</span>
-<span class="fc" id="L46">        }</span>
+<span class="fc" id="L43">            writer = new FileWriter(&quot;src/main/resources/scores/highscore.txt&quot;);</span>
+<span class="fc" id="L44">            bufferedWriter = new BufferedWriter(writer);</span>
+<span class="nc" id="L45">        } catch (IOException e) {</span>
+<span class="nc" id="L46">            throw new RuntimeException(e);</span>
+<span class="fc" id="L47">        }</span>
 
         try {
-<span class="fc" id="L49">            bufferedWriter.write(String.valueOf(newHighScore));</span>
-<span class="fc" id="L50">            bufferedWriter.flush();</span>
-<span class="fc" id="L51">            bufferedWriter.close();</span>
-<span class="nc" id="L52">        } catch (IOException e) {</span>
-<span class="nc" id="L53">            throw new RuntimeException(e);</span>
-<span class="fc" id="L54">        }</span>
-<span class="fc" id="L55">    }</span>
+<span class="fc" id="L50">            bufferedWriter.write(String.valueOf(newHighScore));</span>
+<span class="fc" id="L51">            bufferedWriter.flush();</span>
+<span class="fc" id="L52">            bufferedWriter.close();</span>
+<span class="nc" id="L53">        } catch (IOException e) {</span>
+<span class="nc" id="L54">            throw new RuntimeException(e);</span>
+<span class="fc" id="L55">        }</span>
+<span class="fc" id="L56">    }</span>
 
     public int getHighScore() {
-<span class="fc" id="L58">        return this.highScore;</span>
+<span class="fc" id="L59">        return this.highScore;</span>
     }
 
     public char getDirection(){
-<span class="fc" id="L62">        return this.direction;</span>
+<span class="fc" id="L63">        return this.direction;</span>
     }
 
     public void setDirection(char a){
-<span class="fc" id="L66">        this.direction = a;</span>
-<span class="fc" id="L67">    }</span>
+<span class="fc" id="L67">        this.direction = a;</span>
+<span class="fc" id="L68">    }</span>
 
     public int getScore() {
-<span class="fc" id="L70">        return this.score;</span>
+<span class="fc" id="L71">        return this.score;</span>
     }
 
     public void increaseScore(int increase) {
-<span class="fc" id="L74">        this.score += increase;</span>
-<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (this.score &gt; this.highScore) {</span>
-<span class="fc" id="L76">            this.highScore = this.score;</span>
-<span class="fc" id="L77">            writeHighScore(this.highScore);</span>
+<span class="fc" id="L75">        this.score += increase;</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (this.score &gt; this.highScore) {</span>
+<span class="fc" id="L77">            this.highScore = this.score;</span>
+<span class="fc" id="L78">            writeHighScore(this.highScore);</span>
         }
-<span class="fc" id="L79">    }</span>
+<span class="fc" id="L80">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

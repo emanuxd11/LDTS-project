@@ -5,37 +5,38 @@ import org.l11gr05.sound.SoundFX;
 
 public class ChasedState implements IGhostState {
     private int timer;
-    private Ghost ghost;
-
+    private final Ghost ghost;
     public static final int MAX_TIME = 45;
+
 <span class="fc" id="L11">    public ChasedState(Ghost ghost){</span>
 <span class="fc" id="L12">        this.timer = 0;</span>
 <span class="fc" id="L13">        this.ghost = ghost;</span>
 <span class="fc" id="L14">    }</span>
+
     @Override
     public void powerPelletEaten() {
-<span class="fc" id="L17">        this.timer = 0;</span>
-<span class="fc" id="L18">    }</span>
+<span class="fc" id="L18">        this.timer = 0;</span>
+<span class="fc" id="L19">    }</span>
 
     @Override
     public void pacManCollision(){
-<span class="fc" id="L22">        SoundFX.playPacmanEatsGhost();</span>
-<span class="fc" id="L23">        this.ghost.setState(new EatenState(this.ghost));</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L23">        SoundFX.playPacmanEatsGhost();</span>
+<span class="fc" id="L24">        this.ghost.setState(new EatenState(this.ghost));</span>
+<span class="fc" id="L25">    }</span>
 
     @Override
     public boolean isBeingChased() {
-<span class="fc" id="L28">        return true;</span>
+<span class="fc" id="L29">        return true;</span>
     }
 
     @Override
     public int getTimer() {
-<span class="fc" id="L33">        return this.timer;</span>
+<span class="fc" id="L34">        return this.timer;</span>
     }
 
     @Override
     public void increaseTimer() {
-<span class="fc" id="L38">        this.timer++;</span>
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L39">        this.timer++;</span>
+<span class="fc" id="L40">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

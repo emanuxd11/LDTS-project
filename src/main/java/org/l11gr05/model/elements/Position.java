@@ -1,6 +1,7 @@
 package org.l11gr05.model.elements;
 
 public class Position {
+
     private int x;
     private int y;
 

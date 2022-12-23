@@ -11,6 +11,7 @@ import org.l11gr05.states.MenuState;
 
 public class PacmanController extends GameController {
     public boolean alreadyPlayed = false;
+
     public PacmanController(Arena arena) {
         super(arena);
     }

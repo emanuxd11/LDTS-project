@@ -7,18 +7,19 @@ import org.l11gr05.viewer.Viewer;
 import org.l11gr05.viewer.game.GameViewer;
 
 public class GameState extends State&lt;Arena&gt; {
+
     public GameState(Arena model) {
-<span class="nc" id="L11">        super(model);</span>
-<span class="nc" id="L12">    }</span>
+<span class="nc" id="L12">        super(model);</span>
+<span class="nc" id="L13">    }</span>
 
     @Override
     protected Controller&lt;Arena&gt; getController() {
-<span class="nc" id="L16">        return new ArenaController(getModel());</span>
+<span class="nc" id="L17">        return new ArenaController(getModel());</span>
     }
 
     @Override
     public Viewer&lt;Arena&gt; getViewer() {
-<span class="nc" id="L21">        return new GameViewer(getModel());</span>
+<span class="nc" id="L22">        return new GameViewer(getModel());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.l11gr05.MenuControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-23T20:59:44" hostname="Air-de-Davide.Home" time="1.06">
-  <properties/>
-  <testcase name="DOWNTest()" classname="org.l11gr05.MenuControllerTest" time="1.053"/>
-  <testcase name="UPTest()" classname="org.l11gr05.MenuControllerTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -63,7 +63,7 @@ public class SoundFX {
 <span class="nc" id="L63">    }</span>
 
     private void loop() {
-         try {
+        try {
 <span class="nc bnc" id="L67" title="All 2 branches missed.">            if (!clip.isOpen()) {</span>
 <span class="nc" id="L68">                clip.open(audioStream);</span>
             }
@@ -74,10 +74,10 @@ public class SoundFX {
 <span class="nc" id="L74">    }</span>
 
     private void stop() {
-         try {
+        try {
 <span class="nc" id="L78">            clip.stop();</span>
 <span class="nc" id="L79">            clip.setMicrosecondPosition(0);</span>
-<span class="nc" id="L80">        } catch(NullPointerException e){}</span>
+<span class="nc" id="L80">        } catch(NullPointerException ignored) {}</span>
 <span class="nc" id="L81">    }</span>
 
     public static void stopGameSounds() {
@@ -88,37 +88,37 @@ public class SoundFX {
 <span class="nc" id="L88">            stopWa();</span>
 <span class="nc" id="L89">            stopKa();</span>
 <span class="nc" id="L90">            stopPacmanEatsGhost();</span>
-<span class="pc" id="L91">        } catch (NullPointerException e){}</span>
+<span class="pc" id="L91">        } catch (NullPointerException ignored) {}</span>
 <span class="fc" id="L92">    }</span>
 
     public static void loopMenuTheme() {
         try {
 <span class="nc" id="L96">            menuTheme.loop();</span>
-<span class="pc" id="L97">        }catch(NullPointerException e){}</span>
+<span class="pc" id="L97">        } catch(NullPointerException ignored) {}</span>
 <span class="fc" id="L98">    }</span>
 
     public static void stopMenuSounds() {
         try {
 <span class="nc" id="L102">            stopMenuTheme();</span>
-<span class="nc" id="L103">        }catch(NullPointerException e){}</span>
+<span class="nc" id="L103">        } catch(NullPointerException ignored) {}</span>
 <span class="nc" id="L104">    }</span>
 
     public static void playStartUp() {
         try {
 <span class="nc" id="L108">            startUp.play();</span>
-<span class="pc" id="L109">        }catch(NullPointerException e){}</span>
+<span class="pc" id="L109">        } catch(NullPointerException ignored) {}</span>
 <span class="fc" id="L110">    }</span>
 
     public static void stopStartUp() {
         try {
 <span class="nc" id="L114">            startUp.stop();</span>
-<span class="pc" id="L115">        } catch (NullPointerException e){}</span>
+<span class="pc" id="L115">        } catch (NullPointerException ignored) {}</span>
 <span class="fc" id="L116">    }</span>
 
     private static void playWa() {
         try {
 <span class="nc" id="L120">            wa.play();</span>
-<span class="nc" id="L121">        } catch(NullPointerException e){}</span>
+<span class="nc" id="L121">        } catch(NullPointerException ignored) {}</span>
 <span class="nc" id="L122">    }</span>
 
     private static void stopWa() {
@@ -137,7 +137,7 @@ public class SoundFX {
         try {
 <span class="nc" id="L138">            powerUp.stop();</span>
 <span class="nc" id="L139">            powerUp.play();</span>
-<span class="nc" id="L140">        } catch(NullPointerException e){}</span>
+<span class="nc" id="L140">        } catch(NullPointerException ignored) {}</span>
 <span class="nc" id="L141">    }</span>
 
     public static void stopPowerUp() {
@@ -148,7 +148,7 @@ public class SoundFX {
         try {
 <span class="nc" id="L149">            pacmanEatsGhost.stop();</span>
 <span class="nc" id="L150">            pacmanEatsGhost.play();</span>
-<span class="pc" id="L151">        } catch(NullPointerException e){}</span>
+<span class="pc" id="L151">        } catch(NullPointerException ignored) {}</span>
 <span class="fc" id="L152">    }</span>
 
     public static void stopPacmanEatsGhost() {
@@ -170,7 +170,7 @@ public class SoundFX {
         try {
 <span class="nc" id="L171">            pacmanDies.stop();</span>
 <span class="nc" id="L172">            pacmanDies.play();</span>
-<span class="pc" id="L173">        } catch(NullPointerException e){}</span>
+<span class="pc" id="L173">        } catch(NullPointerException ignored) {}</span>
 <span class="fc" id="L174">    }</span>
 
     public static void stopMenuTheme() {
@@ -188,7 +188,7 @@ public class SoundFX {
 <span class="nc" id="L188">                stopWa();</span>
 <span class="nc" id="L189">                playKa();</span>
             }
-<span class="pc" id="L191">        }catch(NullPointerException e){}</span>
+<span class="pc" id="L191">        } catch(NullPointerException ignored) {}</span>
 <span class="fc" id="L192">    }</span>
 
     public static void powerPelletEatenSound(){
@@ -196,7 +196,7 @@ public class SoundFX {
 <span class="fc" id="L196">            SoundFX.playEatSound();</span>
 <span class="nc" id="L197">            SoundFX.stopGhostSiren1();</span>
 <span class="nc" id="L198">            SoundFX.playPowerUp();</span>
-<span class="pc" id="L199">        }catch(NullPointerException e){}</span>
+<span class="pc" id="L199">        } catch(NullPointerException ignored) {}</span>
 <span class="fc" id="L200">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

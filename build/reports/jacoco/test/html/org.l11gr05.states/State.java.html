@@ -9,9 +9,9 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public abstract class State&lt;T&gt; {
+
     private final T model;
     private final Viewer&lt;T&gt; viewer;
-
     private final Controller&lt;T&gt; controller;
 
 <span class="fc" id="L17">    public State(T model) {</span>
@@ -28,10 +28,11 @@ public abstract class State&lt;T&gt; {
 
     public abstract Viewer&lt;T&gt; getViewer();
 
-    public void step(Game game, GUI gui, long time) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-<span class="nc" id="L32">        GUI.ACTION action = gui.getNextAction();</span>
-<span class="nc" id="L33">        controller.step(game, action, time);</span>
-<span class="nc" id="L34">        viewer.draw(gui);</span>
-<span class="nc" id="L35">    }</span>
+    public void step(Game game, GUI gui, long time)
+            throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+<span class="nc" id="L33">        GUI.ACTION action = gui.getNextAction();</span>
+<span class="nc" id="L34">        controller.step(game, action, time);</span>
+<span class="nc" id="L35">        viewer.draw(gui);</span>
+<span class="nc" id="L36">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

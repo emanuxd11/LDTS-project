@@ -23,7 +23,7 @@ public class PinkyStrategy implements IGhostStrategy {
             if (comparable.getY() < down.getY()) down = comparable;
         }
 
-        Position position = new Position();
+        Position position;
 
         switch(direction){
             case 'u' -> position = up;
@@ -52,7 +52,7 @@ public class PinkyStrategy implements IGhostStrategy {
             if (comparable.getY() < down.getY()) down = comparable;
         }
 
-        Position position = new Position();
+        Position position;
 
         switch(direction){
             case 'u' -> position = right;

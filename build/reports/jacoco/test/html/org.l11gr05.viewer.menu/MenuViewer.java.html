@@ -6,25 +6,26 @@ import org.l11gr05.menu.Menu;
 import org.l11gr05.viewer.Viewer;
 
 public class MenuViewer extends Viewer&lt;Menu&gt; {
-    public MenuViewer(Menu model) {
-<span class="fc" id="L10">        super(model);</span>
-<span class="fc" id="L11">    }</span>
 
-<span class="fc" id="L13">    private static final String[] TITLE_TEXT = {</span>
+    public MenuViewer(Menu model) {
+<span class="fc" id="L11">        super(model);</span>
+<span class="fc" id="L12">    }</span>
+
+<span class="fc" id="L14">    private static final String[] TITLE_TEXT = {</span>
             &quot; _     _  \n&quot;,
             &quot;|_)/\\ /  _ |\\/| /\\ |\\ |\n&quot;,
             &quot;| /--\\\\_   |  |/--\\| \\|\n&quot;
     };
 
     public void drawElements(GUI gui) {
-<span class="fc bfc" id="L20" title="All 2 branches covered.">        for (int i = 0; i &lt; TITLE_TEXT.length; i++) {</span>
-<span class="fc" id="L21">            gui.drawText(new Position(2, 3 + i), TITLE_TEXT[i], &quot;#f5e72c&quot;);</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        for (int i = 0; i &lt; TITLE_TEXT.length; i++) {</span>
+<span class="fc" id="L22">            gui.drawText(new Position(2, 3 + i), TITLE_TEXT[i], &quot;#f5e72c&quot;);</span>
         }
 
-<span class="fc bfc" id="L24" title="All 2 branches covered.">        for (int i = 0; i &lt; getModel().getEntriesLen(); i++) {</span>
-<span class="fc" id="L25">            gui.drawText(new Position(11, 10 + 2*i), getModel().getEntry(i),</span>
-<span class="fc bfc" id="L26" title="All 2 branches covered.">                    getModel().isSelected(i) ? &quot;#34bbc9&quot; : &quot;#FFFFFF&quot;);</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        for (int i = 0; i &lt; getModel().getEntriesLen(); i++) {</span>
+<span class="fc" id="L26">            gui.drawText(new Position(11, 10 + 2*i), getModel().getEntry(i),</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">                    getModel().isSelected(i) ? &quot;#34bbc9&quot; : &quot;#FFFFFF&quot;);</span>
         }
-<span class="fc" id="L28">    }</span>
+<span class="fc" id="L29">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

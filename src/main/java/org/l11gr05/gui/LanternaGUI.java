@@ -59,8 +59,7 @@ public class LanternaGUI implements GUI {
                 .setInitialTerminalSize(terminalSize);
         terminalFactory.setForceAWTOverSwing(true);
         terminalFactory.setTerminalEmulatorFontConfiguration(fontConfig);
-        Terminal terminal = terminalFactory.createTerminal();
-        return terminal;
+        return terminalFactory.createTerminal();
     }
 
     private AWTTerminalFontConfiguration loadSquareFont()
@@ -76,9 +75,7 @@ public class LanternaGUI implements GUI {
 
         Font loadedFont = font.deriveFont(PLAIN, 24);
 
-        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
-        return fontConfig;
-
+        return AWTTerminalFontConfiguration.newInstance(loadedFont);
     }
 
     public ACTION getNextAction() throws IOException {
@@ -141,8 +138,7 @@ public class LanternaGUI implements GUI {
             if (pinky.getState().getTimer() % 2 == 0 && pinky.getState().getTimer() > 30)
             drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', "#FFFFFF");
             else drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', "#5259E8");
-        }
-        else {
+        } else {
             drawCharacter(pinky.getPosition().getX(), pinky.getPosition().getY(), '@', "#FFB8FF");
         }
     }
@@ -154,8 +150,7 @@ public class LanternaGUI implements GUI {
             drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', "#FFFFFF");
             else drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', "#5259E8");
 
-        }
-        else {
+        } else {
             drawCharacter(inky.getPosition().getX(), inky.getPosition().getY(), '@', "#00FFFF");
         }
     }
@@ -167,8 +162,7 @@ public class LanternaGUI implements GUI {
             drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', "#FFFFFF");
             else
                 drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', "#5259E8");
-        }
-        else {
+        } else {
             drawCharacter(clyde.getPosition().getX(), clyde.getPosition().getY(), '@', "#FFB852");
         }
     }

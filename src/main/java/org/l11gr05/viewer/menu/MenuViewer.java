@@ -6,6 +6,7 @@ import org.l11gr05.menu.Menu;
 import org.l11gr05.viewer.Viewer;
 
 public class MenuViewer extends Viewer<Menu> {
+
     public MenuViewer(Menu model) {
         super(model);
     }
