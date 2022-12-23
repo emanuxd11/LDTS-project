@@ -195,7 +195,7 @@ This UML shows how all design patterns we used were mapped to our different clas
 
 ### Screenshot of coverage report
 <p align="center">
-  <img src="images/TestCoverage"/>
+  <img src="images/TestCoverage.png"/>
 </p>
 <p align="center">
   <b><i>Fig 9. Code coverage screenshot</i></b>
