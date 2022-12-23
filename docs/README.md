@@ -217,6 +217,12 @@ This UML shows how all design patterns we used were mapped to our different clas
 
 ### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
+## Dead code
+This method was cleaned after we realized the it was not being used
+<p align="center">
+  <img src="images/deadcode.png"/>
+</p>
+
 ## Testing
 
 ### Screenshot of coverage report
