@@ -1,3 +1,9 @@
+# What is this?
+This repository is a mirror of the original private repository where this project was made.
+It's the final project for the Laboratório de Desenho e Teste de Software UC in the second year of LEIC at FEUP.
+If you are using Arch Linux (which I am btw), the audio will probably make your program crash. If it doesn't, please tell me about it...
+Everything else is the original README.
+
 ## LDTS_11_05 - PACMAN
 
 In this project, we developed a pacman clone written in Java with the GUI Framework "Lanterna". In it, you control pacman through the arena collecting all the PacDots and PowerPellets you can while being chased by 4 different enemy characters.
