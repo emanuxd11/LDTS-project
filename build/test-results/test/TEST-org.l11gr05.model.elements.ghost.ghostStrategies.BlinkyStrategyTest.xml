@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.l11gr05.model.elements.ghost.ghostStrategies.BlinkyStrategyTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-23T21:40:49" hostname="archvivobook" time="0.002">
-  <properties/>
-  <testcase name="nextScatorMoveTest()" classname="org.l11gr05.model.elements.ghost.ghostStrategies.BlinkyStrategyTest" time="0.0"/>
-  <testcase name="nextTargetMoveTest()" classname="org.l11gr05.model.elements.ghost.ghostStrategies.BlinkyStrategyTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.l11gr05.viewer.GameViewerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-23T21:40:49" hostname="archvivobook" time="0.209">
-  <properties/>
-  <testcase name="drawElementsTest()" classname="org.l11gr05.viewer.GameViewerTest" time="0.209"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
